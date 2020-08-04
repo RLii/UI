@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Apache Derby (Embedded) - ultimateDB" uuid="28a78e9a-4712-4d3a-a149-c3b4403587c0">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="DERBY" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>

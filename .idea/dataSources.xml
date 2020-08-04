@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Apache Derby (Embedded) - ultimateDB" uuid="28a78e9a-4712-4d3a-a149-c3b4403587c0">
+      <driver-ref>derby.embedded</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.derby.iapi.jdbc.InternalDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby:$PROJECT_DIR$/ultimateDB</jdbc-url>
+    </data-source>
+  </component>
+</project>
