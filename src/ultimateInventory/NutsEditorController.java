@@ -27,8 +27,6 @@ public class NutsEditorController {
     @FXML
     TextField addPriceText;
     @FXML
-    TextField addManuText;
-    @FXML
     TextField addIdText;
 
     public void setModel(NutsTableManager nut)
