@@ -58,18 +58,20 @@ public class NutsTableManager {
     }
     public void edit(String id, String vName, String vEmail, String vContact, String vWebsite, int price, String pMethod, String pTerm, String date, String curr, String Note)throws SQLException
     {
-        Statement stmt = connection.createStatement();
-        stmt.executeUpdate("UPDATE Nuts SET Price ="+price+"," +
-                "VendorName ="+vName+"," +
-                "VendorEmail = "+vEmail+"," +
-                "VendorContact ="+vContact+"," +
-                "VendowWebsite ="+vWebsite+"," +
-                "Currency ="+curr+"," +
-                "PurchaseDate="+date+"," +
-                "PayTerm = "+pTerm+"," +
-                "PayMethod ="+pMethod+"," +
-                "Note ="+Note+"" +
-                " WHERE ID = '"+id+"'");
+        String sql ="UPDATE Nuts SET VendorName = ?, VendorEmail = ?, VendorContact = ?, VendorWebsite = ?, Price = ?, PayMethod = ?, PayTerm = ?, PurchaseDate = ?, Currency = ?, Note = ? WHERE ID = ?";
+        PreparedStatement prep = connection.prepareStatement(sql);
+        prep.setString(1,vName);
+        prep.setString(2,vEmail);
+        prep.setString(3,vContact);
+        prep.setString(4,vWebsite);
+        prep.setInt(5,price);
+        prep.setString(6,pMethod);
+        prep.setString(7,pTerm);
+        prep.setString(8,date);
+        prep.setString(9,curr);
+        prep.setString(10,Note);
+        prep.setString(11,id);
+        prep.executeUpdate();
 
 
     }

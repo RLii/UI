@@ -194,14 +194,14 @@ public class NutsEditorController implements Initializable {
                     editVendorEmailText.getText(),
                     editVendorContactText.getText(),
                     editVendorWebsiteText.getText(),
-                    Integer.valueOf(editPriceText.getText()),
+                    Integer.parseInt(editPriceText.getText()),
                     editPayMethodText.getText(),
                     editPayTermText.getText(),
                     editPurchaseDateText.getEditor().getText(),
                     curr,
                     editNoteText.getText());
         }
-        catch(Exception e)
+        catch(SQLException e)
         {
             displayAlert("Error!" + e);
         }
