@@ -109,4 +109,27 @@ public class NutsTableManager {
         }
         return array;
     }
+    public int getPrice(String id) throws SQLException
+    {
+        String sql = "SELECT Price FROM Nuts WHERE ID = ?";
+        PreparedStatement stmt = connection.prepareStatement(sql);
+        stmt.setString(1,id);
+        ResultSet rs = stmt.executeQuery();
+        rs.next();
+        return rs.getInt(1);
+    }
+    public boolean isCad(String id) throws SQLException
+    {
+        String sql = "SELECT Currency FROM Nuts WHERE ID = ?";
+        PreparedStatement stmt = connection.prepareStatement(sql);
+        stmt.setString(1,id);
+        ResultSet rs = stmt.executeQuery();
+        rs.next();
+        String curr = rs.getString(1);
+        if(curr.equals("CAD"))
+        {
+            return true;
+        }
+        return false;
+    }
 }

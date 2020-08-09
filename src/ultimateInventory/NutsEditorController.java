@@ -57,8 +57,6 @@ public class NutsEditorController implements Initializable {
     @FXML
     TextField editPriceText;
     @FXML
-    TextField editIdText;
-    @FXML
     TextField editVendorNameText;
     @FXML
     TextField editVendorEmailText;
@@ -80,8 +78,6 @@ public class NutsEditorController implements Initializable {
     TextArea editNoteText;
     @FXML
     ComboBox editCombox;
-    @FXML
-    Label editIdLabel;
     @FXML
     Label editVendorNameLabel;
     @FXML
@@ -108,8 +104,6 @@ public class NutsEditorController implements Initializable {
     Button deleteBtn;
     @FXML
     ComboBox delCombox;
-    @FXML
-    Label delIdLabel;
     @FXML
     Label delVendorNameLabel;
     @FXML
@@ -166,14 +160,20 @@ public class NutsEditorController implements Initializable {
                     addPurchaseDateText.getEditor().getText(),
                     curr,
                     addNoteText.getText());
-        }
-        catch(SQLException e)
-        {
-            displayAlert("Error!" + e);
-        }
-        finally {
+
             Stage stage = (Stage) saveBtn.getScene().getWindow();
             stage.close();
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error!" + e);
+            }
+            else
+            {
+                displayAlert("Please fill out the form correctly");
+            }
         }
     }
     public void edit()
@@ -200,14 +200,20 @@ public class NutsEditorController implements Initializable {
                     editPurchaseDateText.getEditor().getText(),
                     curr,
                     editNoteText.getText());
-        }
-        catch(SQLException e)
-        {
-            displayAlert("Error!" + e);
-        }
-        finally {
+
             Stage stage = (Stage) updateBtn.getScene().getWindow();
             stage.close();
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error!" + e);
+            }
+            else
+            {
+                displayAlert("Please fill out the form correctly");
+            }
         }
     }
     public void delete()
