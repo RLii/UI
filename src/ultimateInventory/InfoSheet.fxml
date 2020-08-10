@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="531.0" prefWidth="758.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ultimateInventory.InfoSheetController">
+    <Label layoutX="44.0" layoutY="151.0" text="Vendor Name :" />
+    <Label layoutX="42.0" layoutY="431.0" text="Price (per unit) :" />
+    <Label layoutX="437.0" layoutY="242.0" text="Purchase Date :" />
+    <Label layoutX="46.0" layoutY="212.0" text="Vendor Email :" />
+    <Label layoutY="285.0" text="Vendor Contact Name :" />
+    <Label layoutX="419.0" layoutY="106.0" text="Payment Method :" />
+    <Label layoutX="437.0" layoutY="169.0" text="Payment Term :" />
+    <Label layoutX="468.0" layoutY="315.0" text="Currency :" />
+    <Label layoutX="489.0" layoutY="385.0" text="Note :" />
+    <Label layoutX="32.0" layoutY="358.0" text="Vendor Website :" />
+    <Label fx:id="VendorNameLabel" alignment="CENTER" layoutX="233.0" layoutY="151.0" text="Label" textAlignment="CENTER" />
+    <Label fx:id="VendorEmailLabel" alignment="CENTER" layoutX="233.0" layoutY="212.0" text="Label" textAlignment="CENTER" />
+    <Label fx:id="VendorContactLabel" alignment="CENTER" layoutX="233.0" layoutY="285.0" text="Label" textAlignment="CENTER" />
+    <Label fx:id="VendorWebsiteLabel" alignment="CENTER" layoutX="233.0" layoutY="358.0" text="Label" textAlignment="CENTER" />
+    <Label fx:id="PriceLabel" alignment="CENTER" layoutX="233.0" layoutY="431.0" text="Label" textAlignment="CENTER" />
+    <Label fx:id="PayMethodLabel" alignment="CENTER" layoutX="624.0" layoutY="106.0" text="Label" textAlignment="CENTER" />
+    <Label fx:id="PayTermLabel" alignment="CENTER" layoutX="624.0" layoutY="169.0" text="Label" textAlignment="CENTER" />
+    <Label fx:id="PayDateLabel" alignment="CENTER" layoutX="624.0" layoutY="242.0" text="Label" textAlignment="CENTER" />
+    <Label fx:id="CurrLabel" alignment="CENTER" layoutX="624.0" layoutY="315.0" text="Label" textAlignment="CENTER" />
+    <Label fx:id="NoteLabel" alignment="CENTER" layoutX="624.0" layoutY="385.0" text="Label" textAlignment="CENTER" />
+   <Label layoutX="105.0" layoutY="88.0" text="ID :" />
+   <Label fx:id="IDLabel" layoutX="233.0" layoutY="88.0" text="Label" />
+   <Label fx:id="TitleLabel" alignment="CENTER" layoutX="351.0" layoutY="14.0" text="Label" textAlignment="CENTER">
+      <font>
+         <Font size="24.0" />
+      </font>
+   </Label>
+
+</AnchorPane>

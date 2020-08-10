@@ -1,8 +1,8 @@
 package ultimateInventory;
 
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,11 +15,10 @@ import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class CostCalculatorController implements Initializable {
@@ -50,49 +49,67 @@ public class CostCalculatorController implements Initializable {
 
     //*****************************FXML********************************
     @FXML
-    ComboBox nutComBox;
+    ComboBox nutComBox1;
     @FXML
-    TextField nutQtyText;
+    TextField nutQtyText1;
+    @FXML
+    Label nutSubtotal1;
 
     @FXML
-    ComboBox pipeComBox;
+    ComboBox pipeComBox1;
     @FXML
-    TextField pipeQtyText;
+    TextField pipeQtyText1;
+    @FXML
+    Label pipeSubtotal1;
 
     @FXML
-    ComboBox flangeComBox;
+    ComboBox flangeComBox1;
     @FXML
-    TextField flangeQtyText;
+    TextField flangeQtyText1;
+    @FXML
+    Label flangeSubtotal1;
 
     @FXML
-    ComboBox elbowComBox;
+    ComboBox elbowComBox1;
     @FXML
-    TextField elbowQtyText;
+    TextField elbowQtyText1;
+    @FXML
+    Label elbowSubtotal1;
 
     @FXML
-    ComboBox hangerComBox;
+    ComboBox hangerComBox1;
     @FXML
-    TextField hangerQtyText;
+    TextField hangerQtyText1;
+    @FXML
+    Label hangerSubtotal1;
 
     @FXML
-    ComboBox boxComBox;
+    ComboBox boxComBox1;
     @FXML
-    TextField boxQtyText;
+    TextField boxQtyText1;
+    @FXML
+    Label boxSubtotal1;
 
     @FXML
-    ComboBox mufflerComBox;
+    ComboBox mufflerComBox1;
     @FXML
-    TextField mufflerQtyText;
+    TextField mufflerQtyText1;
+    @FXML
+    Label mufflerSubtotal1;
 
     @FXML
-    ComboBox resonatorComBox;
+    ComboBox resonatorComBox1;
     @FXML
-    TextField resonatorQtyText;
+    TextField resonatorQtyText1;
+    @FXML
+    Label resonatorSubtotal1;
 
     @FXML
-    ComboBox catComBox;
+    ComboBox catComBox1;
     @FXML
-    TextField catQtyText;
+    TextField catQtyText1;
+    @FXML
+    Label catSubtotal1;
 
 
 
@@ -130,15 +147,15 @@ public class CostCalculatorController implements Initializable {
             resonatorData.addAll(resonatorTableManager.getIdNames());
             catData.addAll(catTableManager.getIdNames());
 
-            nutComBox.getSelectionModel().selectFirst();
-            pipeComBox.getSelectionModel().selectFirst();
-            elbowComBox.getSelectionModel().selectFirst();
-            flangeComBox.getSelectionModel().selectFirst();
-            hangerComBox.getSelectionModel().selectFirst();
-            boxComBox.getSelectionModel().selectFirst();
-            mufflerComBox.getSelectionModel().selectFirst();
-            resonatorComBox.getSelectionModel().selectFirst();
-            catComBox.getSelectionModel().selectFirst();
+            nutComBox1.getSelectionModel().selectFirst();
+            pipeComBox1.getSelectionModel().selectFirst();
+            elbowComBox1.getSelectionModel().selectFirst();
+            flangeComBox1.getSelectionModel().selectFirst();
+            hangerComBox1.getSelectionModel().selectFirst();
+            boxComBox1.getSelectionModel().selectFirst();
+            mufflerComBox1.getSelectionModel().selectFirst();
+            resonatorComBox1.getSelectionModel().selectFirst();
+            catComBox1.getSelectionModel().selectFirst();
         }
         catch(SQLException e)
         {
@@ -152,68 +169,68 @@ public class CostCalculatorController implements Initializable {
             int cadTotal = 0;
             int usdTotal = 0;
 
-            if(!(nutComBox.getSelectionModel().isEmpty()))
+            if(!(nutComBox1.getSelectionModel().isEmpty()))
             {
-                if(nutsTableManager.isCad(nutComBox.getValue().toString()))
-                    cadTotal += nutsTableManager.getPrice(nutComBox.getValue().toString()) * Integer.parseInt(nutQtyText.getText());
+                if(nutsTableManager.isCad(nutComBox1.getValue().toString()))
+                    cadTotal += nutsTableManager.getPrice(nutComBox1.getValue().toString()) * Integer.parseInt(nutQtyText1.getText());
                 else
-                    usdTotal += nutsTableManager.getPrice(nutComBox.getValue().toString()) * Integer.parseInt(nutQtyText.getText());
+                    usdTotal += nutsTableManager.getPrice(nutComBox1.getValue().toString()) * Integer.parseInt(nutQtyText1.getText());
             }
-            if(!(pipeComBox.getSelectionModel().isEmpty()))
+            if(!(pipeComBox1.getSelectionModel().isEmpty()))
             {
-                if(pipeTableManager.isCad(pipeComBox.getValue().toString()))
-                    cadTotal += pipeTableManager.getPrice(pipeComBox.getValue().toString()) * Integer.parseInt(pipeQtyText.getText());
+                if(pipeTableManager.isCad(pipeComBox1.getValue().toString()))
+                    cadTotal += pipeTableManager.getPrice(pipeComBox1.getValue().toString()) * Integer.parseInt(pipeQtyText1.getText());
                 else
-                    usdTotal += pipeTableManager.getPrice(pipeComBox.getValue().toString()) * Integer.parseInt(pipeQtyText.getText());
+                    usdTotal += pipeTableManager.getPrice(pipeComBox1.getValue().toString()) * Integer.parseInt(pipeQtyText1.getText());
             }
-            if(!(elbowComBox.getSelectionModel().isEmpty()))
+            if(!(elbowComBox1.getSelectionModel().isEmpty()))
             {
-                if(elbowTableManager.isCad(elbowComBox.getValue().toString()))
-                    cadTotal += elbowTableManager.getPrice(elbowComBox.getValue().toString()) * Integer.parseInt(elbowQtyText.getText());
+                if(elbowTableManager.isCad(elbowComBox1.getValue().toString()))
+                    cadTotal += elbowTableManager.getPrice(elbowComBox1.getValue().toString()) * Integer.parseInt(elbowQtyText1.getText());
                 else
-                    usdTotal += elbowTableManager.getPrice(elbowComBox.getValue().toString()) * Integer.parseInt(elbowQtyText.getText());
+                    usdTotal += elbowTableManager.getPrice(elbowComBox1.getValue().toString()) * Integer.parseInt(elbowQtyText1.getText());
             }
-            if(!(flangeComBox.getSelectionModel().isEmpty()))
+            if(!(flangeComBox1.getSelectionModel().isEmpty()))
             {
-                if(flangeTableManager.isCad(flangeComBox.getValue().toString()))
-                    cadTotal += flangeTableManager.getPrice(flangeComBox.getValue().toString()) * Integer.parseInt(flangeQtyText.getText());
+                if(flangeTableManager.isCad(flangeComBox1.getValue().toString()))
+                    cadTotal += flangeTableManager.getPrice(flangeComBox1.getValue().toString()) * Integer.parseInt(flangeQtyText1.getText());
                 else
-                    usdTotal += flangeTableManager.getPrice(flangeComBox.getValue().toString()) * Integer.parseInt(flangeQtyText.getText());
+                    usdTotal += flangeTableManager.getPrice(flangeComBox1.getValue().toString()) * Integer.parseInt(flangeQtyText1.getText());
             }
-            if(!(hangerComBox.getSelectionModel().isEmpty()))
+            if(!(hangerComBox1.getSelectionModel().isEmpty()))
             {
-                if(hangerTableManager.isCad(hangerComBox.getValue().toString()))
-                    cadTotal += hangerTableManager.getPrice(hangerComBox.getValue().toString()) * Integer.parseInt(hangerQtyText.getText());
+                if(hangerTableManager.isCad(hangerComBox1.getValue().toString()))
+                    cadTotal += hangerTableManager.getPrice(hangerComBox1.getValue().toString()) * Integer.parseInt(hangerQtyText1.getText());
                 else
-                    usdTotal += hangerTableManager.getPrice(hangerComBox.getValue().toString()) * Integer.parseInt(hangerQtyText.getText());
+                    usdTotal += hangerTableManager.getPrice(hangerComBox1.getValue().toString()) * Integer.parseInt(hangerQtyText1.getText());
             }
-            if(!(boxComBox.getSelectionModel().isEmpty()))
+            if(!(boxComBox1.getSelectionModel().isEmpty()))
             {
-                if(boxTableManager.isCad(boxComBox.getValue().toString()))
-                    cadTotal += boxTableManager.getPrice(boxComBox.getValue().toString()) * Integer.parseInt(boxQtyText.getText());
+                if(boxTableManager.isCad(boxComBox1.getValue().toString()))
+                    cadTotal += boxTableManager.getPrice(boxComBox1.getValue().toString()) * Integer.parseInt(boxQtyText1.getText());
                 else
-                    usdTotal += boxTableManager.getPrice(boxComBox.getValue().toString()) * Integer.parseInt(boxQtyText.getText());
+                    usdTotal += boxTableManager.getPrice(boxComBox1.getValue().toString()) * Integer.parseInt(boxQtyText1.getText());
             }
-            if(!(mufflerComBox.getSelectionModel().isEmpty()))
+            if(!(mufflerComBox1.getSelectionModel().isEmpty()))
             {
-                if(mufflerTableManager.isCad(mufflerComBox.getValue().toString()))
-                    cadTotal += mufflerTableManager.getPrice(mufflerComBox.getValue().toString()) * Integer.parseInt(mufflerQtyText.getText());
+                if(mufflerTableManager.isCad(mufflerComBox1.getValue().toString()))
+                    cadTotal += mufflerTableManager.getPrice(mufflerComBox1.getValue().toString()) * Integer.parseInt(mufflerQtyText1.getText());
                 else
-                    usdTotal += mufflerTableManager.getPrice(mufflerComBox.getValue().toString()) * Integer.parseInt(mufflerQtyText.getText());
+                    usdTotal += mufflerTableManager.getPrice(mufflerComBox1.getValue().toString()) * Integer.parseInt(mufflerQtyText1.getText());
             }
-            if(!(resonatorComBox.getSelectionModel().isEmpty()))
+            if(!(resonatorComBox1.getSelectionModel().isEmpty()))
             {
-                if(resonatorTableManager.isCad(resonatorComBox.getValue().toString()))
-                    cadTotal += resonatorTableManager.getPrice(resonatorComBox.getValue().toString()) * Integer.parseInt(resonatorQtyText.getText());
+                if(resonatorTableManager.isCad(resonatorComBox1.getValue().toString()))
+                    cadTotal += resonatorTableManager.getPrice(resonatorComBox1.getValue().toString()) * Integer.parseInt(resonatorQtyText1.getText());
                 else
-                    usdTotal += resonatorTableManager.getPrice(resonatorComBox.getValue().toString()) * Integer.parseInt(resonatorQtyText.getText());
+                    usdTotal += resonatorTableManager.getPrice(resonatorComBox1.getValue().toString()) * Integer.parseInt(resonatorQtyText1.getText());
             }
-            if(!(catComBox.getSelectionModel().isEmpty()))
+            if(!(catComBox1.getSelectionModel().isEmpty()))
             {
-                if(catTableManager.isCad(catComBox.getValue().toString()))
-                    cadTotal += catTableManager.getPrice(catComBox.getValue().toString()) * Integer.parseInt(catQtyText.getText());
+                if(catTableManager.isCad(catComBox1.getValue().toString()))
+                    cadTotal += catTableManager.getPrice(catComBox1.getValue().toString()) * Integer.parseInt(catQtyText1.getText());
                 else
-                    usdTotal += catTableManager.getPrice(catComBox.getValue().toString()) * Integer.parseInt(catQtyText.getText());
+                    usdTotal += catTableManager.getPrice(catComBox1.getValue().toString()) * Integer.parseInt(catQtyText1.getText());
             }
 
 
@@ -232,6 +249,399 @@ public class CostCalculatorController implements Initializable {
             }
         }
 
+    }
+    /*****************************************************************************************************************
+     ************************************************Info Buttons*****************************************************
+     *****************************************************************************************************************/
+    public void openNutInfo1(ActionEvent actionEvent)
+    {
+        try
+        {
+            String comValue = nutComBox1.getValue().toString();
+            String [] array = nutsTableManager.getRow(comValue);
+            openInfoSheet("Nut", comValue, array);
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error: " +e);
+            }
+            else
+            {
+                displayAlert("Error!!!");
+            }
+
+
+        }
+    }
+    public void openPipeInfo1(ActionEvent actionEvent)
+    {
+        try
+        {
+            String comValue = pipeComBox1.getValue().toString();
+            String [] array = pipeTableManager.getRow(comValue);
+            openInfoSheet("Pipe", comValue, array);
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error: " +e);
+            }
+            else
+            {
+                displayAlert("Error!!!");
+            }
+
+
+        }
+    }
+    public void openElbowInfo1(ActionEvent actionEvent)
+    {
+        try
+        {
+            String comValue = elbowComBox1.getValue().toString();
+            String [] array = elbowTableManager.getRow(comValue);
+            openInfoSheet("Elbow", comValue, array);
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error: " +e);
+            }
+            else
+            {
+                displayAlert("Error!!!");
+            }
+
+
+        }
+    }
+    public void openFlangeInfo1(ActionEvent actionEvent)
+    {
+        try
+        {
+            String comValue = flangeComBox1.getValue().toString();
+            String [] array = flangeTableManager.getRow(comValue);
+            openInfoSheet("Flange", comValue, array);
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error: " +e);
+            }
+            else
+            {
+                displayAlert("Error!!!");
+            }
+
+
+        }
+    }
+    public void openHangerInfo1(ActionEvent actionEvent)
+    {
+        try
+        {
+            String comValue = hangerComBox1.getValue().toString();
+            String [] array = hangerTableManager.getRow(comValue);
+            openInfoSheet("Hanger", comValue, array);
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error: " +e);
+            }
+            else
+            {
+                displayAlert("Error!!!");
+            }
+
+
+        }
+    }
+    public void openBoxInfo1(ActionEvent actionEvent)
+    {
+        try
+        {
+            String comValue = boxComBox1.getValue().toString();
+            String [] array = boxTableManager.getRow(comValue);
+            openInfoSheet("Box", comValue, array);
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error: " +e);
+            }
+            else
+            {
+                displayAlert("Error!!!");
+            }
+
+
+        }
+    }
+    public void openMufflerInfo1(ActionEvent actionEvent)
+    {
+        try
+        {
+            String comValue = mufflerComBox1.getValue().toString();
+            String [] array = mufflerTableManager.getRow(comValue);
+            openInfoSheet("Muffler", comValue, array);
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error: " +e);
+            }
+            else
+            {
+                displayAlert("Error!!!");
+            }
+
+
+        }
+    }
+    public void openResonatorInfo1(ActionEvent actionEvent)
+    {
+        try
+        {
+            String comValue = resonatorComBox1.getValue().toString();
+            String [] array = resonatorTableManager.getRow(comValue);
+            openInfoSheet("Resonator", comValue, array);
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error: " +e);
+            }
+            else
+            {
+                displayAlert("No Selected Value");
+            }
+
+
+        }
+    }
+    public void openCatInfo1(ActionEvent actionEvent)
+    {
+        try
+        {
+            String comValue = catComBox1.getValue().toString();
+            String [] array = catTableManager.getRow(comValue);
+            openInfoSheet("Cat", comValue, array);
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error: " +e);
+            }
+            else
+            {
+                displayAlert("Error!!!");
+            }
+
+
+        }
+    }
+    /******************************************************************************************************************/
+    private void openInfoSheet(String title, String id, String [] array)throws Exception
+    {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("InfoSheet.fxml"));
+        Parent info = (Parent) fxmlLoader.load();
+
+        InfoSheetController infoSheetController = (InfoSheetController) fxmlLoader.getController();
+        infoSheetController.setData(title, id, array);
+
+        Scene scene = new Scene(info);
+        Stage stage = new Stage();
+
+        stage.setScene(scene);
+        stage.getIcons().add(new Image("file:src/ultimateInventory/ultimateIcon"));
+        stage.setTitle(title + "Info");
+
+        stage.show();
+    }
+    /*****************************************************************************************************************
+     ************************************************Subtotal Updates*****************************************************
+     *****************************************************************************************************************/
+    public void CalculateNutSubtotal1(ActionEvent actionEvent)
+    {
+        try
+        {
+            DecimalFormat df = new DecimalFormat("#####.##");
+            nutSubtotal1.setText(df.format(nutsTableManager.getPrice(nutComBox1.getValue().toString())*Double.parseDouble(nutQtyText1.getText())));
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error :" + e);
+            }
+            else
+            {
+                displayAlert("Please fill out the forms correctly");
+            }
+        }
+    }
+    public void CalculatePipeSubtotal1(ActionEvent actionEvent)
+    {
+        try
+        {
+            DecimalFormat df = new DecimalFormat("#####.##");
+            pipeSubtotal1.setText(df.format(pipeTableManager.getPrice(pipeComBox1.getValue().toString())*Double.parseDouble(pipeQtyText1.getText())));
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error :" + e);
+            }
+            else
+            {
+                displayAlert("Please fill out the forms correctly");
+            }
+        }
+    }
+    public void CalculateElbowSubtotal1(ActionEvent actionEvent)
+    {
+        try
+        {
+            DecimalFormat df = new DecimalFormat("#####.##");
+            elbowSubtotal1.setText(df.format(elbowTableManager.getPrice(elbowComBox1.getValue().toString())*Double.parseDouble(elbowQtyText1.getText())));
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error :" + e);
+            }
+            else
+            {
+                displayAlert("Please fill out the forms correctly");
+            }
+        }
+    }
+    public void CalculateFlangeSubtotal1(ActionEvent actionEvent)
+    {
+        try
+        {
+            DecimalFormat df = new DecimalFormat("#####.##");
+            flangeSubtotal1.setText(df.format(flangeTableManager.getPrice(flangeComBox1.getValue().toString())*Double.parseDouble(flangeQtyText1.getText())));
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error :" + e);
+            }
+            else
+            {
+                displayAlert("Please fill out the forms correctly");
+            }
+        }
+    }
+    public void CalculateHangerSubtotal1(ActionEvent actionEvent)
+    {
+        try
+        {
+            DecimalFormat df = new DecimalFormat("#####.##");
+            hangerSubtotal1.setText(df.format(hangerTableManager.getPrice(hangerComBox1.getValue().toString())*Double.parseDouble(hangerQtyText1.getText())));
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error :" + e);
+            }
+            else
+            {
+                displayAlert("Please fill out the forms correctly");
+            }
+        }
+    }
+    public void CalculateBoxSubtotal1(ActionEvent actionEvent)
+    {
+        try
+        {
+            DecimalFormat df = new DecimalFormat("#####.##");
+            boxSubtotal1.setText(df.format(boxTableManager.getPrice(boxComBox1.getValue().toString())*Double.parseDouble(boxQtyText1.getText())));
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error :" + e);
+            }
+            else
+            {
+                displayAlert("Please fill out the forms correctly");
+            }
+        }
+    }
+    public void CalculateMufflerSubtotal1(ActionEvent actionEvent)
+    {
+        try
+        {
+            DecimalFormat df = new DecimalFormat("#####.##");
+            mufflerSubtotal1.setText(df.format(mufflerTableManager.getPrice(mufflerComBox1.getValue().toString())*Double.parseDouble(mufflerQtyText1.getText())));
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error :" + e);
+            }
+            else
+            {
+                displayAlert("Please fill out the forms correctly");
+            }
+        }
+    }
+    public void CalculateResonatorSubtotal1(ActionEvent actionEvent)
+    {
+        try
+        {
+            DecimalFormat df = new DecimalFormat("#####.##");
+            resonatorSubtotal1.setText(df.format(resonatorTableManager.getPrice(resonatorComBox1.getValue().toString())*Double.parseDouble(resonatorQtyText1.getText())));
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error :" + e);
+            }
+            else
+            {
+                displayAlert("Please fill out the forms correctly");
+            }
+        }
+    }
+    public void CalculateCatSubtotal1(ActionEvent actionEvent)
+    {
+        try
+        {
+            DecimalFormat df = new DecimalFormat("#####.##");
+            catSubtotal1.setText(df.format(catTableManager.getPrice(catComBox1.getValue().toString())*Double.parseDouble(catQtyText1.getText())));
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error :" + e);
+            }
+            else
+            {
+                displayAlert("Please fill out the forms correctly");
+            }
+        }
     }
     private void displayAlert(String msg) {
         try {
@@ -257,25 +667,25 @@ public class CostCalculatorController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        nutComBox.setItems(nutsData);
-        pipeComBox.setItems(pipeData);
-        elbowComBox.setItems(elbowData);
-        flangeComBox.setItems(flangeData);
-        hangerComBox.setItems(hangerData);
-        boxComBox.setItems(boxData);
-        mufflerComBox.setItems(mufflerData);
-        resonatorComBox.setItems(resonatorData);
-        catComBox.setItems(catData);
+        nutComBox1.setItems(nutsData);
+        pipeComBox1.setItems(pipeData);
+        elbowComBox1.setItems(elbowData);
+        flangeComBox1.setItems(flangeData);
+        hangerComBox1.setItems(hangerData);
+        boxComBox1.setItems(boxData);
+        mufflerComBox1.setItems(mufflerData);
+        resonatorComBox1.setItems(resonatorData);
+        catComBox1.setItems(catData);
 
-        nutQtyText.setText("0");
-        pipeQtyText.setText("0");
-        elbowQtyText.setText("0");
-        flangeQtyText.setText("0");
-        hangerQtyText.setText("0");
-        boxQtyText.setText("0");
-        mufflerQtyText.setText("0");
-        resonatorQtyText.setText("0");
-        catQtyText.setText("0");
+        nutQtyText1.setText("0");
+        pipeQtyText1.setText("0");
+        elbowQtyText1.setText("0");
+        flangeQtyText1.setText("0");
+        hangerQtyText1.setText("0");
+        boxQtyText1.setText("0");
+        mufflerQtyText1.setText("0");
+        resonatorQtyText1.setText("0");
+        catQtyText1.setText("0");
 
 
     }

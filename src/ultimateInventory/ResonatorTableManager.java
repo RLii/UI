@@ -28,7 +28,7 @@ public class ResonatorTableManager {
                         + "VendorEmail CHAR (30),"
                         + "VendorContact CHAR (30),"
                         + "VendorWebsite CHAR (30),"
-                        + "Price INT,"
+                        + "Price DOUBLE,"
                         + "PayMethod CHAR(30),"
                         + "PayTerm CHAR(30),"
                         + "PurchaseDate CHAR(10),"
@@ -37,7 +37,7 @@ public class ResonatorTableManager {
             }
         }
     }
-    public void add(String id, String vName, String vEmail, String vContact, String vWebsite, int price, String pMethod, String pTerm, String date, String curr, String Note) throws SQLException
+    public void add(String id, String vName, String vEmail, String vContact, String vWebsite, double price, String pMethod, String pTerm, String date, String curr, String Note) throws SQLException
     {
         String sql = "INSERT INTO Resonators(ID, VendorName, VendorEmail, VendorContact, VendorWebsite, Price, PayMethod, PayTerm, PurchaseDate, Currency, Note) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement prep = connection.prepareStatement(sql);
@@ -46,7 +46,7 @@ public class ResonatorTableManager {
         prep.setString(3,vEmail);
         prep.setString(4,vContact);
         prep.setString(5,vWebsite);
-        prep.setInt(6,price);
+        prep.setDouble(6,price);
         prep.setString(7,pMethod);
         prep.setString(8,pTerm);
         prep.setString(9,date);
@@ -54,7 +54,7 @@ public class ResonatorTableManager {
         prep.setString(11,Note);
         prep.executeUpdate();
     }
-    public void edit(String id, String vName, String vEmail, String vContact, String vWebsite, int price, String pMethod, String pTerm, String date, String curr, String Note)throws SQLException
+    public void edit(String id, String vName, String vEmail, String vContact, String vWebsite, double price, String pMethod, String pTerm, String date, String curr, String Note)throws SQLException
     {
         String sql ="UPDATE Resonators SET VendorName = ?, VendorEmail = ?, VendorContact = ?, VendorWebsite = ?, Price = ?, PayMethod = ?, PayTerm = ?, PurchaseDate = ?, Currency = ?, Note = ? WHERE ID = ?";
         PreparedStatement prep = connection.prepareStatement(sql);
@@ -62,7 +62,7 @@ public class ResonatorTableManager {
         prep.setString(2,vEmail);
         prep.setString(3,vContact);
         prep.setString(4,vWebsite);
-        prep.setInt(5,price);
+        prep.setDouble(5,price);
         prep.setString(6,pMethod);
         prep.setString(7,pTerm);
         prep.setString(8,date);
@@ -107,14 +107,14 @@ public class ResonatorTableManager {
         }
         return array;
     }
-    public int getPrice(String id) throws SQLException
+    public double getPrice(String id) throws SQLException
     {
         String sql = "SELECT Price FROM Resonators WHERE ID = ?";
         PreparedStatement stmt = connection.prepareStatement(sql);
         stmt.setString(1,id);
         ResultSet rs = stmt.executeQuery();
         rs.next();
-        return rs.getInt(1);
+        return rs.getDouble(1);
     }
     public boolean isCad(String id) throws SQLException
     {
