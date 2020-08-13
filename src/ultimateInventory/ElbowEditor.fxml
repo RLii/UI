@@ -34,7 +34,7 @@
                   <TextField fx:id="addVendorEmailText" layoutX="174.0" layoutY="199.0" />
                   <TextField fx:id="addVendorContactText" layoutX="174.0" layoutY="281.0" />
                   <TextField fx:id="addVendorWebsiteText" layoutX="174.0" layoutY="363.0" />
-                   <TextField id="priceTextbox" fx:id="addPriceText" layoutX="174.0" layoutY="445.0" />
+                   <TextField fx:id="addPriceText" layoutX="174.0" layoutY="445.0" />
                    <TextField fx:id="addPayMethodText" layoutX="544.0" layoutY="34.0" />
                    <TextField fx:id="addPayTermText" layoutX="544.0" layoutY="120.0" />
                    <DatePicker fx:id="addPurchaseDateText" layoutX="544.0" layoutY="199.0" />

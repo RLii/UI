@@ -21,10 +21,15 @@
                   <MenuItem mnemonicParsing="false" onAction="#openElbowEditor" text="Elbows" />
                   <MenuItem mnemonicParsing="false" onAction="#openFlangeEditor" text="Flanges" />
                   <MenuItem mnemonicParsing="false" onAction="#openHangerEditor" text="Hangers" />
-                  <MenuItem mnemonicParsing="false" onAction="#openBoxEditor" text="Boxes" />
                   <MenuItem mnemonicParsing="false" onAction="#openMufflerEditor" text="Mufflers" />
                   <MenuItem mnemonicParsing="false" onAction="#openResonatorEditor" text="Resonators" />
                   <MenuItem mnemonicParsing="false" onAction="#openCatEditor" text="Cats" />
+                  <MenuItem mnemonicParsing="false" onAction="#openFlexPipeEditor" text="Flex Pipes" />
+                  <MenuItem mnemonicParsing="false" onAction="#openBoltEditor" text="Bolts" />
+                  <MenuItem mnemonicParsing="false" onAction="#openWasherEditor" text="Washers" />
+                  <MenuItem mnemonicParsing="false" onAction="#openRubberEditor" text="Exhaust Rubbers" />
+                  <MenuItem mnemonicParsing="false" onAction="#openTipEditor" text="Tips" />
+                  <MenuItem mnemonicParsing="false" onAction="#openClampEditor" text="Clamps" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Reset Options">
@@ -35,10 +40,15 @@
                   <MenuItem mnemonicParsing="false" onAction="#resetElbows" text="Erase Elbows" />
                   <MenuItem mnemonicParsing="false" onAction="#resetFlanges" text="Erase Flanges" />
                   <MenuItem mnemonicParsing="false" onAction="#resetHangers" text="Erase Hangers" />
-                  <MenuItem mnemonicParsing="false" onAction="#resetBoxes" text="Erase Boxes" />
                   <MenuItem mnemonicParsing="false" onAction="#resetMufflers" text="Erase Mufflers" />
                   <MenuItem mnemonicParsing="false" onAction="#resetResonators" text="Erase Resonators" />
                   <MenuItem mnemonicParsing="false" onAction="#resetCats" text="Erase Cats" />
+                  <MenuItem mnemonicParsing="false" onAction="#resetFPipes" text="Erase Flex Pipes" />
+                  <MenuItem mnemonicParsing="false" onAction="#resetBolts" text="Erase Bolts" />
+                  <MenuItem mnemonicParsing="false" onAction="#resetWashers" text="Erase Washers" />
+                  <MenuItem mnemonicParsing="false" onAction="#resetRubbers" text="Erase Rubbers" />
+                  <MenuItem mnemonicParsing="false" onAction="#resetTips" text="Erase Tips" />
+                  <MenuItem mnemonicParsing="false" onAction="#resetClamps" text="Erase Clamps" />
               </items>
             </Menu>
          </menus>

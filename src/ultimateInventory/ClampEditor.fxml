@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ultimateInventory.ClampEditorController">
+  <tabs>
+    <Tab text="Add">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button id="saveBtn" fx:id="saveBtn" layoutX="722.0" layoutY="517.0" mnemonicParsing="false" onAction="#add" text="Save" />
+                  <TextField id="idTextbox" fx:id="addIdText" layoutX="174.0" layoutY="34.0" />
+                  <TextField fx:id="addVendorNameText" layoutX="174.0" layoutY="120.0" />
+                  <Label layoutX="108.0" layoutY="38.0" text="ID :" />
+                  <Label layoutX="44.0" layoutY="124.0" text="Vendor Name :" />
+                  <Label layoutX="42.0" layoutY="449.0" text="Price (per unit) :" />
+                  <Label layoutX="439.0" layoutY="203.0" text="Purchase Date :" />
+                  <Label layoutX="46.0" layoutY="203.0" text="Vendor Email :" />
+                  <Label layoutY="285.0" text="Vendor Contact Name :" />
+                  <Label layoutX="424.0" layoutY="38.0" text="Payment Method :" />
+                  <Label layoutX="438.0" layoutY="124.0" text="Payment Term :" />
+                  <Label layoutX="461.0" layoutY="285.0" text="Currency :" />
+                  <Label layoutX="480.0" layoutY="367.0" text="Note :" />
+                  <Label layoutX="32.0" layoutY="367.0" text="Vendor Website :" />
+                  <TextField fx:id="addVendorEmailText" layoutX="174.0" layoutY="199.0" />
+                  <TextField fx:id="addVendorContactText" layoutX="174.0" layoutY="281.0" />
+                  <TextField fx:id="addVendorWebsiteText" layoutX="174.0" layoutY="363.0" />
+                   <TextField id="priceTextbox" fx:id="addPriceText" layoutX="174.0" layoutY="445.0" />
+                   <TextField fx:id="addPayMethodText" layoutX="544.0" layoutY="34.0" />
+                   <TextField fx:id="addPayTermText" layoutX="544.0" layoutY="120.0" />
+                   <DatePicker fx:id="addPurchaseDateText" layoutX="544.0" layoutY="199.0" />
+                  <RadioButton fx:id="addCadBtn" layoutX="554.0" layoutY="285.0" mnemonicParsing="false" onAction="#cadCall" selected="true" text="CAD" />
+                  <RadioButton fx:id="addUsdBtn" layoutX="657.0" layoutY="285.0" mnemonicParsing="false" onAction="#usdCall" text="USD" />
+                  <TextArea fx:id="addNoteText" layoutX="544.0" layoutY="346.0" prefHeight="146.0" prefWidth="198.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Edit">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                   <ComboBox fx:id="editCombox" layoutX="563.0" layoutY="37.0" onAction="#updateEditLabels" prefWidth="150.0" />
+                   <Button fx:id="updateBtn" layoutX="713.0" layoutY="518.0" mnemonicParsing="false" onAction="#edit" text="Update" />
+                   <Label layoutX="44.0" layoutY="78.0" text="Vendor Name :" />
+                   <Label layoutX="36.0" layoutY="229.0" text="Price (per unit) :" />
+                   <Label layoutX="37.0" layoutY="350.0" text="Purchase Date :" />
+                   <Label layoutX="46.0" layoutY="115.0" text="Vendor Email :" />
+                   <Label layoutY="156.0" text="Vendor Contact Name :" />
+                   <Label layoutX="22.0" layoutY="269.0" text="Payment Method :" />
+                   <Label layoutX="36.0" layoutY="311.0" text="Payment Term :" />
+                   <Label layoutX="62.0" layoutY="385.0" text="Currency :" />
+                   <Label layoutX="84.0" layoutY="415.0" text="Note :" />
+                   <Label layoutX="32.0" layoutY="194.0" text="Vendor Website :" />
+                   <TextField id="vendorNameTextbox" fx:id="editVendorNameText" layoutX="174.0" layoutY="74.0" />
+                   <TextField fx:id="editVendorEmailText" layoutX="174.0" layoutY="111.0" />
+                   <TextField fx:id="editVendorContactText" layoutX="174.0" layoutY="152.0" />
+                   <TextField fx:id="editVendorWebsiteText" layoutX="174.0" layoutY="190.0" />
+                   <TextField id="priceTextbox" fx:id="editPriceText" layoutX="174.0" layoutY="225.0" />
+                   <TextField fx:id="editPayMethodText" layoutX="174.0" layoutY="265.0" />
+                   <TextField fx:id="editPayTermText" layoutX="174.0" layoutY="307.0" />
+                   <DatePicker fx:id="editPurchaseDateText" layoutX="174.0" layoutY="346.0" />
+                   <RadioButton fx:id="editCadBtn" layoutX="182.0" layoutY="385.0" mnemonicParsing="false" onAction="#cadCall" selected="true" text="CAD" />
+                   <RadioButton fx:id="editUsdBtn" layoutX="268.0" layoutY="385.0" mnemonicParsing="false" onAction="#usdCall" text="USD" />
+                   <TextArea fx:id="editNoteText" layoutX="174.0" layoutY="409.0" prefHeight="146.0" prefWidth="174.0" />
+
+
+                   <Label layoutX="438.0" layoutY="128.0" text="Vendor Name :" />
+                   <Label layoutX="436.0" layoutY="247.0" text="Price (per unit) :" />
+                   <Label layoutX="437.0" layoutY="341.0" text="Purchase Date :" />
+                   <Label layoutX="440.0" layoutY="156.0" text="Vendor Email :" />
+                   <Label layoutX="394.0" layoutY="185.0" text="Vendor Contact Name :" />
+                   <Label layoutX="422.0" layoutY="278.0" text="Payment Method :" />
+                   <Label layoutX="436.0" layoutY="311.0" text="Payment Term :" />
+                   <Label layoutX="468.0" layoutY="376.0" text="Currency :" />
+                   <Label layoutX="486.0" layoutY="406.0" text="Note :" />
+                   <Label layoutX="425.0" layoutY="216.0" text="Vendor Website :" />
+                   <Label fx:id="editVendorNameLabel" alignment="CENTER" layoutX="624.0" layoutY="128.0" text="Label" textAlignment="CENTER" />
+                   <Label fx:id="editVendorEmailLabel" alignment="CENTER" layoutX="624.0" layoutY="156.0" text="Label" textAlignment="CENTER" />
+                   <Label fx:id="editVendorContactLabel" alignment="CENTER" layoutX="624.0" layoutY="185.0" text="Label" textAlignment="CENTER" />
+                   <Label fx:id="editVendorWebsiteLabel" alignment="CENTER" layoutX="624.0" layoutY="216.0" text="Label" textAlignment="CENTER" />
+                   <Label fx:id="editPriceLabel" alignment="CENTER" layoutX="624.0" layoutY="247.0" text="Label" textAlignment="CENTER" />
+                   <Label fx:id="editPayMethodLabel" alignment="CENTER" layoutX="624.0" layoutY="278.0" text="Label" textAlignment="CENTER" />
+                   <Label fx:id="editPayTermLabel" alignment="CENTER" layoutX="624.0" layoutY="311.0" text="Label" textAlignment="CENTER" />
+                   <Label fx:id="editPayDateLabel" alignment="CENTER" layoutX="624.0" layoutY="341.0" text="Label" textAlignment="CENTER" />
+                   <Label fx:id="editCurrLabel" alignment="CENTER" layoutX="624.0" layoutY="376.0" text="Label" textAlignment="CENTER" />
+                   <Label fx:id="editNoteLabel" alignment="CENTER" layoutX="624.0" layoutY="406.0" text="Label" textAlignment="CENTER" wrapText="true" />
+                  <Label layoutX="463.0" layoutY="41.0" text="ID :" />
+
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Delete">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ComboBox fx:id="delCombox" layoutX="172.0" layoutY="46.0" onAction="#updateDelLabels" prefWidth="150.0" />
+                   <Label layoutX="44.0" layoutY="142.0" text="Vendor Name :" />
+                   <Label layoutX="42.0" layoutY="431.0" text="Price (per unit) :" />
+                   <Label layoutX="437.0" layoutY="242.0" text="Purchase Date :" />
+                   <Label layoutX="46.0" layoutY="212.0" text="Vendor Email :" />
+                   <Label layoutY="285.0" text="Vendor Contact Name :" />
+                   <Label layoutX="419.0" layoutY="106.0" text="Payment Method :" />
+                   <Label layoutX="437.0" layoutY="169.0" text="Payment Term :" />
+                   <Label layoutX="468.0" layoutY="315.0" text="Currency :" />
+                   <Label layoutX="489.0" layoutY="385.0" text="Note :" />
+                   <Label layoutX="32.0" layoutY="358.0" text="Vendor Website :" />
+                  <Label fx:id="delVendorNameLabel" alignment="CENTER" layoutX="233.0" layoutY="142.0" text="Label" textAlignment="CENTER" />
+                  <Label fx:id="delVendorEmailLabel" alignment="CENTER" layoutX="233.0" layoutY="212.0" text="Label" textAlignment="CENTER" />
+                  <Label fx:id="delVendorContactLabel" alignment="CENTER" layoutX="233.0" layoutY="285.0" text="Label" textAlignment="CENTER" />
+                  <Label fx:id="delVendorWebsiteLabel" alignment="CENTER" layoutX="233.0" layoutY="358.0" text="Label" textAlignment="CENTER" />
+                  <Label fx:id="delPriceLabel" alignment="CENTER" layoutX="233.0" layoutY="431.0" text="Label" textAlignment="CENTER" />
+                  <Label fx:id="delPayMethodLabel" alignment="CENTER" layoutX="624.0" layoutY="106.0" text="Label" textAlignment="CENTER" />
+                  <Label fx:id="delPayTermLabel" alignment="CENTER" layoutX="624.0" layoutY="169.0" text="Label" textAlignment="CENTER" />
+                  <Label fx:id="delPayDateLabel" alignment="CENTER" layoutX="624.0" layoutY="242.0" text="Label" textAlignment="CENTER" />
+                  <Label fx:id="delCurrLabel" alignment="CENTER" layoutX="624.0" layoutY="315.0" text="Label" textAlignment="CENTER" />
+                  <Label fx:id="delNoteLabel" alignment="CENTER" layoutX="624.0" layoutY="385.0" text="Label" textAlignment="CENTER" />
+                   <Button fx:id="deleteBtn" layoutX="701.0" layoutY="504.0" mnemonicParsing="false" onAction="#delete" text="Delete" />
+                  <Label layoutX="103.0" layoutY="50.0" text="ID : " />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>

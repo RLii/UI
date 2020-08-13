@@ -23,10 +23,15 @@ public class Controller implements Initializable {
     private ElbowTableManager elbow;
     private FlangeTableManager flange;
     private HangerTableManager hanger;
-    private BoxTableManager box;
     private MufflerTableManager muffler;
     private ResonatorTableManager resonator;
     private CatTableManager cat;
+    private FlexPipeTableManager fpipe;
+    private BoltTableManager bolt;
+    private WasherTableManager washer;
+    private RubberTableManager rubber;
+    private TipTableManager tip;
+    private ClampTableManager clamp;
 
 
     public void initialize(URL url, ResourceBundle rb) {
@@ -51,10 +56,15 @@ public class Controller implements Initializable {
             elbow = new ElbowTableManager(conn, true);
             flange = new FlangeTableManager(conn, true);
             hanger = new HangerTableManager(conn, true);
-            box = new BoxTableManager(conn, true);
             muffler = new MufflerTableManager(conn, true);
             resonator = new ResonatorTableManager(conn, true);
             cat = new CatTableManager(conn, true);
+            fpipe = new FlexPipeTableManager(conn, true);
+            bolt = new BoltTableManager(conn,true);
+            washer = new WasherTableManager(conn,true);
+            rubber = new RubberTableManager(conn,true);
+            tip = new TipTableManager(conn,true);
+            clamp = new ClampTableManager(conn,true);
             displayAlert("all reset");
         }
         catch(SQLException ex)
@@ -122,18 +132,6 @@ public class Controller implements Initializable {
             displayAlert("ERROR" + ex.getMessage());
         }
     }
-    public void resetBoxes(ActionEvent actionEvent)
-    {
-        try
-        {
-            box = new BoxTableManager(conn, true);
-            displayAlert("boxes reset");
-        }
-        catch(SQLException ex)
-        {
-            displayAlert("ERROR" + ex.getMessage());
-        }
-    }
     public void resetMufflers(ActionEvent actionEvent)
     {
         try
@@ -163,6 +161,78 @@ public class Controller implements Initializable {
         try
         {
             cat = new CatTableManager(conn, true);
+            displayAlert("cats reset");
+        }
+        catch(SQLException ex)
+        {
+            displayAlert("ERROR" + ex.getMessage());
+        }
+    }
+    public void resetFPipes(ActionEvent actionEvent)
+    {
+        try
+        {
+            fpipe = new FlexPipeTableManager(conn, true);
+            displayAlert("cats reset");
+        }
+        catch(SQLException ex)
+        {
+            displayAlert("ERROR" + ex.getMessage());
+        }
+    }
+    public void resetBolts(ActionEvent actionEvent)
+    {
+        try
+        {
+            bolt = new BoltTableManager(conn, true);
+            displayAlert("cats reset");
+        }
+        catch(SQLException ex)
+        {
+            displayAlert("ERROR" + ex.getMessage());
+        }
+    }
+    public void resetWashers(ActionEvent actionEvent)
+    {
+        try
+        {
+            washer = new WasherTableManager(conn, true);
+            displayAlert("cats reset");
+        }
+        catch(SQLException ex)
+        {
+            displayAlert("ERROR" + ex.getMessage());
+        }
+    }
+    public void resetRubbers(ActionEvent actionEvent)
+    {
+        try
+        {
+            rubber = new RubberTableManager(conn, true);
+            displayAlert("cats reset");
+        }
+        catch(SQLException ex)
+        {
+            displayAlert("ERROR" + ex.getMessage());
+        }
+    }
+    public void resetTips(ActionEvent actionEvent)
+    {
+        try
+        {
+            tip = new TipTableManager(conn, true);
+            displayAlert("cats reset");
+        }
+        catch(SQLException ex)
+        {
+            displayAlert("ERROR" + ex.getMessage());
+        }
+    }
+    public void resetClamps(ActionEvent actionEvent)
+    {
+        try
+        {
+            clamp = new ClampTableManager(conn, true);
             displayAlert("cats reset");
         }
         catch(SQLException ex)
@@ -257,23 +327,6 @@ public class Controller implements Initializable {
 
         stage.show();
     }
-    public void openBoxEditor(ActionEvent actionEvent) throws Exception {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BoxEditor.fxml"));
-        Parent Editor = (Parent) fxmlLoader.load();
-
-        BoxEditorController boxEditorController = (BoxEditorController) fxmlLoader.getController();
-        boxEditorController.setModel(new BoxTableManager(conn,false));
-
-        Scene scene = new Scene(Editor);
-        Stage stage = new Stage();
-
-        stage.setScene(scene);
-        stage.getIcons().add(new Image("file:src/ultimateInventory/ultimateIcon"));
-        stage.setTitle("Box Editor");
-
-        stage.show();
-    }
     public void openMufflerEditor(ActionEvent actionEvent) throws Exception {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MufflerEditor.fxml"));
@@ -325,6 +378,108 @@ public class Controller implements Initializable {
 
         stage.show();
     }
+    public void openFlexPipeEditor(ActionEvent actionEvent) throws Exception {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FlexPipeEditor.fxml"));
+        Parent Editor = (Parent) fxmlLoader.load();
+
+        FlexPipeEditorController EditorController = (FlexPipeEditorController) fxmlLoader.getController();
+        EditorController.setModel(new FlexPipeTableManager(conn,false));
+
+        Scene scene = new Scene(Editor);
+        Stage stage = new Stage();
+
+        stage.setScene(scene);
+        stage.getIcons().add(new Image("file:src/ultimateInventory/ultimateIcon"));
+        stage.setTitle("FlexPipe Editor");
+
+        stage.show();
+    }
+    public void openBoltEditor(ActionEvent actionEvent) throws Exception {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BoltEditor.fxml"));
+        Parent Editor = (Parent) fxmlLoader.load();
+
+        BoltEditorController EditorController = (BoltEditorController) fxmlLoader.getController();
+        EditorController.setModel(new BoltTableManager(conn,false));
+
+        Scene scene = new Scene(Editor);
+        Stage stage = new Stage();
+
+        stage.setScene(scene);
+        stage.getIcons().add(new Image("file:src/ultimateInventory/ultimateIcon"));
+        stage.setTitle("Cat Editor");
+
+        stage.show();
+    }
+    public void openWasherEditor(ActionEvent actionEvent) throws Exception {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("WasherEditor.fxml"));
+        Parent Editor = (Parent) fxmlLoader.load();
+
+        WasherEditorController EditorController = (WasherEditorController) fxmlLoader.getController();
+        EditorController.setModel(new WasherTableManager(conn,false));
+
+        Scene scene = new Scene(Editor);
+        Stage stage = new Stage();
+
+        stage.setScene(scene);
+        stage.getIcons().add(new Image("file:src/ultimateInventory/ultimateIcon"));
+        stage.setTitle("Washer Editor");
+
+        stage.show();
+    }
+    public void openRubberEditor(ActionEvent actionEvent) throws Exception {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("RubberEditor.fxml"));
+        Parent Editor = (Parent) fxmlLoader.load();
+
+        RubberEditorController EditorController = (RubberEditorController) fxmlLoader.getController();
+        EditorController.setModel(new RubberTableManager(conn,false));
+
+        Scene scene = new Scene(Editor);
+        Stage stage = new Stage();
+
+        stage.setScene(scene);
+        stage.getIcons().add(new Image("file:src/ultimateInventory/ultimateIcon"));
+        stage.setTitle("Rubber Editor");
+
+        stage.show();
+    }
+    public void openTipEditor(ActionEvent actionEvent) throws Exception {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TipEditor.fxml"));
+        Parent Editor = (Parent) fxmlLoader.load();
+
+        TipEditorController tipEditorController = (TipEditorController) fxmlLoader.getController();
+        tipEditorController.setModel(new TipTableManager(conn,false));
+
+        Scene scene = new Scene(Editor);
+        Stage stage = new Stage();
+
+        stage.setScene(scene);
+        stage.getIcons().add(new Image("file:src/ultimateInventory/ultimateIcon"));
+        stage.setTitle("Tip Editor");
+
+        stage.show();
+    }
+    public void openClampEditor(ActionEvent actionEvent) throws Exception {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ClampEditor.fxml"));
+        Parent Editor = (Parent) fxmlLoader.load();
+
+        ClampEditorController clampEditorController = (ClampEditorController) fxmlLoader.getController();
+        clampEditorController.setModel(new ClampTableManager(conn,false));
+
+        Scene scene = new Scene(Editor);
+        Stage stage = new Stage();
+
+        stage.setScene(scene);
+        stage.getIcons().add(new Image("file:src/ultimateInventory/ultimateIcon"));
+        stage.setTitle("Clamp Editor");
+
+        stage.show();
+    }
     public void openCostCalculator(ActionEvent actionEvent) throws Exception
     {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CostCalculator.fxml"));
@@ -336,10 +491,15 @@ public class Controller implements Initializable {
                 new ElbowTableManager(conn, false),
                 new FlangeTableManager(conn, false),
                 new HangerTableManager(conn, false),
-                new BoxTableManager(conn, false),
                 new MufflerTableManager(conn, false),
                 new ResonatorTableManager(conn, false),
-                new CatTableManager(conn, false));
+                new CatTableManager(conn, false),
+                new FlexPipeTableManager(conn, false),
+                new BoltTableManager(conn,false),
+                new WasherTableManager(conn,false),
+                new RubberTableManager(conn,false),
+                new TipTableManager(conn,false),
+                new ClampTableManager(conn,false));
 
         Scene scene = new Scene(costCalc);
         Stage stage = new Stage();
