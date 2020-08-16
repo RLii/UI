@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -15,6 +16,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -37,6 +39,7 @@ public class CostCalculatorController implements Initializable {
     RubberTableManager rubberTableManager;
     TipTableManager tipTableManager;
     ClampTableManager clampTableManager;
+    KitTableManager kitTableManager;
 
 
 
@@ -445,14 +448,58 @@ public class CostCalculatorController implements Initializable {
     Label clampSubtotal4;
 
 
+    @FXML
+    ComboBox miscPartComBox1;
+    @FXML
+    ComboBox miscIdComBox1;
+    @FXML
+    TextField miscQtyText1;
+    @FXML
+    Label miscSubtotal1;
+
+    @FXML
+    ComboBox miscPartComBox2;
+    @FXML
+    ComboBox miscIdComBox2;
+    @FXML
+    TextField miscQtyText2;
+    @FXML
+    Label miscSubtotal2;
+
+    @FXML
+    ComboBox miscPartComBox3;
+    @FXML
+    ComboBox miscIdComBox3;
+    @FXML
+    TextField miscQtyText3;
+    @FXML
+    Label miscSubtotal3;
+
+    @FXML
+    ComboBox miscPartComBox4;
+    @FXML
+    ComboBox miscIdComBox4;
+    @FXML
+    TextField miscQtyText4;
+    @FXML
+    Label miscSubtotal4;
+
+    @FXML
+    TextField labourCostText;
+    @FXML
+    TextField KitNameText;
+
+
 
     @FXML
     Label CADTotalLabel;
     @FXML
     Label USDTotalLabel;
 
+    boolean hasBuilt = false;
 
-    public void setModel(NutsTableManager nut, PipeTableManager pipe, ElbowTableManager elbow, FlangeTableManager flange, HangerTableManager hanger, MufflerTableManager muffler, ResonatorTableManager resonator, CatTableManager cat, FlexPipeTableManager flexpipe, BoltTableManager bolt, WasherTableManager washer, RubberTableManager rubber, TipTableManager tip, ClampTableManager clamp)
+
+    public void setModel(NutsTableManager nut, PipeTableManager pipe, ElbowTableManager elbow, FlangeTableManager flange, HangerTableManager hanger, MufflerTableManager muffler, ResonatorTableManager resonator, CatTableManager cat, FlexPipeTableManager flexpipe, BoltTableManager bolt, WasherTableManager washer, RubberTableManager rubber, TipTableManager tip, ClampTableManager clamp, KitTableManager kit)
     {
         nutsTableManager = nut;
         pipeTableManager = pipe;
@@ -468,6 +515,7 @@ public class CostCalculatorController implements Initializable {
         rubberTableManager = rubber;
         tipTableManager = tip;
         clampTableManager = clamp;
+        kitTableManager = kit;
 
         buildComBoxData();
     }
@@ -565,6 +613,70 @@ public class CostCalculatorController implements Initializable {
             tipComBox4.setItems(tipData);
             clampComBox4.setItems(clampData);
 
+            if(hasBuilt == false) {
+                nutComBox1.getSelectionModel().selectFirst();
+                pipeComBox1.getSelectionModel().selectFirst();
+                elbowComBox1.getSelectionModel().selectFirst();
+                flangeComBox1.getSelectionModel().selectFirst();
+                hangerComBox1.getSelectionModel().selectFirst();
+                mufflerComBox1.getSelectionModel().selectFirst();
+                resonatorComBox1.getSelectionModel().selectFirst();
+                catComBox1.getSelectionModel().selectFirst();
+                flexPipeComBox1.getSelectionModel().selectFirst();
+                boltComBox1.getSelectionModel().selectFirst();
+                washerComBox1.getSelectionModel().selectFirst();
+                rubberComBox1.getSelectionModel().selectFirst();
+                tipComBox1.getSelectionModel().selectFirst();
+                clampComBox1.getSelectionModel().selectFirst();
+
+                /*nutComBox2.getSelectionModel().selectNext();
+                pipeComBox2.getSelectionModel().selectNext();
+                elbowComBox2.getSelectionModel().selectNext();
+                flangeComBox2.getSelectionModel().selectNext();
+                hangerComBox2.getSelectionModel().selectNext();
+                mufflerComBox2.getSelectionModel().selectNext();
+                resonatorComBox2.getSelectionModel().selectNext();
+                catComBox2.getSelectionModel().selectNext();
+                flexPipeComBox2.getSelectionModel().selectFirst();
+                boltComBox2.getSelectionModel().selectFirst();
+                washerComBox2.getSelectionModel().selectFirst();
+                rubberComBox2.getSelectionModel().selectFirst();
+                tipComBox2.getSelectionModel().selectFirst();
+                clampComBox2.getSelectionModel().selectFirst();
+
+                nutComBox3.getSelectionModel().selectNext();
+                pipeComBox3.getSelectionModel().selectNext();
+                elbowComBox3.getSelectionModel().selectNext();
+                flangeComBox3.getSelectionModel().selectNext();
+                hangerComBox3.getSelectionModel().selectNext();
+                mufflerComBox3.getSelectionModel().selectNext();
+                resonatorComBox3.getSelectionModel().selectNext();
+                catComBox3.getSelectionModel().selectNext();
+                flexPipeComBox3.getSelectionModel().selectFirst();
+                boltComBox3.getSelectionModel().selectFirst();
+                washerComBox3.getSelectionModel().selectFirst();
+                rubberComBox3.getSelectionModel().selectFirst();
+                tipComBox3.getSelectionModel().selectFirst();
+                clampComBox3.getSelectionModel().selectFirst();
+
+                nutComBox4.getSelectionModel().selectNext();
+                pipeComBox4.getSelectionModel().selectNext();
+                elbowComBox4.getSelectionModel().selectNext();
+                flangeComBox4.getSelectionModel().selectNext();
+                hangerComBox4.getSelectionModel().selectNext();
+                mufflerComBox4.getSelectionModel().selectNext();
+                resonatorComBox4.getSelectionModel().selectNext();
+                catComBox4.getSelectionModel().selectNext();
+                flexPipeComBox4.getSelectionModel().selectFirst();
+                boltComBox4.getSelectionModel().selectFirst();
+                washerComBox4.getSelectionModel().selectFirst();
+                rubberComBox4.getSelectionModel().selectFirst();
+                tipComBox4.getSelectionModel().selectFirst();
+                clampComBox4.getSelectionModel().selectFirst();*/
+
+                hasBuilt = true;
+            }
+
         }
         catch(SQLException e)
         {
@@ -577,6 +689,7 @@ public class CostCalculatorController implements Initializable {
         {
             double cadTotal = 0;
             double usdTotal = 0;
+            calculateSubtotals();
 
             if(!(nutComBox1.getSelectionModel().isEmpty()))
             {
@@ -1016,11 +1129,59 @@ public class CostCalculatorController implements Initializable {
                     usdTotal += clampTableManager.getPrice(clampComBox4.getValue().toString()) * Double.parseDouble(clampQtyText4.getText());
             }
 
+            String temp = miscSubtotal1.getText();
+            if(!(temp.equals("")))
+            {
+                if(temp.substring(temp.length()-3).equals("CAD"))
+                {
+                    cadTotal += Double.parseDouble(temp.substring(0,temp.length()-5));
+                }
+                else
+                {
+                    usdTotal += Double.parseDouble(temp.substring(0,temp.length()-5));
+                }
+            }
+            temp = miscSubtotal2.getText();
+            if(!(temp.equals("")))
+            {
+                if(temp.substring(temp.length()-3).equals("CAD"))
+                {
+                    cadTotal += Double.parseDouble(temp.substring(0,temp.length()-5));
+                }
+                else
+                {
+                    usdTotal += Double.parseDouble(temp.substring(0,temp.length()-5));
+                }
+            }
+            temp = miscSubtotal3.getText();
+            if(!(temp.equals("")))
+            {
+                if(temp.substring(temp.length()-3).equals("CAD"))
+                {
+                    cadTotal += Double.parseDouble(temp.substring(0,temp.length()-5));
+                }
+                else
+                {
+                    usdTotal += Double.parseDouble(temp.substring(0,temp.length()-5));
+                }
+            }
+            temp = miscSubtotal4.getText();
+            if(!(temp.equals("")))
+            {
+                if(temp.substring(temp.length()-3).equals("CAD"))
+                {
+                    cadTotal += Double.parseDouble(temp.substring(0,temp.length()-5));
+                }
+                else
+                {
+                    usdTotal += Double.parseDouble(temp.substring(0,temp.length()-5));
+                }
+            }
+            cadTotal += Double.parseDouble(labourCostText.getText());
 
             DecimalFormat df = new DecimalFormat("####.##");
             CADTotalLabel.setText(df.format(cadTotal));
             USDTotalLabel.setText(df.format(usdTotal));
-            calculateSubtotals();
         }
         catch(Exception e)
         {
@@ -2156,6 +2317,222 @@ public class CostCalculatorController implements Initializable {
             {
                 displayAlert("Error!!!");
             }
+        }
+    }
+    public void openMiscInfo1(ActionEvent actionEvent)
+    {
+        String part = miscPartComBox1.getValue().toString();
+        String comValue = miscIdComBox1.getValue().toString();
+        try {
+            if (part.equals("Nuts")) {
+                String[] array = nutsTableManager.getRow(comValue);
+                openInfoSheet("Nut", comValue, array);
+            } else if (part.equals("Pipe")) {
+                String[] array = pipeTableManager.getRow(comValue);
+                openInfoSheet("Pipe", comValue, array);
+            } else if (part.equals("Elbow")) {
+                String[] array = elbowTableManager.getRow(comValue);
+                openInfoSheet("Elbow", comValue, array);
+            } else if (part.equals("Flange")) {
+                String[] array = flangeTableManager.getRow(comValue);
+                openInfoSheet("Flange", comValue, array);
+            } else if (part.equals("Hanger")) {
+                String[] array = hangerTableManager.getRow(comValue);
+                openInfoSheet("Hanger", comValue, array);
+            } else if (part.equals("Muffler")) {
+                String[] array = mufflerTableManager.getRow(comValue);
+                openInfoSheet("Muffler", comValue, array);
+            } else if (part.equals("Resonator")) {
+                String[] array = resonatorTableManager.getRow(comValue);
+                openInfoSheet("Resonator", comValue, array);
+            } else if (part.equals("Cat")) {
+                String[] array = catTableManager.getRow(comValue);
+                openInfoSheet("Cat", comValue, array);
+            } else if (part.equals("FlexPipe")) {
+                String[] array = flexPipeTableManager.getRow(comValue);
+                openInfoSheet("FlexPipe", comValue, array);
+            } else if (part.equals("Bolt")) {
+                String[] array = boltTableManager.getRow(comValue);
+                openInfoSheet("Bolt", comValue, array);
+            } else if (part.equals("Washer")) {
+                String[] array = washerTableManager.getRow(comValue);
+                openInfoSheet("Washer", comValue, array);
+            } else if (part.equals("Rubber")) {
+                String[] array = rubberTableManager.getRow(comValue);
+                openInfoSheet("Rubber", comValue, array);
+            } else if (part.equals("Tip")) {
+                String[] array = tipTableManager.getRow(comValue);
+                openInfoSheet("Tip", comValue, array);
+            } else {
+                String[] array = clampTableManager.getRow(comValue);
+                openInfoSheet("Clamp", comValue, array);
+            }
+        }
+        catch(Exception e)
+        {
+            displayAlert("Error: "+e);
+        }
+    }
+    public void openMiscInfo2(ActionEvent actionEvent)
+    {
+        String part = miscPartComBox2.getValue().toString();
+        String comValue = miscIdComBox2.getValue().toString();
+        try {
+            if (part.equals("Nuts")) {
+                String[] array = nutsTableManager.getRow(comValue);
+                openInfoSheet("Nut", comValue, array);
+            } else if (part.equals("Pipe")) {
+                String[] array = pipeTableManager.getRow(comValue);
+                openInfoSheet("Pipe", comValue, array);
+            } else if (part.equals("Elbow")) {
+                String[] array = elbowTableManager.getRow(comValue);
+                openInfoSheet("Elbow", comValue, array);
+            } else if (part.equals("Flange")) {
+                String[] array = flangeTableManager.getRow(comValue);
+                openInfoSheet("Flange", comValue, array);
+            } else if (part.equals("Hanger")) {
+                String[] array = hangerTableManager.getRow(comValue);
+                openInfoSheet("Hanger", comValue, array);
+            } else if (part.equals("Muffler")) {
+                String[] array = mufflerTableManager.getRow(comValue);
+                openInfoSheet("Muffler", comValue, array);
+            } else if (part.equals("Resonator")) {
+                String[] array = resonatorTableManager.getRow(comValue);
+                openInfoSheet("Resonator", comValue, array);
+            } else if (part.equals("Cat")) {
+                String[] array = catTableManager.getRow(comValue);
+                openInfoSheet("Cat", comValue, array);
+            } else if (part.equals("FlexPipe")) {
+                String[] array = flexPipeTableManager.getRow(comValue);
+                openInfoSheet("FlexPipe", comValue, array);
+            } else if (part.equals("Bolt")) {
+                String[] array = boltTableManager.getRow(comValue);
+                openInfoSheet("Bolt", comValue, array);
+            } else if (part.equals("Washer")) {
+                String[] array = washerTableManager.getRow(comValue);
+                openInfoSheet("Washer", comValue, array);
+            } else if (part.equals("Rubber")) {
+                String[] array = rubberTableManager.getRow(comValue);
+                openInfoSheet("Rubber", comValue, array);
+            } else if (part.equals("Tip")) {
+                String[] array = tipTableManager.getRow(comValue);
+                openInfoSheet("Tip", comValue, array);
+            } else {
+                String[] array = clampTableManager.getRow(comValue);
+                openInfoSheet("Clamp", comValue, array);
+            }
+        }
+        catch(Exception e)
+        {
+            displayAlert("Error: "+e);
+        }
+    }
+    public void openMiscInfo3(ActionEvent actionEvent)
+    {
+        String part = miscPartComBox3.getValue().toString();
+        String comValue = miscIdComBox3.getValue().toString();
+        try {
+            if (part.equals("Nuts")) {
+                String[] array = nutsTableManager.getRow(comValue);
+                openInfoSheet("Nut", comValue, array);
+            } else if (part.equals("Pipe")) {
+                String[] array = pipeTableManager.getRow(comValue);
+                openInfoSheet("Pipe", comValue, array);
+            } else if (part.equals("Elbow")) {
+                String[] array = elbowTableManager.getRow(comValue);
+                openInfoSheet("Elbow", comValue, array);
+            } else if (part.equals("Flange")) {
+                String[] array = flangeTableManager.getRow(comValue);
+                openInfoSheet("Flange", comValue, array);
+            } else if (part.equals("Hanger")) {
+                String[] array = hangerTableManager.getRow(comValue);
+                openInfoSheet("Hanger", comValue, array);
+            } else if (part.equals("Muffler")) {
+                String[] array = mufflerTableManager.getRow(comValue);
+                openInfoSheet("Muffler", comValue, array);
+            } else if (part.equals("Resonator")) {
+                String[] array = resonatorTableManager.getRow(comValue);
+                openInfoSheet("Resonator", comValue, array);
+            } else if (part.equals("Cat")) {
+                String[] array = catTableManager.getRow(comValue);
+                openInfoSheet("Cat", comValue, array);
+            } else if (part.equals("FlexPipe")) {
+                String[] array = flexPipeTableManager.getRow(comValue);
+                openInfoSheet("FlexPipe", comValue, array);
+            } else if (part.equals("Bolt")) {
+                String[] array = boltTableManager.getRow(comValue);
+                openInfoSheet("Bolt", comValue, array);
+            } else if (part.equals("Washer")) {
+                String[] array = washerTableManager.getRow(comValue);
+                openInfoSheet("Washer", comValue, array);
+            } else if (part.equals("Rubber")) {
+                String[] array = rubberTableManager.getRow(comValue);
+                openInfoSheet("Rubber", comValue, array);
+            } else if (part.equals("Tip")) {
+                String[] array = tipTableManager.getRow(comValue);
+                openInfoSheet("Tip", comValue, array);
+            } else {
+                String[] array = clampTableManager.getRow(comValue);
+                openInfoSheet("Clamp", comValue, array);
+            }
+        }
+        catch(Exception e)
+        {
+            displayAlert("Error: "+e);
+        }
+    }
+    public void openMiscInfo4(ActionEvent actionEvent)
+    {
+        String part = miscPartComBox4.getValue().toString();
+        String comValue = miscIdComBox4.getValue().toString();
+        try {
+            if (part.equals("Nuts")) {
+                String[] array = nutsTableManager.getRow(comValue);
+                openInfoSheet("Nut", comValue, array);
+            } else if (part.equals("Pipe")) {
+                String[] array = pipeTableManager.getRow(comValue);
+                openInfoSheet("Pipe", comValue, array);
+            } else if (part.equals("Elbow")) {
+                String[] array = elbowTableManager.getRow(comValue);
+                openInfoSheet("Elbow", comValue, array);
+            } else if (part.equals("Flange")) {
+                String[] array = flangeTableManager.getRow(comValue);
+                openInfoSheet("Flange", comValue, array);
+            } else if (part.equals("Hanger")) {
+                String[] array = hangerTableManager.getRow(comValue);
+                openInfoSheet("Hanger", comValue, array);
+            } else if (part.equals("Muffler")) {
+                String[] array = mufflerTableManager.getRow(comValue);
+                openInfoSheet("Muffler", comValue, array);
+            } else if (part.equals("Resonator")) {
+                String[] array = resonatorTableManager.getRow(comValue);
+                openInfoSheet("Resonator", comValue, array);
+            } else if (part.equals("Cat")) {
+                String[] array = catTableManager.getRow(comValue);
+                openInfoSheet("Cat", comValue, array);
+            } else if (part.equals("FlexPipe")) {
+                String[] array = flexPipeTableManager.getRow(comValue);
+                openInfoSheet("FlexPipe", comValue, array);
+            } else if (part.equals("Bolt")) {
+                String[] array = boltTableManager.getRow(comValue);
+                openInfoSheet("Bolt", comValue, array);
+            } else if (part.equals("Washer")) {
+                String[] array = washerTableManager.getRow(comValue);
+                openInfoSheet("Washer", comValue, array);
+            } else if (part.equals("Rubber")) {
+                String[] array = rubberTableManager.getRow(comValue);
+                openInfoSheet("Rubber", comValue, array);
+            } else if (part.equals("Tip")) {
+                String[] array = tipTableManager.getRow(comValue);
+                openInfoSheet("Tip", comValue, array);
+            } else {
+                String[] array = clampTableManager.getRow(comValue);
+                openInfoSheet("Clamp", comValue, array);
+            }
+        }
+        catch(Exception e)
+        {
+            displayAlert("Error: "+e);
         }
     }
     /******************************************************************************************************************/
@@ -3466,6 +3843,354 @@ public class CostCalculatorController implements Initializable {
             }
         }
     }
+    public void CalculateMiscSubtotal1(ActionEvent actionEvent)
+    {
+        DecimalFormat df = new DecimalFormat("#####.##");
+        String text = "";
+        try {
+            String part = miscPartComBox1.getValue().toString();
+            String id = miscIdComBox1.getValue().toString();
+            double qty = Double.parseDouble(miscQtyText1.getText());
+            if (part.equals("Nuts")) {
+                if(nutsTableManager.isCad(id))
+                    text = nutsTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = nutsTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Pipe")) {
+                if(pipeTableManager.isCad(id))
+                    text = pipeTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = pipeTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Elbow")) {
+                if(elbowTableManager.isCad(id))
+                    text = elbowTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = elbowTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Flange")) {
+                if(flangeTableManager.isCad(id))
+                    text = flangeTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = flangeTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Hanger")) {
+                if(hangerTableManager.isCad(id))
+                    text = hangerTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = hangerTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Muffler")) {
+                if(mufflerTableManager.isCad(id))
+                    text = mufflerTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = mufflerTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Resonator")) {
+                if(resonatorTableManager.isCad(id))
+                    text = resonatorTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = resonatorTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Cat")) {
+                if(catTableManager.isCad(id))
+                    text = catTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = catTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("FlexPipe")) {
+                if(flexPipeTableManager.isCad(id))
+                    text = flexPipeTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = flexPipeTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Bolt")) {
+                if(boltTableManager.isCad(id))
+                    text = boltTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = boltTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Washer")) {
+                if(washerTableManager.isCad(id))
+                    text = washerTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = washerTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Rubber")) {
+                if(rubberTableManager.isCad(id))
+                    text = rubberTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = rubberTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Tip")) {
+                if(tipTableManager.isCad(id))
+                    text = tipTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = tipTableManager.getPrice(id) * qty + " USD";
+            } else {
+                if(clampTableManager.isCad(id))
+                    text = clampTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = clampTableManager.getPrice(id) * qty + " USD";
+            }
+            miscSubtotal1.setText(text);
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            displayAlert("Error :"+e);
+        }
+    }
+    public void CalculateMiscSubtotal2(ActionEvent actionEvent)
+    {
+        DecimalFormat df = new DecimalFormat("#####.##");
+        String text = "";
+        try {
+            String part = miscPartComBox2.getValue().toString();
+            String id = miscIdComBox2.getValue().toString();
+            double qty = Double.parseDouble(miscQtyText2.getText());
+            if (part.equals("Nuts")) {
+                if(nutsTableManager.isCad(id))
+                    text = nutsTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = nutsTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Pipe")) {
+                if(pipeTableManager.isCad(id))
+                    text = pipeTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = pipeTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Elbow")) {
+                if(elbowTableManager.isCad(id))
+                    text = elbowTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = elbowTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Flange")) {
+                if(flangeTableManager.isCad(id))
+                    text = flangeTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = flangeTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Hanger")) {
+                if(hangerTableManager.isCad(id))
+                    text = hangerTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = hangerTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Muffler")) {
+                if(mufflerTableManager.isCad(id))
+                    text = mufflerTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = mufflerTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Resonator")) {
+                if(resonatorTableManager.isCad(id))
+                    text = resonatorTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = resonatorTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Cat")) {
+                if(catTableManager.isCad(id))
+                    text = catTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = catTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("FlexPipe")) {
+                if(flexPipeTableManager.isCad(id))
+                    text = flexPipeTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = flexPipeTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Bolt")) {
+                if(boltTableManager.isCad(id))
+                    text = boltTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = boltTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Washer")) {
+                if(washerTableManager.isCad(id))
+                    text = washerTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = washerTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Rubber")) {
+                if(rubberTableManager.isCad(id))
+                    text = rubberTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = rubberTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Tip")) {
+                if(tipTableManager.isCad(id))
+                    text = tipTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = tipTableManager.getPrice(id) * qty + " USD";
+            } else {
+                if(clampTableManager.isCad(id))
+                    text = clampTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = clampTableManager.getPrice(id) * qty + " USD";
+            }
+            miscSubtotal2.setText(text);
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            displayAlert("Error :"+e);
+        }
+    }
+    public void CalculateMiscSubtotal3(ActionEvent actionEvent)
+    {
+        DecimalFormat df = new DecimalFormat("#####.##");
+        String text = "";
+        try {
+            String part = miscPartComBox3.getValue().toString();
+            String id = miscIdComBox3.getValue().toString();
+            double qty = Double.parseDouble(miscQtyText3.getText());
+            if (part.equals("Nuts")) {
+                if(nutsTableManager.isCad(id))
+                    text = nutsTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = nutsTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Pipe")) {
+                if(pipeTableManager.isCad(id))
+                    text = pipeTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = pipeTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Elbow")) {
+                if(elbowTableManager.isCad(id))
+                    text = elbowTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = elbowTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Flange")) {
+                if(flangeTableManager.isCad(id))
+                    text = flangeTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = flangeTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Hanger")) {
+                if(hangerTableManager.isCad(id))
+                    text = hangerTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = hangerTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Muffler")) {
+                if(mufflerTableManager.isCad(id))
+                    text = mufflerTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = mufflerTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Resonator")) {
+                if(resonatorTableManager.isCad(id))
+                    text = resonatorTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = resonatorTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Cat")) {
+                if(catTableManager.isCad(id))
+                    text = catTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = catTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("FlexPipe")) {
+                if(flexPipeTableManager.isCad(id))
+                    text = flexPipeTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = flexPipeTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Bolt")) {
+                if(boltTableManager.isCad(id))
+                    text = boltTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = boltTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Washer")) {
+                if(washerTableManager.isCad(id))
+                    text = washerTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = washerTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Rubber")) {
+                if(rubberTableManager.isCad(id))
+                    text = rubberTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = rubberTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Tip")) {
+                if(tipTableManager.isCad(id))
+                    text = tipTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = tipTableManager.getPrice(id) * qty + " USD";
+            } else {
+                if(clampTableManager.isCad(id))
+                    text = clampTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = clampTableManager.getPrice(id) * qty + " USD";
+            }
+            miscSubtotal3.setText(text);
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            displayAlert("Error :"+e);
+        }
+    }
+    public void CalculateMiscSubtotal4(ActionEvent actionEvent)
+    {
+        DecimalFormat df = new DecimalFormat("#####.##");
+        String text = "";
+        try {
+            String part = miscPartComBox4.getValue().toString();
+            String id = miscIdComBox4.getValue().toString();
+            double qty = Double.parseDouble(miscQtyText4.getText());
+            if (part.equals("Nuts")) {
+                if(nutsTableManager.isCad(id))
+                    text = nutsTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = nutsTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Pipe")) {
+                if(pipeTableManager.isCad(id))
+                    text = pipeTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = pipeTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Elbow")) {
+                if(elbowTableManager.isCad(id))
+                    text = elbowTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = elbowTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Flange")) {
+                if(flangeTableManager.isCad(id))
+                    text = flangeTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = flangeTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Hanger")) {
+                if(hangerTableManager.isCad(id))
+                    text = hangerTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = hangerTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Muffler")) {
+                if(mufflerTableManager.isCad(id))
+                    text = mufflerTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = mufflerTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Resonator")) {
+                if(resonatorTableManager.isCad(id))
+                    text = resonatorTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = resonatorTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Cat")) {
+                if(catTableManager.isCad(id))
+                    text = catTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = catTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("FlexPipe")) {
+                if(flexPipeTableManager.isCad(id))
+                    text = flexPipeTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = flexPipeTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Bolt")) {
+                if(boltTableManager.isCad(id))
+                    text = boltTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = boltTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Washer")) {
+                if(washerTableManager.isCad(id))
+                    text = washerTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = washerTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Rubber")) {
+                if(rubberTableManager.isCad(id))
+                    text = rubberTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = rubberTableManager.getPrice(id) * qty + " USD";
+            } else if (part.equals("Tip")) {
+                if(tipTableManager.isCad(id))
+                    text = tipTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = tipTableManager.getPrice(id) * qty + " USD";
+            } else {
+                if(clampTableManager.isCad(id))
+                    text = clampTableManager.getPrice(id) * qty + " CAD";
+                else
+                    text = clampTableManager.getPrice(id) * qty + " USD";
+            }
+            miscSubtotal4.setText(text);
+        }
+        catch(Exception e)
+        {
+            if(e instanceof SQLException)
+            displayAlert("Error :"+e);
+        }
+    }
     public void calculateSubtotals() throws Exception
     {
         CalculateNutSubtotal1(new ActionEvent());
@@ -3527,6 +4252,11 @@ public class CostCalculatorController implements Initializable {
         CalculateRubberSubtotal4(new ActionEvent());
         CalculateTipSubtotal4(new ActionEvent());
         CalculateClampSubtotal4(new ActionEvent());
+
+        CalculateMiscSubtotal1(new ActionEvent());
+        CalculateMiscSubtotal2(new ActionEvent());
+        CalculateMiscSubtotal3(new ActionEvent());
+        CalculateMiscSubtotal4(new ActionEvent());
     }
 
     private void displayAlert(String msg) {
@@ -3550,8 +4280,244 @@ public class CostCalculatorController implements Initializable {
         }
     }
 
+    public void updateIdComBox1(ActionEvent actionEvent)
+    {
+        String part = miscPartComBox1.getValue().toString();
+        ObservableList data = FXCollections.observableArrayList();
+        try {
+            if (part.equals("Nuts")) {
+                data.addAll(nutsTableManager.getIdNames());
+            } else if (part.equals("Pipe")) {
+                data.addAll(pipeTableManager.getIdNames());
+            } else if (part.equals("Elbow")) {
+                data.addAll(elbowTableManager.getIdNames());
+            } else if (part.equals("Flange")) {
+                data.addAll(flangeTableManager.getIdNames());
+            } else if (part.equals("Hanger")) {
+                data.addAll(hangerTableManager.getIdNames());
+            } else if (part.equals("Muffler")) {
+                data.addAll(mufflerTableManager.getIdNames());
+            } else if (part.equals("Resonator")) {
+                data.addAll(resonatorTableManager.getIdNames());
+            } else if (part.equals("Cat")) {
+                data.addAll(catTableManager.getIdNames());
+            } else if (part.equals("FlexPipe")) {
+                data.addAll(flexPipeTableManager.getIdNames());
+            } else if (part.equals("Bolt")) {
+                data.addAll(boltTableManager.getIdNames());
+            } else if (part.equals("Washer")) {
+                data.addAll(washerTableManager.getIdNames());
+            } else if (part.equals("Rubber")) {
+                data.addAll(rubberTableManager.getIdNames());
+            } else if (part.equals("Tip")) {
+                data.addAll(tipTableManager.getIdNames());
+            } else {
+                data.addAll(clampTableManager.getIdNames());
+            }
+            miscIdComBox1.setItems(data);
+            miscIdComBox1.getSelectionModel().selectFirst();
+        }
+        catch(Exception e)
+        {
+            displayAlert("Error: " + e);
+        }
+    }
+    public void updateIdComBox2(ActionEvent actionEvent)
+    {
+        String part = miscPartComBox2.getValue().toString();
+        ObservableList data = FXCollections.observableArrayList();
+        try {
+            if (part.equals("Nuts")) {
+                data.addAll(nutsTableManager.getIdNames());
+            } else if (part.equals("Pipe")) {
+                data.addAll(pipeTableManager.getIdNames());
+            } else if (part.equals("Elbow")) {
+                data.addAll(elbowTableManager.getIdNames());
+            } else if (part.equals("Flange")) {
+                data.addAll(flangeTableManager.getIdNames());
+            } else if (part.equals("Hanger")) {
+                data.addAll(hangerTableManager.getIdNames());
+            } else if (part.equals("Muffler")) {
+                data.addAll(mufflerTableManager.getIdNames());
+            } else if (part.equals("Resonator")) {
+                data.addAll(resonatorTableManager.getIdNames());
+            } else if (part.equals("Cat")) {
+                data.addAll(catTableManager.getIdNames());
+            } else if (part.equals("FlexPipe")) {
+                data.addAll(flexPipeTableManager.getIdNames());
+            } else if (part.equals("Bolt")) {
+                data.addAll(boltTableManager.getIdNames());
+            } else if (part.equals("Washer")) {
+                data.addAll(washerTableManager.getIdNames());
+            } else if (part.equals("Rubber")) {
+                data.addAll(rubberTableManager.getIdNames());
+            } else if (part.equals("Tip")) {
+                data.addAll(tipTableManager.getIdNames());
+            } else {
+                data.addAll(clampTableManager.getIdNames());
+            }
+            miscIdComBox2.setItems(data);
+            miscIdComBox2.getSelectionModel().selectFirst();
+
+        }
+        catch(Exception e)
+        {
+            displayAlert("Error :" + e);
+        }
+    }
+
+    public void updateIdComBox3(ActionEvent actionEvent)
+    {
+        String part = miscPartComBox3.getValue().toString();
+        ObservableList data = FXCollections.observableArrayList();
+        try {
+            if (part.equals("Nuts")) {
+                data.addAll(nutsTableManager.getIdNames());
+            } else if (part.equals("Pipe")) {
+                data.addAll(pipeTableManager.getIdNames());
+            } else if (part.equals("Elbow")) {
+                data.addAll(elbowTableManager.getIdNames());
+            } else if (part.equals("Flange")) {
+                data.addAll(flangeTableManager.getIdNames());
+            } else if (part.equals("Hanger")) {
+                data.addAll(hangerTableManager.getIdNames());
+            } else if (part.equals("Muffler")) {
+                data.addAll(mufflerTableManager.getIdNames());
+            } else if (part.equals("Resonator")) {
+                data.addAll(resonatorTableManager.getIdNames());
+            } else if (part.equals("Cat")) {
+                data.addAll(catTableManager.getIdNames());
+            } else if (part.equals("FlexPipe")) {
+                data.addAll(flexPipeTableManager.getIdNames());
+            } else if (part.equals("Bolt")) {
+                data.addAll(boltTableManager.getIdNames());
+            } else if (part.equals("Washer")) {
+                data.addAll(washerTableManager.getIdNames());
+            } else if (part.equals("Rubber")) {
+                data.addAll(rubberTableManager.getIdNames());
+            } else if (part.equals("Tip")) {
+                data.addAll(tipTableManager.getIdNames());
+            } else {
+                data.addAll(clampTableManager.getIdNames());
+            }
+            miscIdComBox3.setItems(data);
+            miscIdComBox3.getSelectionModel().selectFirst();
+        }
+        catch(Exception e)
+        {
+            displayAlert("Error: " + e);
+        }
+    }
+
+    public void updateIdComBox4(ActionEvent actionEvent)
+    {
+        String part = miscPartComBox4.getValue().toString();
+        ObservableList data = FXCollections.observableArrayList();
+        try {
+            if (part.equals("Nuts")) {
+                data.addAll(nutsTableManager.getIdNames());
+            } else if (part.equals("Pipe")) {
+                data.addAll(pipeTableManager.getIdNames());
+            } else if (part.equals("Elbow")) {
+                data.addAll(elbowTableManager.getIdNames());
+            } else if (part.equals("Flange")) {
+                data.addAll(flangeTableManager.getIdNames());
+            } else if (part.equals("Hanger")) {
+                data.addAll(hangerTableManager.getIdNames());
+            } else if (part.equals("Muffler")) {
+                data.addAll(mufflerTableManager.getIdNames());
+            } else if (part.equals("Resonator")) {
+                data.addAll(resonatorTableManager.getIdNames());
+            } else if (part.equals("Cat")) {
+                data.addAll(catTableManager.getIdNames());
+            } else if (part.equals("FlexPipe")) {
+                data.addAll(flexPipeTableManager.getIdNames());
+            } else if (part.equals("Bolt")) {
+                data.addAll(boltTableManager.getIdNames());
+            } else if (part.equals("Washer")) {
+                data.addAll(washerTableManager.getIdNames());
+            } else if (part.equals("Rubber")) {
+                data.addAll(rubberTableManager.getIdNames());
+            } else if (part.equals("Tip")) {
+                data.addAll(tipTableManager.getIdNames());
+            } else {
+                data.addAll(clampTableManager.getIdNames());
+            }
+            miscIdComBox4.setItems(data);
+            miscIdComBox4.getSelectionModel().selectFirst();
+        }
+        catch(Exception e)
+        {
+            displayAlert("Error: " + e);
+        }
+    }
+
+    public void saveAsKit()
+    {
+        String bolts = boltComBox1.getValue().toString() + "," + boltComBox2.getValue().toString() + "," + boltComBox3.getValue().toString() + "," + boltComBox4.getValue().toString();
+        String cats = catComBox1.getValue().toString() + "," + catComBox2.getValue().toString() + "," + catComBox3.getValue().toString() + "," + catComBox4.getValue().toString();
+        String clamps = clampComBox1.getValue().toString() + "," + clampComBox2.getValue().toString() + "," + clampComBox3.getValue().toString() + "," + clampComBox4.getValue().toString();
+        String elbows = elbowComBox1.getValue().toString() + "," + elbowComBox2.getValue().toString() + "," + elbowComBox3.getValue().toString() + "," + elbowComBox4.getValue().toString();
+        String flanges = flangeComBox1.getValue().toString() + "," + flangeComBox2.getValue().toString() + "," + flangeComBox3.getValue().toString() + "," + flangeComBox4.getValue().toString();
+        String flexs = flexPipeComBox1.getValue().toString() + "," + flexPipeComBox2.getValue().toString() + "," + flexPipeComBox3.getValue().toString() + "," + flexPipeComBox4.getValue().toString();
+        String hangers = hangerComBox1.getValue().toString() + "," + hangerComBox2.getValue().toString() + "," + hangerComBox3.getValue().toString() + "," + hangerComBox4.getValue().toString();
+        String mufflers = mufflerComBox1.getValue().toString() + "," + mufflerComBox2.getValue().toString() + "," + mufflerComBox3.getValue().toString() + "," + mufflerComBox4.getValue().toString();
+        String nuts = nutComBox1.getValue().toString() + "," + nutComBox2.getValue().toString() + "," + nutComBox3.getValue().toString() + "," + nutComBox4.getValue().toString();
+        String pipes = pipeComBox1.getValue().toString() + "," + pipeComBox2.getValue().toString() + "," + pipeComBox3.getValue().toString() + "," + pipeComBox4.getValue().toString();
+        String resonators = resonatorComBox1.getValue().toString() + "," + resonatorComBox2.getValue().toString() + "," + resonatorComBox3.getValue().toString() + "," + resonatorComBox4.getValue().toString();
+        String rubbers = rubberComBox1.getValue().toString() + "," + rubberComBox2.getValue().toString() + "," + rubberComBox3.getValue().toString() + "," + rubberComBox4.getValue().toString();
+        String tips = tipComBox1.getValue().toString() + "," + tipComBox2.getValue().toString() + "," + tipComBox3.getValue().toString() + "," + tipComBox4.getValue().toString();
+        String washers = washerComBox1.getValue().toString() + "," + washerComBox2.getValue().toString() + "," + washerComBox3.getValue().toString() + "," + washerComBox4.getValue().toString();
+
+
+        String boltsQTY = boltQtyText1.getText() + "," + boltQtyText2.getText() + "," + boltQtyText3.getText() + "," + boltQtyText4.getText();
+        String catsQTY = catQtyText1.getText() + "," + catQtyText2.getText() + "," + catQtyText3.getText() + "," + catQtyText4.getText();
+        String clampsQTY = clampQtyText1.getText() + "," + clampQtyText2.getText() + "," + clampQtyText3.getText() + "," + clampQtyText4.getText();
+        String elbowsQTY = elbowQtyText1.getText() + "," + elbowQtyText2.getText() + "," + elbowQtyText3.getText() + "," + elbowQtyText4.getText();
+        String flangesQTY = flangeQtyText1.getText() + "," + flangeQtyText2.getText() + "," + flangeQtyText3.getText() + "," + flangeQtyText4.getText();
+        String flexsQTY = flexPipeQtyText1.getText() + "," + flexPipeQtyText2.getText() + "," + flexPipeQtyText3.getText() + "," + flexPipeQtyText4.getText();
+        String hangersQTY = hangerQtyText1.getText() + "," + hangerQtyText2.getText() + "," + hangerQtyText3.getText() + "," + hangerQtyText4.getText();
+        String mufflersQTY = mufflerQtyText1.getText() + "," + mufflerQtyText2.getText() + "," + mufflerQtyText3.getText() + "," + mufflerQtyText4.getText();
+        String nutsQTY = nutQtyText1.getText() + "," + nutQtyText2.getText() + "," + nutQtyText3.getText() + "," + nutQtyText4.getText();
+        String pipesQTY = pipeQtyText1.getText() + "," + pipeQtyText2.getText() + "," + pipeQtyText3.getText() + "," + pipeQtyText4.getText();
+        String resonatorsQTY = resonatorQtyText1.getText() + "," + resonatorQtyText2.getText() + "," + resonatorQtyText3.getText() + "," + resonatorQtyText4.getText();
+        String rubbersQTY = rubberQtyText1.getText() + "," + rubberQtyText2.getText() + "," + rubberQtyText3.getText() + "," + rubberQtyText4.getText();
+        String tipsQTY = tipQtyText1.getText() + "," + tipQtyText2.getText() + "," + tipQtyText3.getText() + "," + tipQtyText4.getText();
+        String washersQTY = washerQtyText1.getText() + "," + washerQtyText2.getText() + "," + washerQtyText3.getText() + "," + washerQtyText4.getText();
+
+        try {
+            kitTableManager.add(KitNameText.getText(), bolts, boltsQTY, cats, catsQTY, clamps, clampsQTY, elbows, elbowsQTY, flanges, flangesQTY, flexs, flexsQTY, hangers, hangersQTY, mufflers, mufflersQTY,
+                    nuts, nutsQTY, pipes, pipesQTY, resonators, resonatorsQTY, rubbers, rubbersQTY, tips, tipsQTY, washers, washersQTY, Double.parseDouble(CADTotalLabel.getText()), Double.parseDouble(USDTotalLabel.getText()));
+        }
+        catch(Exception e)
+        {
+            
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
+        ObservableList miscData = FXCollections.observableArrayList();
+        miscData.add("Nuts");
+        miscData.add("Pipe");
+        miscData.add("Elbow");
+        miscData.add("Flange");
+        miscData.add("Hanger");
+        miscData.add("Muffler");
+        miscData.add("Resonator");
+        miscData.add("Cat");
+        miscData.add("FlexPipe");
+        miscData.add("Bolt");
+        miscData.add("Washer");
+        miscData.add("Rubber");
+        miscData.add("Tip");
+        miscData.add("Clamp");
+        miscPartComBox1.setItems(miscData);
+        miscPartComBox2.setItems(miscData);
+        miscPartComBox3.setItems(miscData);
+        miscPartComBox4.setItems(miscData);
 
         nutQtyText1.setText("0");
         pipeQtyText1.setText("0");
@@ -3613,65 +4579,14 @@ public class CostCalculatorController implements Initializable {
         tipQtyText4.setText("0");
         clampQtyText4.setText("0");
 
+        miscQtyText1.setText("0");
+        miscQtyText2.setText("0");
+        miscQtyText3.setText("0");
+        miscQtyText4.setText("0");
 
-        nutComBox1.getSelectionModel().selectFirst();
-        pipeComBox1.getSelectionModel().selectFirst();
-        elbowComBox1.getSelectionModel().selectFirst();
-        flangeComBox1.getSelectionModel().selectFirst();
-        hangerComBox1.getSelectionModel().selectFirst();
-        mufflerComBox1.getSelectionModel().selectFirst();
-        resonatorComBox1.getSelectionModel().selectFirst();
-        catComBox1.getSelectionModel().selectFirst();
-        flexPipeComBox1.getSelectionModel().selectFirst();
-        boltComBox1.getSelectionModel().selectFirst();
-        washerComBox1.getSelectionModel().selectFirst();
-        rubberComBox1.getSelectionModel().selectFirst();
-        tipComBox1.getSelectionModel().selectFirst();
-        clampComBox1.getSelectionModel().selectFirst();
+        labourCostText.setText("0");
 
-        nutComBox2.getSelectionModel().selectNext();
-        pipeComBox2.getSelectionModel().selectNext();
-        elbowComBox2.getSelectionModel().selectNext();
-        flangeComBox2.getSelectionModel().selectNext();
-        hangerComBox2.getSelectionModel().selectNext();
-        mufflerComBox2.getSelectionModel().selectNext();
-        resonatorComBox2.getSelectionModel().selectNext();
-        catComBox2.getSelectionModel().selectNext();
-        flexPipeComBox2.getSelectionModel().selectFirst();
-        boltComBox2.getSelectionModel().selectFirst();
-        washerComBox2.getSelectionModel().selectFirst();
-        rubberComBox2.getSelectionModel().selectFirst();
-        tipComBox2.getSelectionModel().selectFirst();
-        clampComBox2.getSelectionModel().selectFirst();
 
-        nutComBox3.getSelectionModel().selectNext();
-        pipeComBox3.getSelectionModel().selectNext();
-        elbowComBox3.getSelectionModel().selectNext();
-        flangeComBox3.getSelectionModel().selectNext();
-        hangerComBox3.getSelectionModel().selectNext();
-        mufflerComBox3.getSelectionModel().selectNext();
-        resonatorComBox3.getSelectionModel().selectNext();
-        catComBox3.getSelectionModel().selectNext();
-        flexPipeComBox3.getSelectionModel().selectFirst();
-        boltComBox3.getSelectionModel().selectFirst();
-        washerComBox3.getSelectionModel().selectFirst();
-        rubberComBox3.getSelectionModel().selectFirst();
-        tipComBox3.getSelectionModel().selectFirst();
-        clampComBox3.getSelectionModel().selectFirst();
 
-        nutComBox4.getSelectionModel().selectNext();
-        pipeComBox4.getSelectionModel().selectNext();
-        elbowComBox4.getSelectionModel().selectNext();
-        flangeComBox4.getSelectionModel().selectNext();
-        hangerComBox4.getSelectionModel().selectNext();
-        mufflerComBox4.getSelectionModel().selectNext();
-        resonatorComBox4.getSelectionModel().selectNext();
-        catComBox4.getSelectionModel().selectNext();
-        flexPipeComBox4.getSelectionModel().selectFirst();
-        boltComBox4.getSelectionModel().selectFirst();
-        washerComBox4.getSelectionModel().selectFirst();
-        rubberComBox4.getSelectionModel().selectFirst();
-        tipComBox4.getSelectionModel().selectFirst();
-        clampComBox4.getSelectionModel().selectFirst();
     }
 }

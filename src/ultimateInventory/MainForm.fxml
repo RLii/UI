@@ -16,20 +16,20 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Edit">
               <items>
-                <MenuItem mnemonicParsing="false" onAction="#openNutsEditor" text="Nuts" />
-                  <MenuItem mnemonicParsing="false" onAction="#openPipesEditor" text="Pipes" />
+                  <MenuItem mnemonicParsing="false" onAction="#openBoltEditor" text="Bolts" />
+                  <MenuItem mnemonicParsing="false" onAction="#openCatEditor" text="Cats" />
+                  <MenuItem mnemonicParsing="false" onAction="#openClampEditor" text="Clamps" />
                   <MenuItem mnemonicParsing="false" onAction="#openElbowEditor" text="Elbows" />
+                  <MenuItem mnemonicParsing="false" onAction="#openRubberEditor" text="Exhaust Rubbers" />
                   <MenuItem mnemonicParsing="false" onAction="#openFlangeEditor" text="Flanges" />
+                  <MenuItem mnemonicParsing="false" onAction="#openFlexPipeEditor" text="Flex Pipes" />
                   <MenuItem mnemonicParsing="false" onAction="#openHangerEditor" text="Hangers" />
                   <MenuItem mnemonicParsing="false" onAction="#openMufflerEditor" text="Mufflers" />
+                <MenuItem mnemonicParsing="false" onAction="#openNutsEditor" text="Nuts" />
+                  <MenuItem mnemonicParsing="false" onAction="#openPipesEditor" text="Pipes" />
                   <MenuItem mnemonicParsing="false" onAction="#openResonatorEditor" text="Resonators" />
-                  <MenuItem mnemonicParsing="false" onAction="#openCatEditor" text="Cats" />
-                  <MenuItem mnemonicParsing="false" onAction="#openFlexPipeEditor" text="Flex Pipes" />
-                  <MenuItem mnemonicParsing="false" onAction="#openBoltEditor" text="Bolts" />
-                  <MenuItem mnemonicParsing="false" onAction="#openWasherEditor" text="Washers" />
-                  <MenuItem mnemonicParsing="false" onAction="#openRubberEditor" text="Exhaust Rubbers" />
                   <MenuItem mnemonicParsing="false" onAction="#openTipEditor" text="Tips" />
-                  <MenuItem mnemonicParsing="false" onAction="#openClampEditor" text="Clamps" />
+                  <MenuItem mnemonicParsing="false" onAction="#openWasherEditor" text="Washers" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Reset Options">

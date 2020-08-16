@@ -499,7 +499,8 @@ public class Controller implements Initializable {
                 new WasherTableManager(conn,false),
                 new RubberTableManager(conn,false),
                 new TipTableManager(conn,false),
-                new ClampTableManager(conn,false));
+                new ClampTableManager(conn,false),
+                new KitTableManager(conn, false));
 
         Scene scene = new Scene(costCalc);
         Stage stage = new Stage();
