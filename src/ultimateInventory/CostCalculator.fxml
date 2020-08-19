@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,7 +11,7 @@
 
 <AnchorPane prefHeight="800" prefWidth="1000" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ultimateInventory.CostCalculatorController">
    <children>
-      <Pane layoutX="14.0" layoutY="305.0" prefHeight="112.0" prefWidth="97.0">
+      <Pane layoutX="14.0" layoutY="385.0" prefHeight="112.0" prefWidth="97.0">
          <children>
             <Button fx:id="calculateBtn" layoutX="14.0" layoutY="75.0" mnemonicParsing="false" onAction="#calculateTotals" text="Calculate" />
             <Label layoutX="14.0" layoutY="14.0" text="CAD :" />
@@ -638,6 +639,7 @@
                       <Label fx:id="clampSubtotal4" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
                    </children>
                 </Pane>
+                <!--
                   <Pane layoutX="22.0" layoutY="1082.0" prefHeight="145.0" prefWidth="370.0">
                      <children>
                         <Label layoutX="20.0" layoutY="60.0" prefHeight="17.0" prefWidth="64.0" text="Misc ID :" />
@@ -690,15 +692,58 @@
                       <Label layoutX="10.0" layoutY="31.0" text="Misc part :" />
                    </children>
                 </Pane>
+                -->
+                <Pane layoutX="22.0" layoutY="1082.0" prefHeight="145.0" prefWidth="370.0">
+                   <children>
+                      <Label layoutY="60.0" layoutX="5.0" prefHeight="17.0" prefWidth="64.0" text="Misc Price :" />
+                      <TextField fx:id="miscPriceText1" layoutX="68.0" layoutY="56.0" prefWidth="150.0" />
+                      <TextField fx:id="miscPartText1" layoutX="68.0" layoutY="24.0" prefWidth="150.0" />
+                      <Label layoutX="10.0" layoutY="31.0" text="Misc part :" />
+                      <RadioButton fx:id="miscRadBtnCAD1" onAction="#clickRadBtnCAD1" layoutX="71.0" layoutY="97.0" selected="true" mnemonicParsing="false" text="CAD" />
+                      <RadioButton fx:id="miscRadBtnUSD1" onAction="#clickRadBtnUSD1" layoutX="165.0" layoutY="97.0" mnemonicParsing="false" text="USD" />
+                   </children>
+                </Pane>
+                <Pane layoutX="336.0" layoutY="1082.0" prefHeight="145.0" prefWidth="370.0">
+                   <children>
+                      <Label layoutY="60.0" layoutX="5.0" prefHeight="17.0" prefWidth="64.0" text="Misc Price :" />
+                      <TextField fx:id="miscPriceText2" layoutX="68.0" layoutY="56.0" prefWidth="150.0" />
+                      <TextField fx:id="miscPartText2" layoutX="68.0" layoutY="24.0" prefWidth="150.0" />
+                      <Label layoutX="10.0" layoutY="31.0" text="Misc part :" />
+                      <RadioButton fx:id="miscRadBtnCAD2" onAction="#clickRadBtnCAD2" layoutX="71.0" layoutY="97.0" selected="true" mnemonicParsing="false" text="CAD" />
+                      <RadioButton fx:id="miscRadBtnUSD2" onAction="#clickRadBtnUSD2" layoutX="165.0" layoutY="97.0" mnemonicParsing="false" text="USD" />
+                   </children>
+                </Pane>
+                <Pane layoutX="649.0" layoutY="1082.0" prefHeight="145.0" prefWidth="370.0">
+                   <children>
+                      <Label layoutY="60.0" layoutX="5.0" prefHeight="17.0" prefWidth="64.0" text="Misc Price :" />
+                      <TextField fx:id="miscPriceText3" layoutX="68.0" layoutY="56.0" prefWidth="150.0" />
+                      <TextField fx:id="miscPartText3" layoutX="68.0" layoutY="24.0" prefWidth="150.0" />
+                      <Label layoutX="10.0" layoutY="31.0" text="Misc part :" />
+                      <RadioButton fx:id="miscRadBtnCAD3" onAction="#clickRadBtnCAD3" layoutX="71.0" layoutY="97.0" selected="true" mnemonicParsing="false" text="CAD" />
+                      <RadioButton fx:id="miscRadBtnUSD3" onAction="#clickRadBtnUSD3" layoutX="165.0" layoutY="97.0" mnemonicParsing="false" text="USD" />
+                   </children>
+                </Pane>
+                <Pane layoutX="962.0" layoutY="1082.0" prefHeight="145.0" prefWidth="370.0">
+                   <children>
+                      <Label layoutY="60.0" layoutX="5.0" prefHeight="17.0" prefWidth="64.0" text="Misc Price :" />
+                      <TextField fx:id="miscPriceText4" layoutX="68.0" layoutY="56.0" prefWidth="150.0" />
+                      <TextField fx:id="miscPartText4" layoutX="68.0" layoutY="24.0" prefWidth="150.0" />
+                      <Label layoutX="10.0" layoutY="31.0" text="Misc part :" />
+                      <RadioButton fx:id="miscRadBtnCAD4" onAction="#clickRadBtnCAD4" layoutX="71.0" layoutY="97.0" selected="true" mnemonicParsing="false" text="CAD" />
+                      <RadioButton fx:id="miscRadBtnUSD4" onAction="#clickRadBtnUSD4" layoutX="165.0" layoutY="97.0" mnemonicParsing="false" text="USD" />
+                   </children>
+                </Pane>
                </children>
             </AnchorPane>
          </content>
       </ScrollPane>
-      <Button layoutX="14.0" layoutY="37.0" mnemonicParsing="false" onAction="#buildComBoxData" prefHeight="26.0" prefWidth="98.0" text="Reload Data" />
-      <Label layoutX="38.0" layoutY="666.0" text="Kit Name" />
-      <TextField fx:id="KitNameText" layoutX="2.0" layoutY="701.0" prefHeight="26.0" prefWidth="120.0" />
-      <Button layoutX="25.0" layoutY="739.0" mnemonicParsing="false" onAction="#saveAsKit" text="Save As Kit" />
-      <Label layoutX="11.0" layoutY="230.0" text="Labour Costs (CAD)" />
-      <TextField fx:id="labourCostText" layoutX="12.0" layoutY="257.0" prefHeight="26.0" prefWidth="98.0" />
+      <Button layoutX="14.0" layoutY="739.0" mnemonicParsing="false" onAction="#buildComBoxData" prefHeight="26.0" prefWidth="98.0" text="Reload Data" />
+      <Label layoutX="38.0" layoutY="35.0" text="Kit Name" />
+      <TextField fx:id="KitNameText" layoutX="2.0" layoutY="60.0" prefHeight="26.0" prefWidth="120.0" />
+      <Button layoutX="25.0" layoutY="100.0" mnemonicParsing="false" onAction="#saveAsKit" text="Save As Kit" />
+      <Label layoutX="11.0" layoutY="310.0" text="Labour Costs (CAD)" />
+      <TextField fx:id="labourCostTextCAD" layoutX="12.0" layoutY="337.0" prefHeight="26.0" prefWidth="98.0" />
+      <Label layoutX="11.0" layoutY="230.0" text="Labour Costs (USD)" />
+      <TextField fx:id="labourCostTextUSD" layoutX="12.0" layoutY="257.0" prefHeight="26.0" prefWidth="98.0" />
    </children>
 </AnchorPane>

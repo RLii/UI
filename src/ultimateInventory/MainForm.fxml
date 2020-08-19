@@ -12,6 +12,7 @@
             <Menu mnemonicParsing="false" text="Tools">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#openCostCalculator" text="Cost Calculation" />
+                  <MenuItem mnemonicParsing="false" onAction="#openKits" text="View Kits" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Edit">
@@ -49,6 +50,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#resetRubbers" text="Erase Rubbers" />
                   <MenuItem mnemonicParsing="false" onAction="#resetTips" text="Erase Tips" />
                   <MenuItem mnemonicParsing="false" onAction="#resetClamps" text="Erase Clamps" />
+                  <MenuItem mnemonicParsing="false" onAction="#resetKits" text="Erase Kits" />
               </items>
             </Menu>
          </menus>

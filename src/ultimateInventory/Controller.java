@@ -32,6 +32,7 @@ public class Controller implements Initializable {
     private RubberTableManager rubber;
     private TipTableManager tip;
     private ClampTableManager clamp;
+    private KitTableManager kit;
 
 
     public void initialize(URL url, ResourceBundle rb) {
@@ -65,6 +66,7 @@ public class Controller implements Initializable {
             rubber = new RubberTableManager(conn,true);
             tip = new TipTableManager(conn,true);
             clamp = new ClampTableManager(conn,true);
+            kit = new KitTableManager(conn,true);
             displayAlert("all reset");
         }
         catch(SQLException ex)
@@ -238,6 +240,18 @@ public class Controller implements Initializable {
         catch(SQLException ex)
         {
             displayAlert("ERROR" + ex.getMessage());
+        }
+    }
+    public void resetKits ()
+    {
+        try
+        {
+            kit = new KitTableManager(conn,true);
+            displayAlert("Kit Reset");
+        }
+        catch(SQLException e)
+        {
+            displayAlert("Error "+e);
         }
     }
 
@@ -501,6 +515,23 @@ public class Controller implements Initializable {
                 new TipTableManager(conn,false),
                 new ClampTableManager(conn,false),
                 new KitTableManager(conn, false));
+
+        Scene scene = new Scene(costCalc);
+        Stage stage = new Stage();
+
+        stage.setScene(scene);
+        stage.getIcons().add(new Image("file:src/ultimateInventory/ultimateIcon"));
+        stage.setTitle("CostCalculator");
+
+        stage.show();
+    }
+    public void openKits() throws Exception{
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Kit.fxml"));
+        Parent costCalc = (Parent) fxmlLoader.load();
+
+        KitController kitController = (KitController) fxmlLoader.getController();
+        kitController.setModel(new KitTableManager(conn, false));
 
         Scene scene = new Scene(costCalc);
         Stage stage = new Stage();

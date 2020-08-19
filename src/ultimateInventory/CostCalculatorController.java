@@ -8,15 +8,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -448,6 +447,44 @@ public class CostCalculatorController implements Initializable {
     Label clampSubtotal4;
 
 
+
+    @FXML
+    TextField miscPriceText1;
+    @FXML
+    TextField miscPartText1;
+    @FXML
+    RadioButton miscRadBtnCAD1;
+    @FXML
+    RadioButton miscRadBtnUSD1;
+
+    @FXML
+    TextField miscPriceText2;
+    @FXML
+    TextField miscPartText2;
+    @FXML
+    RadioButton miscRadBtnCAD2;
+    @FXML
+    RadioButton miscRadBtnUSD2;
+
+    @FXML
+    TextField miscPriceText3;
+    @FXML
+    TextField miscPartText3;
+    @FXML
+    RadioButton miscRadBtnCAD3;
+    @FXML
+    RadioButton miscRadBtnUSD3;
+
+    @FXML
+    TextField miscPriceText4;
+    @FXML
+    TextField miscPartText4;
+    @FXML
+    RadioButton miscRadBtnCAD4;
+    @FXML
+    RadioButton miscRadBtnUSD4;
+
+    /*
     @FXML
     ComboBox miscPartComBox1;
     @FXML
@@ -483,9 +520,12 @@ public class CostCalculatorController implements Initializable {
     TextField miscQtyText4;
     @FXML
     Label miscSubtotal4;
+    */
 
     @FXML
-    TextField labourCostText;
+    TextField labourCostTextCAD;
+    @FXML
+    TextField labourCostTextUSD;
     @FXML
     TextField KitNameText;
 
@@ -1129,6 +1169,7 @@ public class CostCalculatorController implements Initializable {
                     usdTotal += clampTableManager.getPrice(clampComBox4.getValue().toString()) * Double.parseDouble(clampQtyText4.getText());
             }
 
+            /*
             String temp = miscSubtotal1.getText();
             if(!(temp.equals("")))
             {
@@ -1177,7 +1218,43 @@ public class CostCalculatorController implements Initializable {
                     usdTotal += Double.parseDouble(temp.substring(0,temp.length()-5));
                 }
             }
-            cadTotal += Double.parseDouble(labourCostText.getText());
+            */
+
+            cadTotal += Double.parseDouble(labourCostTextCAD.getText());
+            usdTotal += Double.parseDouble(labourCostTextUSD.getText());
+
+            if(miscRadBtnCAD1.isSelected())
+            {
+                cadTotal += Double.parseDouble(miscPriceText1.getText());
+            }
+            else
+            {
+                usdTotal += Double.parseDouble(miscPriceText1.getText());
+            }
+            if(miscRadBtnCAD2.isSelected())
+            {
+                cadTotal += Double.parseDouble(miscPriceText2.getText());
+            }
+            else
+            {
+                usdTotal += Double.parseDouble(miscPriceText2.getText());
+            }
+            if(miscRadBtnCAD3.isSelected())
+            {
+                cadTotal += Double.parseDouble(miscPriceText3.getText());
+            }
+            else
+            {
+                usdTotal += Double.parseDouble(miscPriceText3.getText());
+            }
+            if(miscRadBtnCAD4.isSelected())
+            {
+                cadTotal += Double.parseDouble(miscPriceText4.getText());
+            }
+            else
+            {
+                usdTotal += Double.parseDouble(miscPriceText4.getText());
+            }
 
             DecimalFormat df = new DecimalFormat("####.##");
             CADTotalLabel.setText(df.format(cadTotal));
@@ -2319,6 +2396,7 @@ public class CostCalculatorController implements Initializable {
             }
         }
     }
+    /*
     public void openMiscInfo1(ActionEvent actionEvent)
     {
         String part = miscPartComBox1.getValue().toString();
@@ -2535,6 +2613,7 @@ public class CostCalculatorController implements Initializable {
             displayAlert("Error: "+e);
         }
     }
+    */
     /******************************************************************************************************************/
     private void openInfoSheet(String title, String id, String [] array)throws Exception
     {
@@ -3843,6 +3922,7 @@ public class CostCalculatorController implements Initializable {
             }
         }
     }
+    /*
     public void CalculateMiscSubtotal1(ActionEvent actionEvent)
     {
         DecimalFormat df = new DecimalFormat("#####.##");
@@ -4191,6 +4271,8 @@ public class CostCalculatorController implements Initializable {
             displayAlert("Error :"+e);
         }
     }
+     */
+
     public void calculateSubtotals() throws Exception
     {
         CalculateNutSubtotal1(new ActionEvent());
@@ -4253,10 +4335,12 @@ public class CostCalculatorController implements Initializable {
         CalculateTipSubtotal4(new ActionEvent());
         CalculateClampSubtotal4(new ActionEvent());
 
+        /*
         CalculateMiscSubtotal1(new ActionEvent());
         CalculateMiscSubtotal2(new ActionEvent());
         CalculateMiscSubtotal3(new ActionEvent());
         CalculateMiscSubtotal4(new ActionEvent());
+         */
     }
 
     private void displayAlert(String msg) {
@@ -4280,6 +4364,7 @@ public class CostCalculatorController implements Initializable {
         }
     }
 
+    /*
     public void updateIdComBox1(ActionEvent actionEvent)
     {
         String part = miscPartComBox1.getValue().toString();
@@ -4451,24 +4536,69 @@ public class CostCalculatorController implements Initializable {
             displayAlert("Error: " + e);
         }
     }
+     */
+
+    public void clickRadBtnCAD1(ActionEvent actionEvent)
+    {
+        miscRadBtnCAD1.setSelected(true);
+        miscRadBtnUSD1.setSelected(false);
+    }
+    public void clickRadBtnUSD1(ActionEvent actionEvent)
+    {
+        miscRadBtnCAD1.setSelected(false);
+        miscRadBtnUSD1.setSelected(true);
+    }
+    public void clickRadBtnCAD2(ActionEvent actionEvent)
+    {
+        miscRadBtnCAD2.setSelected(true);
+        miscRadBtnUSD2.setSelected(false);
+    }
+    public void clickRadBtnUSD2(ActionEvent actionEvent)
+    {
+        miscRadBtnCAD2.setSelected(false);
+        miscRadBtnUSD2.setSelected(true);
+    }
+    public void clickRadBtnCAD3(ActionEvent actionEvent)
+    {
+        miscRadBtnCAD3.setSelected(true);
+        miscRadBtnUSD3.setSelected(false);
+    }
+    public void clickRadBtnUSD3(ActionEvent actionEvent)
+    {
+        miscRadBtnCAD3.setSelected(false);
+        miscRadBtnUSD3.setSelected(true);
+    }
+    public void clickRadBtnCAD4(ActionEvent actionEvent)
+    {
+        miscRadBtnCAD4.setSelected(true);
+        miscRadBtnUSD4.setSelected(false);
+    }
+    public void clickRadBtnUSD4(ActionEvent actionEvent)
+    {
+        miscRadBtnCAD4.setSelected(false);
+        miscRadBtnUSD4.setSelected(true);
+    }
+
+
+
 
     public void saveAsKit()
     {
-        String bolts = boltComBox1.getValue().toString() + "," + boltComBox2.getValue().toString() + "," + boltComBox3.getValue().toString() + "," + boltComBox4.getValue().toString();
-        String cats = catComBox1.getValue().toString() + "," + catComBox2.getValue().toString() + "," + catComBox3.getValue().toString() + "," + catComBox4.getValue().toString();
-        String clamps = clampComBox1.getValue().toString() + "," + clampComBox2.getValue().toString() + "," + clampComBox3.getValue().toString() + "," + clampComBox4.getValue().toString();
-        String elbows = elbowComBox1.getValue().toString() + "," + elbowComBox2.getValue().toString() + "," + elbowComBox3.getValue().toString() + "," + elbowComBox4.getValue().toString();
-        String flanges = flangeComBox1.getValue().toString() + "," + flangeComBox2.getValue().toString() + "," + flangeComBox3.getValue().toString() + "," + flangeComBox4.getValue().toString();
-        String flexs = flexPipeComBox1.getValue().toString() + "," + flexPipeComBox2.getValue().toString() + "," + flexPipeComBox3.getValue().toString() + "," + flexPipeComBox4.getValue().toString();
-        String hangers = hangerComBox1.getValue().toString() + "," + hangerComBox2.getValue().toString() + "," + hangerComBox3.getValue().toString() + "," + hangerComBox4.getValue().toString();
-        String mufflers = mufflerComBox1.getValue().toString() + "," + mufflerComBox2.getValue().toString() + "," + mufflerComBox3.getValue().toString() + "," + mufflerComBox4.getValue().toString();
-        String nuts = nutComBox1.getValue().toString() + "," + nutComBox2.getValue().toString() + "," + nutComBox3.getValue().toString() + "," + nutComBox4.getValue().toString();
-        String pipes = pipeComBox1.getValue().toString() + "," + pipeComBox2.getValue().toString() + "," + pipeComBox3.getValue().toString() + "," + pipeComBox4.getValue().toString();
-        String resonators = resonatorComBox1.getValue().toString() + "," + resonatorComBox2.getValue().toString() + "," + resonatorComBox3.getValue().toString() + "," + resonatorComBox4.getValue().toString();
-        String rubbers = rubberComBox1.getValue().toString() + "," + rubberComBox2.getValue().toString() + "," + rubberComBox3.getValue().toString() + "," + rubberComBox4.getValue().toString();
-        String tips = tipComBox1.getValue().toString() + "," + tipComBox2.getValue().toString() + "," + tipComBox3.getValue().toString() + "," + tipComBox4.getValue().toString();
-        String washers = washerComBox1.getValue().toString() + "," + washerComBox2.getValue().toString() + "," + washerComBox3.getValue().toString() + "," + washerComBox4.getValue().toString();
-
+        String bolts = boltComBox1.getEditor().getText() + "," + boltComBox2.getEditor().getText() + "," + boltComBox3.getEditor().getText() + "," + boltComBox4.getEditor().getText();
+        String cats = catComBox1.getEditor().getText() + "," + catComBox2.getEditor().getText() + "," + catComBox3.getEditor().getText() + "," + catComBox4.getEditor().getText();
+        String clamps = clampComBox1.getEditor().getText() + "," + clampComBox2.getEditor().getText() + "," + clampComBox3.getEditor().getText() + "," + clampComBox4.getEditor().getText();
+        String elbows = elbowComBox1.getEditor().getText() + "," + elbowComBox2.getEditor().getText() + "," + elbowComBox3.getEditor().getText() + "," + elbowComBox4.getEditor().getText();
+        String flanges = flangeComBox1.getEditor().getText() + "," + flangeComBox2.getEditor().getText() + "," + flangeComBox3.getEditor().getText() + "," + flangeComBox4.getEditor().getText();
+        String flexs = flexPipeComBox1.getEditor().getText() + "," + flexPipeComBox2.getEditor().getText() + "," + flexPipeComBox3.getEditor().getText() + "," + flexPipeComBox4.getEditor().getText();
+        String hangers = hangerComBox1.getEditor().getText() + "," + hangerComBox2.getEditor().getText() + "," + hangerComBox3.getEditor().getText() + "," + hangerComBox4.getEditor().getText();
+        String mufflers = mufflerComBox1.getEditor().getText() + "," + mufflerComBox2.getEditor().getText() + "," + mufflerComBox3.getEditor().getText() + "," + mufflerComBox4.getEditor().getText();
+        String nuts = nutComBox1.getEditor().getText() + "," + nutComBox2.getEditor().getText() + "," + nutComBox3.getEditor().getText() + "," + nutComBox4.getEditor().getText();
+        String pipes = pipeComBox1.getEditor().getText() + "," + pipeComBox2.getEditor().getText() + "," + pipeComBox3.getEditor().getText() + "," + pipeComBox4.getEditor().getText();
+        String resonators = resonatorComBox1.getEditor().getText() + "," + resonatorComBox2.getEditor().getText() + "," + resonatorComBox3.getEditor().getText() + "," + resonatorComBox4.getEditor().getText();
+        String rubbers = rubberComBox1.getEditor().getText() + "," + rubberComBox2.getEditor().getText() + "," + rubberComBox3.getEditor().getText() + "," + rubberComBox4.getEditor().getText();
+        String tips = tipComBox1.getEditor().getText() + "," + tipComBox2.getEditor().getText() + "," + tipComBox3.getEditor().getText() + "," + tipComBox4.getEditor().getText();
+        String washers = washerComBox1.getEditor().getText() + "," + washerComBox2.getEditor().getText() + "," + washerComBox3.getEditor().getText() + "," + washerComBox4.getEditor().getText();
+        String miscs = miscPartText1.getText() + "," + miscPartText2.getText() + "," + miscPartText3.getText() + "," + miscPartText4.getText();
 
         String boltsQTY = boltQtyText1.getText() + "," + boltQtyText2.getText() + "," + boltQtyText3.getText() + "," + boltQtyText4.getText();
         String catsQTY = catQtyText1.getText() + "," + catQtyText2.getText() + "," + catQtyText3.getText() + "," + catQtyText4.getText();
@@ -4484,21 +4614,31 @@ public class CostCalculatorController implements Initializable {
         String rubbersQTY = rubberQtyText1.getText() + "," + rubberQtyText2.getText() + "," + rubberQtyText3.getText() + "," + rubberQtyText4.getText();
         String tipsQTY = tipQtyText1.getText() + "," + tipQtyText2.getText() + "," + tipQtyText3.getText() + "," + tipQtyText4.getText();
         String washersQTY = washerQtyText1.getText() + "," + washerQtyText2.getText() + "," + washerQtyText3.getText() + "," + washerQtyText4.getText();
+        String miscPrice = miscPriceText1.getText() + "," + miscPriceText2.getText() + "," + miscPriceText3.getText() + "," + miscPriceText4.getText();
 
         try {
-            kitTableManager.add(KitNameText.getText(), bolts, boltsQTY, cats, catsQTY, clamps, clampsQTY, elbows, elbowsQTY, flanges, flangesQTY, flexs, flexsQTY, hangers, hangersQTY, mufflers, mufflersQTY,
-                    nuts, nutsQTY, pipes, pipesQTY, resonators, resonatorsQTY, rubbers, rubbersQTY, tips, tipsQTY, washers, washersQTY, Double.parseDouble(CADTotalLabel.getText()), Double.parseDouble(USDTotalLabel.getText()));
+            if(!(KitNameText.getText().equals(""))) {
+                kitTableManager.add(KitNameText.getText(), bolts, boltsQTY, cats, catsQTY, clamps, clampsQTY, elbows, elbowsQTY, flanges, flangesQTY, flexs, flexsQTY, hangers, hangersQTY, mufflers, mufflersQTY,
+                        nuts, nutsQTY, pipes, pipesQTY, resonators, resonatorsQTY, rubbers, rubbersQTY, tips, tipsQTY, washers, washersQTY, miscs, miscPrice, Double.parseDouble(CADTotalLabel.getText()), Double.parseDouble(USDTotalLabel.getText()));
+                System.out.print("KIT ADDED!");
+            }
+            else {
+                displayAlert("Name the Kit!");
+            }
         }
         catch(Exception e)
         {
-            
+            if(e instanceof SQLException)
+            {
+                displayAlert("Error: " + e);
+            }
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
+        /*
         ObservableList miscData = FXCollections.observableArrayList();
         miscData.add("Nuts");
         miscData.add("Pipe");
@@ -4518,6 +4658,7 @@ public class CostCalculatorController implements Initializable {
         miscPartComBox2.setItems(miscData);
         miscPartComBox3.setItems(miscData);
         miscPartComBox4.setItems(miscData);
+         */
 
         nutQtyText1.setText("0");
         pipeQtyText1.setText("0");
@@ -4579,12 +4720,20 @@ public class CostCalculatorController implements Initializable {
         tipQtyText4.setText("0");
         clampQtyText4.setText("0");
 
+        /*
         miscQtyText1.setText("0");
         miscQtyText2.setText("0");
         miscQtyText3.setText("0");
         miscQtyText4.setText("0");
+         */
 
-        labourCostText.setText("0");
+        miscPriceText1.setText("0");
+        miscPriceText2.setText("0");
+        miscPriceText3.setText("0");
+        miscPriceText4.setText("0");
+
+        labourCostTextCAD.setText("0");
+        labourCostTextUSD.setText("0");
 
 
 

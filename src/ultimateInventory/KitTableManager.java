@@ -1,9 +1,9 @@
 package ultimateInventory;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.sql.*;
 
 public class KitTableManager {
 
@@ -53,6 +53,8 @@ public class KitTableManager {
                         + "TipQTY CHAR(30),"
                         + "Washer CHAR (30),"
                         + "WasherQTY CHAR (30),"
+                        + "Misc CHAR (30),"
+                        + "MiscPrice CHAR (30),"
                         + "CostCAD DOUBLE,"
                         + "CostUSD DOUBLE" +")");
             }
@@ -60,10 +62,10 @@ public class KitTableManager {
     }
     public void add(String name, String bolt, String boltQTY, String cat, String catQTY, String clamp, String clampQTY, String elbow, String elbowQTY, String flange, String flangeQTY, String flex, String flexQTY,
     String hanger, String hangerQTY, String muffler, String mufflerQTY, String nut, String nutQTY, String pipe, String pipeLENGTH, String resonator, String resonatorQTY, String rubber, String rubberQTY,
-                    String tip, String tipQTY, String washer, String washerQTY, double costCad, double costUsd) throws SQLException
+                    String tip, String tipQTY, String washer, String washerQTY, String misc, String miscPRICE, double costCad, double costUsd) throws SQLException
     {
         String sql = "INSERT INTO Kits(Name, Bolt, BoltQTY, Cat, CatQTY, Clamp, clampQTY, Elbow, ElbowQTY, Flange, FlangeQTY, FlexPipe, FlexPipeQTY, Hanger, HangerQTY, Muffler, MufflerQTY," +
-                "Nut, NutQTY, Pipe, PipeLENGTH, Resonator, ResonatorQTY, Rubber, RubberQTY, Tip, TipQTY, Washer, WasherQTY, CostCAD, CostUSD) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "Nut, NutQTY, Pipe, PipeLENGTH, Resonator, ResonatorQTY, Rubber, RubberQTY, Tip, TipQTY, Washer, WasherQTY, Misc, MiscPrice, CostCAD, CostUSD) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement prep = connection.prepareStatement(sql);
         prep.setString(1, name);
         prep.setString(2, bolt);
@@ -94,8 +96,10 @@ public class KitTableManager {
         prep.setString(27, tipQTY);
         prep.setString(28, washer);
         prep.setString(29, washerQTY);
-        prep.setDouble(30, costCad);
-        prep.setDouble(31, costUsd);
+        prep.setString(30, misc);
+        prep.setString(31, miscPRICE);
+        prep.setDouble(32, costCad);
+        prep.setDouble(33, costUsd);
         prep.executeUpdate();
     }
     public void delete(String name) throws SQLException
@@ -104,5 +108,18 @@ public class KitTableManager {
         PreparedStatement stmt = connection.prepareStatement(sql);
         stmt.setString(1, name);
         stmt.executeUpdate();
+    }
+    public ObservableList<String> getKitNames() throws SQLException
+    {
+        ObservableList<String> list = FXCollections.observableArrayList();
+        ResultSet rs;
+        Statement stmt = connection.createStatement();
+        rs = stmt.executeQuery("SELECT Name FROM Kits");
+        while(rs.next())
+        {
+            list.add(rs.getString(1));
+        }
+
+        return list;
     }
 }
