@@ -669,7 +669,7 @@ public class CostCalculatorController implements Initializable {
                 tipComBox1.getSelectionModel().selectFirst();
                 clampComBox1.getSelectionModel().selectFirst();
 
-                /*nutComBox2.getSelectionModel().selectNext();
+                nutComBox2.getSelectionModel().selectNext();
                 pipeComBox2.getSelectionModel().selectNext();
                 elbowComBox2.getSelectionModel().selectNext();
                 flangeComBox2.getSelectionModel().selectNext();
@@ -712,7 +712,7 @@ public class CostCalculatorController implements Initializable {
                 washerComBox4.getSelectionModel().selectFirst();
                 rubberComBox4.getSelectionModel().selectFirst();
                 tipComBox4.getSelectionModel().selectFirst();
-                clampComBox4.getSelectionModel().selectFirst();*/
+                clampComBox4.getSelectionModel().selectFirst();
 
                 hasBuilt = true;
             }
@@ -4584,20 +4584,21 @@ public class CostCalculatorController implements Initializable {
 
     public void saveAsKit()
     {
-        String bolts = boltComBox1.getEditor().getText() + "," + boltComBox2.getEditor().getText() + "," + boltComBox3.getEditor().getText() + "," + boltComBox4.getEditor().getText();
-        String cats = catComBox1.getEditor().getText() + "," + catComBox2.getEditor().getText() + "," + catComBox3.getEditor().getText() + "," + catComBox4.getEditor().getText();
-        String clamps = clampComBox1.getEditor().getText() + "," + clampComBox2.getEditor().getText() + "," + clampComBox3.getEditor().getText() + "," + clampComBox4.getEditor().getText();
-        String elbows = elbowComBox1.getEditor().getText() + "," + elbowComBox2.getEditor().getText() + "," + elbowComBox3.getEditor().getText() + "," + elbowComBox4.getEditor().getText();
-        String flanges = flangeComBox1.getEditor().getText() + "," + flangeComBox2.getEditor().getText() + "," + flangeComBox3.getEditor().getText() + "," + flangeComBox4.getEditor().getText();
-        String flexs = flexPipeComBox1.getEditor().getText() + "," + flexPipeComBox2.getEditor().getText() + "," + flexPipeComBox3.getEditor().getText() + "," + flexPipeComBox4.getEditor().getText();
-        String hangers = hangerComBox1.getEditor().getText() + "," + hangerComBox2.getEditor().getText() + "," + hangerComBox3.getEditor().getText() + "," + hangerComBox4.getEditor().getText();
-        String mufflers = mufflerComBox1.getEditor().getText() + "," + mufflerComBox2.getEditor().getText() + "," + mufflerComBox3.getEditor().getText() + "," + mufflerComBox4.getEditor().getText();
-        String nuts = nutComBox1.getEditor().getText() + "," + nutComBox2.getEditor().getText() + "," + nutComBox3.getEditor().getText() + "," + nutComBox4.getEditor().getText();
-        String pipes = pipeComBox1.getEditor().getText() + "," + pipeComBox2.getEditor().getText() + "," + pipeComBox3.getEditor().getText() + "," + pipeComBox4.getEditor().getText();
-        String resonators = resonatorComBox1.getEditor().getText() + "," + resonatorComBox2.getEditor().getText() + "," + resonatorComBox3.getEditor().getText() + "," + resonatorComBox4.getEditor().getText();
-        String rubbers = rubberComBox1.getEditor().getText() + "," + rubberComBox2.getEditor().getText() + "," + rubberComBox3.getEditor().getText() + "," + rubberComBox4.getEditor().getText();
-        String tips = tipComBox1.getEditor().getText() + "," + tipComBox2.getEditor().getText() + "," + tipComBox3.getEditor().getText() + "," + tipComBox4.getEditor().getText();
-        String washers = washerComBox1.getEditor().getText() + "," + washerComBox2.getEditor().getText() + "," + washerComBox3.getEditor().getText() + "," + washerComBox4.getEditor().getText();
+        calculateTotals();
+        String bolts = boltComBox1.getEditor().getText().trim() + "," + boltComBox2.getEditor().getText().trim() + "," + boltComBox3.getEditor().getText().trim() + "," + boltComBox4.getEditor().getText().trim();
+        String cats = catComBox1.getEditor().getText().trim() + "," + catComBox2.getEditor().getText().trim() + "," + catComBox3.getEditor().getText().trim() + "," + catComBox4.getEditor().getText().trim();
+        String clamps = clampComBox1.getEditor().getText().trim() + "," + clampComBox2.getEditor().getText().trim() + "," + clampComBox3.getEditor().getText().trim() + "," + clampComBox4.getEditor().getText().trim();
+        String elbows = elbowComBox1.getEditor().getText().trim() + "," + elbowComBox2.getEditor().getText().trim() + "," + elbowComBox3.getEditor().getText().trim() + "," + elbowComBox4.getEditor().getText().trim();
+        String flanges = flangeComBox1.getEditor().getText().trim() + "," + flangeComBox2.getEditor().getText().trim() + "," + flangeComBox3.getEditor().getText().trim() + "," + flangeComBox4.getEditor().getText().trim();
+        String flexs = flexPipeComBox1.getEditor().getText().trim() + "," + flexPipeComBox2.getEditor().getText().trim() + "," + flexPipeComBox3.getEditor().getText().trim() + "," + flexPipeComBox4.getEditor().getText().trim();
+        String hangers = hangerComBox1.getEditor().getText().trim() + "," + hangerComBox2.getEditor().getText().trim() + "," + hangerComBox3.getEditor().getText().trim() + "," + hangerComBox4.getEditor().getText().trim();
+        String mufflers = mufflerComBox1.getEditor().getText().trim() + "," + mufflerComBox2.getEditor().getText().trim() + "," + mufflerComBox3.getEditor().getText().trim() + "," + mufflerComBox4.getEditor().getText().trim();
+        String nuts = nutComBox1.getEditor().getText().trim() + "," + nutComBox2.getEditor().getText().trim() + "," + nutComBox3.getEditor().getText().trim() + "," + nutComBox4.getEditor().getText().trim();
+        String pipes = pipeComBox1.getEditor().getText().trim() + "," + pipeComBox2.getEditor().getText().trim() + "," + pipeComBox3.getEditor().getText().trim() + "," + pipeComBox4.getEditor().getText().trim();
+        String resonators = resonatorComBox1.getEditor().getText().trim() + "," + resonatorComBox2.getEditor().getText().trim() + "," + resonatorComBox3.getEditor().getText().trim() + "," + resonatorComBox4.getEditor().getText().trim();
+        String rubbers = rubberComBox1.getEditor().getText().trim() + "," + rubberComBox2.getEditor().getText().trim() + "," + rubberComBox3.getEditor().getText().trim() + "," + rubberComBox4.getEditor().getText().trim();
+        String tips = tipComBox1.getEditor().getText().trim() + "," + tipComBox2.getEditor().getText().trim() + "," + tipComBox3.getEditor().getText().trim() + "," + tipComBox4.getEditor().getText().trim();
+        String washers = washerComBox1.getEditor().getText().trim() + "," + washerComBox2.getEditor().getText().trim() + "," + washerComBox3.getEditor().getText().trim() + "," + washerComBox4.getEditor().getText().trim();
         String miscs = miscPartText1.getText() + "," + miscPartText2.getText() + "," + miscPartText3.getText() + "," + miscPartText4.getText();
 
         String boltsQTY = boltQtyText1.getText() + "," + boltQtyText2.getText() + "," + boltQtyText3.getText() + "," + boltQtyText4.getText();
@@ -4616,10 +4617,12 @@ public class CostCalculatorController implements Initializable {
         String washersQTY = washerQtyText1.getText() + "," + washerQtyText2.getText() + "," + washerQtyText3.getText() + "," + washerQtyText4.getText();
         String miscPrice = miscPriceText1.getText() + "," + miscPriceText2.getText() + "," + miscPriceText3.getText() + "," + miscPriceText4.getText();
 
+
         try {
             if(!(KitNameText.getText().equals(""))) {
-                kitTableManager.add(KitNameText.getText(), bolts, boltsQTY, cats, catsQTY, clamps, clampsQTY, elbows, elbowsQTY, flanges, flangesQTY, flexs, flexsQTY, hangers, hangersQTY, mufflers, mufflersQTY,
-                        nuts, nutsQTY, pipes, pipesQTY, resonators, resonatorsQTY, rubbers, rubbersQTY, tips, tipsQTY, washers, washersQTY, miscs, miscPrice, Double.parseDouble(CADTotalLabel.getText()), Double.parseDouble(USDTotalLabel.getText()));
+                kitTableManager.add(KitNameText.getText().trim(), bolts, boltsQTY, cats, catsQTY, clamps, clampsQTY, elbows, elbowsQTY, flanges, flangesQTY, flexs, flexsQTY, hangers, hangersQTY, mufflers, mufflersQTY,
+                        nuts, nutsQTY, pipes, pipesQTY, resonators, resonatorsQTY, rubbers, rubbersQTY, tips, tipsQTY, washers, washersQTY, miscs, miscPrice,
+                        Double.parseDouble(labourCostTextCAD.getText()), Double.parseDouble(labourCostTextUSD.getText()), Double.parseDouble(CADTotalLabel.getText()), Double.parseDouble(USDTotalLabel.getText()));
                 System.out.print("KIT ADDED!");
             }
             else {
