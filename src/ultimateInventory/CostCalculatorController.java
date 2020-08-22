@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 public class CostCalculatorController implements Initializable {
@@ -592,6 +593,21 @@ public class CostCalculatorController implements Initializable {
             rubberData.addAll(rubberTableManager.getIdNames());
             tipData.addAll(tipTableManager.getIdNames());
             clampData.addAll(clampTableManager.getIdNames());
+
+            Collections.sort(nutsData);
+            Collections.sort(pipeData);
+            Collections.sort(elbowData);
+            Collections.sort(flangeData);
+            Collections.sort(hangerData);
+            Collections.sort(mufflerData);
+            Collections.sort(resonatorData);
+            Collections.sort(catData);
+            Collections.sort(flexPipeData);
+            Collections.sort(boltData);
+            Collections.sort(washerData);
+            Collections.sort(rubberData);
+            Collections.sort(tipData);
+            Collections.sort(clampData);
 
             nutComBox1.setItems(nutsData);
             pipeComBox1.setItems(pipeData);
@@ -4617,13 +4633,49 @@ public class CostCalculatorController implements Initializable {
         String washersQTY = washerQtyText1.getText() + "," + washerQtyText2.getText() + "," + washerQtyText3.getText() + "," + washerQtyText4.getText();
         String miscPrice = miscPriceText1.getText() + "," + miscPriceText2.getText() + "," + miscPriceText3.getText() + "," + miscPriceText4.getText();
 
+        String cur1, cur2, cur3, cur4;
+
+        if(miscRadBtnCAD1.isSelected())
+        {
+            cur1 = "CAD";
+        }
+        else
+        {
+            cur1 = "USD";
+        }
+        if(miscRadBtnCAD2.isSelected())
+        {
+            cur2 = "CAD";
+        }
+        else
+        {
+            cur2 = "USD";
+        }
+        if(miscRadBtnCAD3.isSelected())
+        {
+            cur3 = "CAD";
+        }
+        else
+        {
+            cur3 = "USD";
+        }
+        if(miscRadBtnCAD4.isSelected())
+        {
+            cur4 = "CAD";
+        }
+        else
+        {
+            cur4 = "USD";
+        }
+
+        String miscCurr = cur1 + "," + cur2 + "," + cur3 + "," + cur4;
 
         try {
             if(!(KitNameText.getText().equals(""))) {
                 kitTableManager.add(KitNameText.getText().trim(), bolts, boltsQTY, cats, catsQTY, clamps, clampsQTY, elbows, elbowsQTY, flanges, flangesQTY, flexs, flexsQTY, hangers, hangersQTY, mufflers, mufflersQTY,
-                        nuts, nutsQTY, pipes, pipesQTY, resonators, resonatorsQTY, rubbers, rubbersQTY, tips, tipsQTY, washers, washersQTY, miscs, miscPrice,
+                        nuts, nutsQTY, pipes, pipesQTY, resonators, resonatorsQTY, rubbers, rubbersQTY, tips, tipsQTY, washers, washersQTY, miscs, miscPrice, miscCurr,
                         Double.parseDouble(labourCostTextCAD.getText()), Double.parseDouble(labourCostTextUSD.getText()), Double.parseDouble(CADTotalLabel.getText()), Double.parseDouble(USDTotalLabel.getText()));
-                System.out.print("KIT ADDED!");
+                displayAlert("Kit Added!");
             }
             else {
                 displayAlert("Name the Kit!");
@@ -4633,7 +4685,11 @@ public class CostCalculatorController implements Initializable {
         {
             if(e instanceof SQLException)
             {
-                displayAlert("Error: " + e);
+                displayAlert("Kit Names must be unique");
+            }
+            else
+            {
+                displayAlert("Error :" + e);
             }
         }
     }

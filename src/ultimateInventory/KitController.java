@@ -49,6 +49,7 @@ public class KitController implements Initializable {
         {
 
         }
+        Collections.sort(list);
         kitNameComBox.setItems(list);
         kitNameComBox.getSelectionModel().selectFirst();
     }
@@ -278,7 +279,7 @@ public class KitController implements Initializable {
                 Object [] objectArr = empinfo.get(Integer.toString(key));
                 int cellid = 0;
 
-                if(!(Objects.toString(objectArr[4]).trim().equals("0") || (Objects.toString(objectArr[1]).trim().equals("")))) {
+                if(!((Objects.toString(objectArr[4]).trim().equals("0")) || (Objects.toString(objectArr[1]).trim().equals("")))) {
                     row = spreadsheet.createRow(rowid++);
                     for (Object obj : objectArr) {
                         Cell cell = row.createCell(cellid++);
@@ -304,7 +305,7 @@ public class KitController implements Initializable {
 
             workbook.write(out);
             out.close();
-            System.out.print("Write COMPLETE");
+            displayAlert("Kit Exported");
         }
         catch(Exception e)
         {

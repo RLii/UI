@@ -87,6 +87,7 @@ public class KitTableManager {
                         + "WasherQTY CHAR (30),"
                         + "Misc CHAR (30),"
                         + "MiscPrice CHAR (30),"
+                        + "MiscCurr CHAR (30),"
                         + "labourCAD DOUBLE ,"
                         + "labourUSD DOUBLE,"
                         + "CostCAD DOUBLE,"
@@ -96,10 +97,10 @@ public class KitTableManager {
     }
     public void add(String name, String bolt, String boltQTY, String cat, String catQTY, String clamp, String clampQTY, String elbow, String elbowQTY, String flange, String flangeQTY, String flex, String flexQTY,
     String hanger, String hangerQTY, String muffler, String mufflerQTY, String nut, String nutQTY, String pipe, String pipeLENGTH, String resonator, String resonatorQTY, String rubber, String rubberQTY,
-                    String tip, String tipQTY, String washer, String washerQTY, String misc, String miscPRICE, double cadLabour, double usdLabour, double costCad, double costUsd) throws SQLException
+                    String tip, String tipQTY, String washer, String washerQTY, String misc, String miscPRICE, String miscCurr, double cadLabour, double usdLabour, double costCad, double costUsd) throws SQLException
     {
         String sql = "INSERT INTO Kits(ID, Bolt, BoltQTY, Cat, CatQTY, Clamp, clampQTY, Elbow, ElbowQTY, Flange, FlangeQTY, FlexPipe, FlexPipeQTY, Hanger, HangerQTY, Muffler, MufflerQTY," +
-                "Nut, NutQTY, Pipe, PipeLENGTH, Resonator, ResonatorQTY, Rubber, RubberQTY, Tip, TipQTY, Washer, WasherQTY, Misc, MiscPrice, labourCAD, labourUSD, CostCAD, CostUSD) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "Nut, NutQTY, Pipe, PipeLENGTH, Resonator, ResonatorQTY, Rubber, RubberQTY, Tip, TipQTY, Washer, WasherQTY, Misc, MiscPrice, MiscCurr, labourCAD, labourUSD, CostCAD, CostUSD) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement prep = connection.prepareStatement(sql);
         prep.setString(1, name);
         prep.setString(2, bolt);
@@ -132,10 +133,11 @@ public class KitTableManager {
         prep.setString(29, washerQTY);
         prep.setString(30, misc);
         prep.setString(31, miscPRICE);
-        prep.setDouble(32, cadLabour);
-        prep.setDouble(33, usdLabour);
-        prep.setDouble(34, costCad);
-        prep.setDouble(35, costUsd);
+        prep.setString(32, miscCurr);
+        prep.setDouble(33, cadLabour);
+        prep.setDouble(34, usdLabour);
+        prep.setDouble(35, costCad);
+        prep.setDouble(36, costUsd);
         prep.executeUpdate();
     }
     public void delete(String name) throws SQLException
@@ -361,6 +363,7 @@ public class KitTableManager {
         }
         String ids = rs.getString(30);
         String qty = rs.getString(31);
+        String curr = rs.getString(32);
 
         for(int x = 0; x < 4; x++) {
             int commaPos = ids.indexOf(",");
@@ -368,25 +371,35 @@ public class KitTableManager {
                 array[counter][0] = ids.substring(0, commaPos);
                 ids = ids.substring(commaPos + 1, ids.length());
             } else {
-                array[counter][3] = ids;
+                array[counter][0] = ids;
             }
 
             commaPos = qty.indexOf(",");
             if (commaPos != -1) {
-                array[counter][2] = qty.substring(0, commaPos);
+                array[counter][3] = qty.substring(0, commaPos);
                 qty = qty.substring(commaPos + 1, qty.length());
             } else {
                 array[counter][3] = qty;
             }
+
+
+            commaPos = curr.indexOf(",");
+            if (commaPos != -1) {
+                array[counter][4] = curr.substring(0, commaPos);
+                curr = curr.substring(commaPos + 1, curr.length());
+            } else {
+                array[counter][4] = curr;
+            }
+
             array[counter][1] = "";
             array[counter][2] = "";
             counter++;
 
         }
-        array[0][0] = Double.toString(rs.getDouble(32)) + " cad Labour";
-        array[0][1] = Double.toString(rs.getDouble(33)) + " usd Labour";
-        array[0][2] = Double.toString(rs.getDouble(34)) + " cad Total";
-        array[0][3] = Double.toString(rs.getDouble(35)) + " usd Total";
+        array[0][0] = Double.toString(rs.getDouble(33)) + " cad Labour";
+        array[0][1] = Double.toString(rs.getDouble(34)) + " usd Labour";
+        array[0][2] = Double.toString(rs.getDouble(35)) + " cad Total";
+        array[0][3] = Double.toString(rs.getDouble(36)) + " usd Total";
 
         return array;
     }

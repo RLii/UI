@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateDB/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateDB/db.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateDB/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateDB/log/log.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UltimateDB/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateDB/log/log1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UltimateDB/log/log1.dat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateDB/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateDB/log/logmirror.ctrl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateDB/seg0/c101.dat" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateDB/seg0/c101.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateDB/seg0/c111.dat" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateDB/seg0/c111.dat" afterDir="false" />
@@ -20,17 +20,16 @@
       <change beforePath="$PROJECT_DIR$/UltimateDB/seg0/c71.dat" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateDB/seg0/c71.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateDB/seg0/c81.dat" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateDB/seg0/c81.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateDB/seg0/c820.dat" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateDB/seg0/c820.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UltimateDB/seg0/c831.dat" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateDB/seg0/c831.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateDB/seg0/c90.dat" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateDB/seg0/c90.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UltimateDB/seg0/c9c0.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UltimateDB/seg0/c9d1.dat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateDB/seg0/ca1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateDB/seg0/ca1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UltimateDB/seg0/caa0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UltimateDB/seg0/cab1.dat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateDB/seg0/cb1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateDB/seg0/cb1.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UltimateDB/seg0/cf0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/UltimateDB/seg0/cf0.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/UltimateInventory/ultimateInventory/CostCalculator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UltimateInventory/ultimateInventory/CostCalculator.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/UltimateInventory/ultimateInventory/CostCalculatorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UltimateInventory/ultimateInventory/CostCalculatorController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/UltimateInventory/ultimateInventory/KitTableManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/UltimateInventory/ultimateInventory/KitTableManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ultimateInventory/CostCalculator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ultimateInventory/CostCalculator.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ultimateInventory/CostCalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ultimateInventory/CostCalculatorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ultimateInventory/KitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ultimateInventory/KitController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ultimateInventory/KitTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ultimateInventory/KitTableManager.java" afterDir="false" />
@@ -264,7 +263,7 @@
       <workItem from="1595614476584" duration="17716000" />
       <workItem from="1596555167515" duration="5693000" />
       <workItem from="1596653122370" duration="70348000" />
-      <workItem from="1597356121089" duration="53074000" />
+      <workItem from="1597356121089" duration="58049000" />
     </task>
     <servers />
   </component>
@@ -308,22 +307,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="888" y="208" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1597853613848" />
-    <state width="1493" height="109" key="GridCell.Tab.0.bottom" timestamp="1597953256020">
+    <state width="1493" height="109" key="GridCell.Tab.0.bottom" timestamp="1598122616737">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="109" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597953256020" />
-    <state width="1493" height="109" key="GridCell.Tab.0.center" timestamp="1597953256020">
+    <state width="1493" height="109" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598122616737" />
+    <state width="1493" height="109" key="GridCell.Tab.0.center" timestamp="1598122616737">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="109" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597953256020" />
-    <state width="1493" height="109" key="GridCell.Tab.0.left" timestamp="1597953256019">
+    <state width="1493" height="109" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598122616737" />
+    <state width="1493" height="109" key="GridCell.Tab.0.left" timestamp="1598122616737">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="109" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597953256019" />
-    <state width="1493" height="109" key="GridCell.Tab.0.right" timestamp="1597953256020">
+    <state width="1493" height="109" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598122616737" />
+    <state width="1493" height="109" key="GridCell.Tab.0.right" timestamp="1598122616737">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="109" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597953256020" />
+    <state width="1493" height="109" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598122616737" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1597871533164">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
