@@ -11,9 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -40,9 +38,12 @@ public class Controller implements Initializable {
         try {
             // Create a named constant for the URL
             // NOTE: This value is specific for Java DB
-            String DB_URL = "jdbc:derby:UltimateDB";
+            String DB_URL = "jdbc:derby:UltimateDB;create=true";
             // Create a connection to the database
             conn = DriverManager.getConnection(DB_URL);
+
+            Statement s = conn.createStatement();
+            s.executeUpdate("SET SCHEMA APP");
 
         } catch (SQLException ex) {
             displayAlert(ex.getMessage());
@@ -422,7 +423,7 @@ public class Controller implements Initializable {
 
         stage.setScene(scene);
         stage.getIcons().add(new Image("file:src/ultimateInventory/ultimateIcon"));
-        stage.setTitle("Cat Editor");
+        stage.setTitle("Bolt Editor");
 
         stage.show();
     }

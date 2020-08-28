@@ -2,9 +2,7 @@ package ultimateInventory;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import org.apache.derby.client.am.SqlException;
 
-import javax.xml.transform.Result;
 import java.sql.*;
 
 public class NutsTableManager {

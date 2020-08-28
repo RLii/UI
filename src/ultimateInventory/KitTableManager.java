@@ -91,7 +91,8 @@ public class KitTableManager {
                         + "labourCAD DOUBLE ,"
                         + "labourUSD DOUBLE,"
                         + "CostCAD DOUBLE,"
-                        + "CostUSD DOUBLE" +")");
+                        + "CostUSD DOUBLE,"
+                        + "OutputPath CHAR(100)"+")");
             }
         }
     }
@@ -146,6 +147,20 @@ public class KitTableManager {
         PreparedStatement stmt = connection.prepareStatement(sql);
         stmt.setString(1, name);
         stmt.executeUpdate();
+    }
+    public void setOutputPath(String path)throws SQLException
+    {
+        String sql = "UPDATE Kits SET OutputPath = ?";
+        PreparedStatement prep = connection.prepareStatement(sql);
+        prep.setString(1,path);
+        prep.executeUpdate();
+    }
+    public String getOutputPath()throws SQLException
+    {
+        Statement stmt = connection.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT OutputPath FROM Kits");
+        rs.next();
+        return rs.getString(1);
     }
     public ObservableList<String> getKitNames() throws SQLException
     {

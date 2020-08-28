@@ -37,6 +37,13 @@ public class KitController implements Initializable {
     {
         kitTableManager = kit;
         buildComBoxData();
+        try{
+            pathText.setText(kitTableManager.getOutputPath().trim());
+        }
+        catch(Exception e)
+        {
+            displayAlert("No Paths Saved!");
+        }
     }
     public void buildComBoxData()
     {
@@ -71,7 +78,7 @@ public class KitController implements Initializable {
             //This data needs to be written (Object[])
             Map < String, Object[] > empinfo = new TreeMap < String, Object[] >();
             empinfo.put( "1", new Object[] {
-                    "Part Type", "Part ID", "Quantity" , "Price per unit", "Subtotal", "Currency" });
+                    "Part Type", "Part ID", "Quantity" , "Price per unit", "Subtotal", "Currency", String.format("KitName: %s", kitNameComBox.getValue().toString()) });
 
             empinfo.put( "2", new Object[] {
                     "Bolt1", array[1][0], array[1][1], array[1][2], array[1][3] ,array[1][4] });
@@ -319,6 +326,20 @@ public class KitController implements Initializable {
             }
         }
     }
+
+    public void savePath()
+    {
+        try
+        {
+            kitTableManager.setOutputPath(pathText.getText());
+            displayAlert("Path Saved!");
+        }
+        catch(Exception e)
+        {
+            displayAlert("Error: "+e);
+        }
+    }
+
     private void displayAlert(String msg) {
         try {
 
@@ -342,6 +363,5 @@ public class KitController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        pathText.setText("C:\\Users\\Richard-PC\\Desktop\\ExcelOutputs");
     }
 }

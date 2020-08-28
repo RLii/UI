@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: ultimateInventory.Main
+Class-Path: C:\Users\Richard-PC\Desktop\UltimateInventory\out\artifacts\
+ UltimateInventory_jar
+

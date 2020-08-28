@@ -537,6 +537,11 @@ public class CostCalculatorController implements Initializable {
     @FXML
     Label USDTotalLabel;
 
+
+    @FXML
+    ComboBox kitIDComBox;
+    @FXML
+    TextField kitNameText;
     boolean hasBuilt = false;
 
 
@@ -578,6 +583,7 @@ public class CostCalculatorController implements Initializable {
             ObservableList<String> rubberData = FXCollections.observableArrayList();
             ObservableList<String> tipData = FXCollections.observableArrayList();
             ObservableList<String> clampData = FXCollections.observableArrayList();
+            ObservableList<String> kitData = FXCollections.observableArrayList();
 
             nutsData.addAll(nutsTableManager.getIdNames());
             pipeData.addAll(pipeTableManager.getIdNames());
@@ -593,6 +599,7 @@ public class CostCalculatorController implements Initializable {
             rubberData.addAll(rubberTableManager.getIdNames());
             tipData.addAll(tipTableManager.getIdNames());
             clampData.addAll(clampTableManager.getIdNames());
+            kitData.addAll(kitTableManager.getKitNames());
 
             Collections.sort(nutsData);
             Collections.sort(pipeData);
@@ -608,6 +615,7 @@ public class CostCalculatorController implements Initializable {
             Collections.sort(rubberData);
             Collections.sort(tipData);
             Collections.sort(clampData);
+            Collections.sort(kitData);
 
             nutComBox1.setItems(nutsData);
             pipeComBox1.setItems(pipeData);
@@ -668,6 +676,7 @@ public class CostCalculatorController implements Initializable {
             rubberComBox4.setItems(rubberData);
             tipComBox4.setItems(tipData);
             clampComBox4.setItems(clampData);
+            kitIDComBox.setItems(kitData);
 
             if(hasBuilt == false) {
                 nutComBox1.getSelectionModel().selectFirst();
@@ -729,6 +738,8 @@ public class CostCalculatorController implements Initializable {
                 rubberComBox4.getSelectionModel().selectFirst();
                 tipComBox4.getSelectionModel().selectFirst();
                 clampComBox4.getSelectionModel().selectFirst();
+
+                kitIDComBox.getSelectionModel().selectFirst();
 
                 hasBuilt = true;
             }
@@ -4594,9 +4605,174 @@ public class CostCalculatorController implements Initializable {
         miscRadBtnCAD4.setSelected(false);
         miscRadBtnUSD4.setSelected(true);
     }
+    public void openKitInfo()
+    {
+        try {
+            String[][] array = kitTableManager.getKitInfo(kitIDComBox.getValue().toString());
+            boltComBox1.getEditor().setText(array[1][0]);
+            boltComBox2.getEditor().setText(array[2][0]);
+            boltComBox3.getEditor().setText(array[3][0]);
+            boltComBox4.getEditor().setText(array[4][0]);
+            catComBox1.getEditor().setText(array[5][0]);
+            catComBox2.getEditor().setText(array[6][0]);
+            catComBox3.getEditor().setText(array[7][0]);
+            catComBox4.getEditor().setText(array[8][0]);
+            clampComBox1.getEditor().setText(array[9][0]);
+            clampComBox2.getEditor().setText(array[10][0]);
+            clampComBox3.getEditor().setText(array[11][0]);
+            clampComBox4.getEditor().setText(array[12][0]);
+            elbowComBox1.getEditor().setText(array[13][0]);
+            elbowComBox2.getEditor().setText(array[14][0]);
+            elbowComBox3.getEditor().setText(array[15][0]);
+            elbowComBox4.getEditor().setText(array[16][0]);
+            flangeComBox1.getEditor().setText(array[17][0]);
+            flangeComBox2.getEditor().setText(array[18][0]);
+            flangeComBox3.getEditor().setText(array[19][0]);
+            flangeComBox4.getEditor().setText(array[20][0]);
+            flexPipeComBox1.getEditor().setText(array[21][0]);
+            flexPipeComBox2.getEditor().setText(array[22][0]);
+            flexPipeComBox3.getEditor().setText(array[23][0]);
+            flexPipeComBox4.getEditor().setText(array[24][0]);
+            hangerComBox1.getEditor().setText(array[25][0]);
+            hangerComBox2.getEditor().setText(array[26][0]);
+            hangerComBox3.getEditor().setText(array[27][0]);
+            hangerComBox4.getEditor().setText(array[28][0]);
+            mufflerComBox1.getEditor().setText(array[29][0]);
+            mufflerComBox2.getEditor().setText(array[30][0]);
+            mufflerComBox3.getEditor().setText(array[31][0]);
+            mufflerComBox4.getEditor().setText(array[32][0]);
+            nutComBox1.getEditor().setText(array[33][0]);
+            nutComBox2.getEditor().setText(array[34][0]);
+            nutComBox3.getEditor().setText(array[35][0]);
+            nutComBox4.getEditor().setText(array[36][0]);
+            pipeComBox1.getEditor().setText(array[37][0]);
+            pipeComBox2.getEditor().setText(array[38][0]);
+            pipeComBox3.getEditor().setText(array[39][0]);
+            pipeComBox4.getEditor().setText(array[40][0]);
+            resonatorComBox1.getEditor().setText(array[41][0]);
+            resonatorComBox2.getEditor().setText(array[42][0]);
+            resonatorComBox3.getEditor().setText(array[43][0]);
+            resonatorComBox4.getEditor().setText(array[44][0]);
+            rubberComBox1.getEditor().setText(array[45][0]);
+            rubberComBox2.getEditor().setText(array[46][0]);
+            rubberComBox3.getEditor().setText(array[47][0]);
+            rubberComBox4.getEditor().setText(array[48][0]);
+            tipComBox1.getEditor().setText(array[49][0]);
+            tipComBox2.getEditor().setText(array[50][0]);
+            tipComBox3.getEditor().setText(array[51][0]);
+            tipComBox4.getEditor().setText(array[52][0]);
+            washerComBox1.getEditor().setText(array[53][0]);
+            washerComBox2.getEditor().setText(array[54][0]);
+            washerComBox3.getEditor().setText(array[55][0]);
+            washerComBox4.getEditor().setText(array[56][0]);
+            miscPartText1.setText(array[57][0]);
+            miscPartText2.setText(array[58][0]);
+            miscPartText3.setText(array[59][0]);
+            miscPartText4.setText(array[60][0]);
 
 
+            boltQtyText1.setText(array[1][1]);
+            boltQtyText2.setText(array[2][1]);
+            boltQtyText3.setText(array[3][1]);
+            boltQtyText4.setText(array[4][1]);
+            catQtyText1.setText(array[5][1]);
+            catQtyText2.setText(array[6][1]);
+            catQtyText3.setText(array[7][1]);
+            catQtyText4.setText(array[8][1]);
+            clampQtyText1.setText(array[9][1]);
+            clampQtyText2.setText(array[10][1]);
+            clampQtyText3.setText(array[11][1]);
+            clampQtyText4.setText(array[12][1]);
+            elbowQtyText1.setText(array[13][1]);
+            elbowQtyText2.setText(array[14][1]);
+            elbowQtyText3.setText(array[15][1]);
+            elbowQtyText4.setText(array[16][1]);
+            flangeQtyText1.setText(array[17][1]);
+            flangeQtyText2.setText(array[18][1]);
+            flangeQtyText3.setText(array[19][1]);
+            flangeQtyText4.setText(array[20][1]);
+            flexPipeQtyText1.setText(array[21][1]);
+            flexPipeQtyText2.setText(array[22][1]);
+            flexPipeQtyText3.setText(array[23][1]);
+            flexPipeQtyText4.setText(array[24][1]);
+            hangerQtyText1.setText(array[25][1]);
+            hangerQtyText2.setText(array[26][1]);
+            hangerQtyText3.setText(array[27][1]);
+            hangerQtyText4.setText(array[28][1]);
+            mufflerQtyText1.setText(array[29][1]);
+            mufflerQtyText2.setText(array[30][1]);
+            mufflerQtyText3.setText(array[31][1]);
+            mufflerQtyText4.setText(array[32][1]);
+            nutQtyText1.setText(array[33][1]);
+            nutQtyText2.setText(array[34][1]);
+            nutQtyText3.setText(array[35][1]);
+            nutQtyText4.setText(array[36][1]);
+            pipeQtyText1.setText(array[37][1]);
+            pipeQtyText2.setText(array[38][1]);
+            pipeQtyText3.setText(array[39][1]);
+            pipeQtyText4.setText(array[40][1]);
+            resonatorQtyText1.setText(array[41][1]);
+            resonatorQtyText2.setText(array[42][1]);
+            resonatorQtyText3.setText(array[43][1]);
+            resonatorQtyText4.setText(array[44][1]);
+            rubberQtyText1.setText(array[45][1]);
+            rubberQtyText2.setText(array[46][1]);
+            rubberQtyText3.setText(array[47][1]);
+            rubberQtyText4.setText(array[48][1]);
+            tipQtyText1.setText(array[49][1]);
+            tipQtyText2.setText(array[50][1]);
+            tipQtyText3.setText(array[51][1]);
+            tipQtyText4.setText(array[52][1]);
+            washerQtyText1.setText(array[53][1]);
+            washerQtyText2.setText(array[54][1]);
+            washerQtyText3.setText(array[55][1]);
+            washerQtyText4.setText(array[56][1]);
+            miscPartText1.setText(array[57][1]);
+            miscPartText2.setText(array[58][1]);
+            miscPartText3.setText(array[59][1]);
+            miscPartText4.setText(array[60][1]);
 
+            if(array[57][3].trim().equals("CAD"))
+            {
+                clickRadBtnCAD1(new ActionEvent());
+            }
+            else
+            {
+                clickRadBtnUSD1(new ActionEvent());
+            }
+            if(array[58][3].trim().equals("CAD"))
+            {
+                clickRadBtnCAD1(new ActionEvent());
+            }
+            else
+            {
+                clickRadBtnUSD1(new ActionEvent());
+            }
+            if(array[59][3].trim().equals("CAD"))
+            {
+                clickRadBtnCAD1(new ActionEvent());
+            }
+            else
+            {
+                clickRadBtnUSD1(new ActionEvent());
+            }
+            if(array[60][3].trim().equals("CAD"))
+            {
+                clickRadBtnCAD1(new ActionEvent());
+            }
+            else
+            {
+                clickRadBtnUSD1(new ActionEvent());
+            }
+
+            kitNameText.setText(kitIDComBox.getValue().toString().trim());
+
+        }
+        catch(Exception e)
+        {
+            displayAlert("Loading data failed");
+        }
+    }
 
     public void saveAsKit()
     {

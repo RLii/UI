@@ -29,7 +29,7 @@
                       <Label layoutY="18.0" text="Nut ID :" />
                       <TextField fx:id="nutQtyText1" layoutX="49.0" layoutY="47.0" onAction="#CalculateNutSubtotal1" />
                       <Label layoutX="14.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="nutComBox1" layoutX="48.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="nutComBox1" editable="true" layoutX="48.0" layoutY="14.0" prefWidth="150.0" />
                       <Button layoutX="235.0" layoutY="14.0" mnemonicParsing="false" onAction="#openNutInfo1" text="Info" />
                       <Label layoutX="210.0" layoutY="51.0" text="Subtotal: " />
                       <Label fx:id="nutSubtotal1" alignment="CENTER" layoutX="260.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -40,7 +40,7 @@
                       <Label layoutY="18.0" text="Nut ID :" />
                       <TextField fx:id="nutQtyText2" layoutX="49.0" layoutY="47.0" onAction="#CalculateNutSubtotal2" />
                       <Label layoutX="14.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="nutComBox2" layoutX="48.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="nutComBox2" editable="true" layoutX="48.0" layoutY="14.0" prefWidth="150.0" />
                       <Button layoutX="235.0" layoutY="14.0" mnemonicParsing="false" onAction="#openNutInfo2" text="Info" />
                       <Label layoutX="210.0" layoutY="51.0" text="Subtotal: " />
                       <Label fx:id="nutSubtotal2" alignment="CENTER" layoutX="260.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -51,7 +51,7 @@
                       <Label layoutY="18.0" text="Nut ID :" />
                       <TextField fx:id="nutQtyText3" layoutX="49.0" layoutY="47.0" onAction="#CalculateNutSubtotal3" />
                       <Label layoutX="14.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="nutComBox3" layoutX="48.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="nutComBox3" editable="true" layoutX="48.0" layoutY="14.0" prefWidth="150.0" />
                       <Button layoutX="235.0" layoutY="14.0" mnemonicParsing="false" onAction="#openNutInfo3" text="Info" />
                       <Label layoutX="210.0" layoutY="51.0" text="Subtotal: " />
                       <Label fx:id="nutSubtotal3" alignment="CENTER" layoutX="260.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -62,7 +62,7 @@
                       <Label layoutY="18.0" text="Nut ID :" />
                       <TextField fx:id="nutQtyText4" layoutX="49.0" layoutY="47.0" onAction="#CalculateNutSubtotal4" />
                       <Label layoutX="14.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="nutComBox4" layoutX="48.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="nutComBox4" editable="true" layoutX="48.0" layoutY="14.0" prefWidth="150.0" />
                       <Button layoutX="235.0" layoutY="14.0" mnemonicParsing="false" onAction="#openNutInfo4" text="Info" />
                       <Label layoutX="210.0" layoutY="51.0" text="Subtotal: " />
                       <Label fx:id="nutSubtotal4" alignment="CENTER" layoutX="260.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -73,7 +73,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="Elbow ID :" />
                       <TextField fx:id="elbowQtyText1" layoutX="69.0" layoutY="47.0" onAction="#CalculateElbowSubtotal1" />
                       <Label layoutX="30.0" layoutY="51.0" text="Angle :" />
-                      <ComboBox editable="true" fx:id="elbowComBox1" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="elbowComBox1" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="231.0" layoutY="52.0" text="Subtotal: " />
                       <Button layoutX="256.0" layoutY="14.0" mnemonicParsing="false" onAction="#openElbowInfo1" text="Info" />
                       <Label fx:id="elbowSubtotal1" alignment="CENTER" layoutX="279.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -84,7 +84,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="Elbow ID :" />
                       <TextField fx:id="elbowQtyText2" layoutX="69.0" layoutY="47.0" onAction="#CalculateElbowSubtotal2" />
                       <Label layoutX="30.0" layoutY="51.0" text="Angle :" />
-                      <ComboBox editable="true" fx:id="elbowComBox2" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="elbowComBox2" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="231.0" layoutY="52.0" text="Subtotal: " />
                       <Button layoutX="256.0" layoutY="14.0" mnemonicParsing="false" onAction="#openElbowInfo2" text="Info" />
                       <Label fx:id="elbowSubtotal2" alignment="CENTER" layoutX="279.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -95,7 +95,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="Elbow ID :" />
                       <TextField fx:id="elbowQtyText3" layoutX="69.0" layoutY="47.0" onAction="#CalculateElbowSubtotal3" />
                       <Label layoutX="30.0" layoutY="51.0" text="Angle :" />
-                      <ComboBox editable="true" fx:id="elbowComBox3" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="elbowComBox3" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="231.0" layoutY="52.0" text="Subtotal: " />
                       <Button layoutX="256.0" layoutY="14.0" mnemonicParsing="false" onAction="#openElbowInfo3" text="Info" />
                       <Label fx:id="elbowSubtotal3" alignment="CENTER" layoutX="279.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -106,7 +106,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="Elbow ID :" />
                       <TextField fx:id="elbowQtyText4" layoutX="69.0" layoutY="47.0" onAction="#CalculateElbowSubtotal4" />
                       <Label layoutX="30.0" layoutY="51.0" text="Angle :" />
-                      <ComboBox editable="true" fx:id="elbowComBox4" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="elbowComBox4" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="231.0" layoutY="52.0" text="Subtotal: " />
                       <Button layoutX="256.0" layoutY="14.0" mnemonicParsing="false" onAction="#openElbowInfo4" text="Info" />
                       <Label fx:id="elbowSubtotal4" alignment="CENTER" layoutX="279.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -117,7 +117,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="Flange ID :" textAlignment="CENTER" />
                       <TextField fx:id="flangeQtyText1" layoutX="78.0" layoutY="47.0" onAction="#CalculateFlangeSubtotal1" />
                       <Label layoutX="42.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="flangeComBox1" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="flangeComBox1" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="239.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="264.0" layoutY="14.0" mnemonicParsing="false" onAction="#openFlangeInfo1" text="Info" />
                       <Label fx:id="flangeSubtotal1" alignment="CENTER" layoutX="287.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -128,7 +128,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="Flange ID :" textAlignment="CENTER" />
                       <TextField fx:id="flangeQtyText2" layoutX="78.0" layoutY="47.0" onAction="#CalculateFlangeSubtotal2" />
                       <Label layoutX="42.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="flangeComBox2" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="flangeComBox2" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="239.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="264.0" layoutY="14.0" mnemonicParsing="false" onAction="#openFlangeInfo2" text="Info" />
                       <Label fx:id="flangeSubtotal2" alignment="CENTER" layoutX="287.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -139,7 +139,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="Flange ID :" textAlignment="CENTER" />
                       <TextField fx:id="flangeQtyText3" layoutX="78.0" layoutY="47.0" onAction="#CalculateFlangeSubtotal3" />
                       <Label layoutX="42.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="flangeComBox3" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="flangeComBox3" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="239.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="264.0" layoutY="14.0" mnemonicParsing="false" onAction="#openFlangeInfo3" text="Info" />
                       <Label fx:id="flangeSubtotal3" alignment="CENTER" layoutX="287.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -150,7 +150,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="Flange ID :" textAlignment="CENTER" />
                       <TextField fx:id="flangeQtyText4" layoutX="78.0" layoutY="47.0" onAction="#CalculateFlangeSubtotal4" />
                       <Label layoutX="42.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="flangeComBox4" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="flangeComBox4" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="239.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="264.0" layoutY="14.0" mnemonicParsing="false" onAction="#openFlangeInfo4" text="Info" />
                       <Label fx:id="flangeSubtotal4" alignment="CENTER" layoutX="287.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -161,7 +161,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="Hanger ID :" textAlignment="CENTER" />
                       <TextField fx:id="hangerQtyText1" layoutX="78.0" layoutY="47.0" onAction="#CalculateHangerSubtotal1" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="hangerComBox1" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="hangerComBox1" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="240.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="262.0" layoutY="17.0" mnemonicParsing="false" onAction="#openHangerInfo1" text="Info" />
                       <Label fx:id="hangerSubtotal1" alignment="CENTER" layoutX="290.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -171,7 +171,7 @@
                    <Label layoutX="14.0" layoutY="18.0" text="Hanger ID :" textAlignment="CENTER" />
                    <TextField fx:id="hangerQtyText2" layoutX="78.0" layoutY="47.0" onAction="#CalculateHangerSubtotal2" />
                    <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                   <ComboBox editable="true" fx:id="hangerComBox2" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                   <ComboBox fx:id="hangerComBox2" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                    <Label layoutX="240.0" layoutY="51.0" text="Subtotal: " />
                    <Button layoutX="262.0" layoutY="17.0" mnemonicParsing="false" onAction="#openHangerInfo2" text="Info" />
                    <Label fx:id="hangerSubtotal2" alignment="CENTER" layoutX="290.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -182,7 +182,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="Hanger ID :" textAlignment="CENTER" />
                       <TextField fx:id="hangerQtyText3" layoutX="78.0" layoutY="47.0" onAction="#CalculateHangerSubtotal3" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="hangerComBox3" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="hangerComBox3" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="240.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="262.0" layoutY="17.0" mnemonicParsing="false" onAction="#openHangerInfo3" text="Info" />
                       <Label fx:id="hangerSubtotal3" alignment="CENTER" layoutX="290.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -193,7 +193,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="Hanger ID :" textAlignment="CENTER" />
                       <TextField fx:id="hangerQtyText4" layoutX="78.0" layoutY="47.0" onAction="#CalculateHangerSubtotal4" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="hangerComBox4" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="hangerComBox4" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="240.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="262.0" layoutY="17.0" mnemonicParsing="false" onAction="#openHangerInfo4" text="Info" />
                       <Label fx:id="hangerSubtotal4" alignment="CENTER" layoutX="290.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -204,7 +204,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="Muffler ID :" textAlignment="CENTER" />
                       <TextField fx:id="mufflerQtyText1" layoutX="78.0" layoutY="47.0" onAction="#CalculateMufflerSubtotal1" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="mufflerComBox1" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="mufflerComBox1" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="242.0" layoutY="49.0" text="Subtotal: " />
                       <Button layoutX="266.0" layoutY="17.0" mnemonicParsing="false" onAction="#openMufflerInfo1" text="Info" />
                       <Label fx:id="mufflerSubtotal1" alignment="CENTER" layoutX="289.0" layoutY="49.0" text="" textAlignment="CENTER" />
@@ -215,7 +215,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="Muffler ID :" textAlignment="CENTER" />
                       <TextField fx:id="mufflerQtyText2" layoutX="78.0" layoutY="47.0" onAction="#CalculateMufflerSubtotal2" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="mufflerComBox2" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="mufflerComBox2" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="242.0" layoutY="49.0" text="Subtotal: " />
                       <Button layoutX="266.0" layoutY="17.0" mnemonicParsing="false" onAction="#openMufflerInfo2" text="Info" />
                       <Label fx:id="mufflerSubtotal2" alignment="CENTER" layoutX="289.0" layoutY="49.0" text="" textAlignment="CENTER" />
@@ -226,7 +226,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="Muffler ID :" textAlignment="CENTER" />
                       <TextField fx:id="mufflerQtyText3" layoutX="78.0" layoutY="47.0" onAction="#CalculateMufflerSubtotal3" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="mufflerComBox3" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="mufflerComBox3" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="242.0" layoutY="49.0" text="Subtotal: " />
                       <Button layoutX="266.0" layoutY="17.0" mnemonicParsing="false" onAction="#openMufflerInfo3" text="Info" />
                       <Label fx:id="mufflerSubtotal3" alignment="CENTER" layoutX="289.0" layoutY="49.0" text="" textAlignment="CENTER" />
@@ -237,7 +237,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="Muffler ID :" textAlignment="CENTER" />
                       <TextField fx:id="mufflerQtyText4" layoutX="78.0" layoutY="47.0" onAction="#CalculateMufflerSubtotal4" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="mufflerComBox4" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="mufflerComBox4" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="242.0" layoutY="49.0" text="Subtotal: " />
                       <Button layoutX="266.0" layoutY="17.0" mnemonicParsing="false" onAction="#openMufflerInfo4" text="Info" />
                       <Label fx:id="mufflerSubtotal4" alignment="CENTER" layoutX="289.0" layoutY="49.0" text="" textAlignment="CENTER" />
@@ -248,7 +248,7 @@
                       <Label layoutY="18.0" text="Resonator ID :" textAlignment="CENTER" />
                       <TextField fx:id="resonatorQtyText1" layoutX="78.0" layoutY="47.0" onAction="#CalculateResonatorSubtotal1" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="resonatorComBox1" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="resonatorComBox1" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="240.0" layoutY="54.0" text="Subtotal: " />
                       <Button layoutX="265.0" layoutY="14.0" mnemonicParsing="false" onAction="#openResonatorInfo1" text="Info" />
                       <Label fx:id="resonatorSubtotal1" alignment="CENTER" layoutX="288.0" layoutY="54.0" text="" textAlignment="CENTER" />
@@ -259,7 +259,7 @@
                       <Label layoutY="18.0" text="Resonator ID :" textAlignment="CENTER" />
                       <TextField fx:id="resonatorQtyText2" layoutX="78.0" layoutY="47.0" onAction="#CalculateResonatorSubtotal2" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="resonatorComBox2" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="resonatorComBox2" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="240.0" layoutY="54.0" text="Subtotal: " />
                       <Button layoutX="265.0" layoutY="14.0" mnemonicParsing="false" onAction="#openResonatorInfo2" text="Info" />
                       <Label fx:id="resonatorSubtotal2" alignment="CENTER" layoutX="288.0" layoutY="54.0" text="" textAlignment="CENTER" />
@@ -270,7 +270,7 @@
                       <Label layoutY="18.0" text="Resonator ID :" textAlignment="CENTER" />
                       <TextField fx:id="resonatorQtyText3" layoutX="78.0" layoutY="47.0" onAction="#CalculateResonatorSubtotal3" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="resonatorComBox3" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="resonatorComBox3" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="240.0" layoutY="54.0" text="Subtotal: " />
                       <Button layoutX="265.0" layoutY="14.0" mnemonicParsing="false" onAction="#openResonatorInfo3" text="Info" />
                       <Label fx:id="resonatorSubtotal3" alignment="CENTER" layoutX="288.0" layoutY="54.0" text="" textAlignment="CENTER" />
@@ -281,7 +281,7 @@
                       <Label layoutY="18.0" text="Resonator ID :" textAlignment="CENTER" />
                       <TextField fx:id="resonatorQtyText4" layoutX="78.0" layoutY="47.0" onAction="#CalculateResonatorSubtotal4" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="resonatorComBox4" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="resonatorComBox4" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="240.0" layoutY="54.0" text="Subtotal: " />
                       <Button layoutX="265.0" layoutY="14.0" mnemonicParsing="false" onAction="#openResonatorInfo4" text="Info" />
                       <Label fx:id="resonatorSubtotal4" alignment="CENTER" layoutX="288.0" layoutY="54.0" text="" textAlignment="CENTER" />
@@ -292,7 +292,7 @@
                       <Label layoutX="35.0" layoutY="18.0" text="Cat ID :" textAlignment="CENTER" />
                       <TextField fx:id="catQtyText1" layoutX="78.0" layoutY="47.0" onAction="#CalculateCatSubtotal1" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="catComBox1" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="catComBox1" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="239.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="268.0" layoutY="12.0" mnemonicParsing="false" onAction="#openCatInfo1" text="Info" />
                       <Label fx:id="catSubtotal1" alignment="CENTER" layoutX="290.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -303,7 +303,7 @@
                       <Label layoutX="35.0" layoutY="18.0" text="Cat ID :" textAlignment="CENTER" />
                       <TextField fx:id="catQtyText2" layoutX="78.0" layoutY="47.0" onAction="#CalculateCatSubtotal2" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="catComBox2" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="catComBox2" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="239.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="268.0" layoutY="12.0" mnemonicParsing="false" onAction="#openCatInfo2" text="Info" />
                       <Label fx:id="catSubtotal2" alignment="CENTER" layoutX="290.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -314,7 +314,7 @@
                       <Label layoutX="35.0" layoutY="18.0" text="Cat ID :" textAlignment="CENTER" />
                       <TextField fx:id="catQtyText3" layoutX="78.0" layoutY="47.0" onAction="#CalculateCatSubtotal3" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="catComBox3" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="catComBox3" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="239.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="268.0" layoutY="12.0" mnemonicParsing="false" onAction="#openCatInfo3" text="Info" />
                       <Label fx:id="catSubtotal3" alignment="CENTER" layoutX="290.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -325,7 +325,7 @@
                       <Label layoutX="35.0" layoutY="18.0" text="Cat ID :" textAlignment="CENTER" />
                       <TextField fx:id="catQtyText4" layoutX="78.0" layoutY="47.0" onAction="#CalculateCatSubtotal4" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="catComBox4" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="catComBox4" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="239.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="268.0" layoutY="12.0" mnemonicParsing="false" onAction="#openCatInfo4" text="Info" />
                       <Label fx:id="catSubtotal4" alignment="CENTER" layoutX="290.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -336,7 +336,7 @@
                       <Label layoutX="22.0" layoutY="18.0" prefHeight="17.0" prefWidth="53.0" text="Pipe ID :" />
                       <TextField fx:id="pipeQtyText1" layoutX="69.0" layoutY="47.0" onAction="#CalculatePipeSubtotal1" />
                       <Label layoutX="22.0" layoutY="51.0" text="Length :" />
-                      <ComboBox editable="true" fx:id="pipeComBox1" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="pipeComBox1" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openPipeInfo1" text="Info" />
                       <Label fx:id="pipeSubtotal1" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -347,7 +347,7 @@
                       <Label layoutX="22.0" layoutY="18.0" prefHeight="17.0" prefWidth="53.0" text="Pipe ID :" />
                       <TextField fx:id="pipeQtyText2" layoutX="69.0" layoutY="47.0" onAction="#CalculatePipeSubtotal2" />
                       <Label layoutX="22.0" layoutY="51.0" text="Length :" />
-                      <ComboBox editable="true" fx:id="pipeComBox2" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="pipeComBox2" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openPipeInfo2" text="Info" />
                       <Label fx:id="pipeSubtotal2" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -358,7 +358,7 @@
                       <Label layoutX="22.0" layoutY="18.0" prefHeight="17.0" prefWidth="53.0" text="Pipe ID :" />
                       <TextField fx:id="pipeQtyText3" layoutX="69.0" layoutY="47.0" onAction="#CalculatePipeSubtotal3" />
                       <Label layoutX="22.0" layoutY="51.0" text="Length :" />
-                      <ComboBox editable="true" fx:id="pipeComBox3" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="pipeComBox3" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openPipeInfo3" text="Info" />
                       <Label fx:id="pipeSubtotal3" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -369,7 +369,7 @@
                       <Label layoutX="22.0" layoutY="18.0" prefHeight="17.0" prefWidth="53.0" text="Pipe ID :" />
                       <TextField fx:id="pipeQtyText4" layoutX="69.0" layoutY="47.0" onAction="#CalculatePipeSubtotal4" />
                       <Label layoutX="22.0" layoutY="51.0" text="Length :" />
-                      <ComboBox editable="true" fx:id="pipeComBox4" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="pipeComBox4" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openPipeInfo4" text="Info" />
                       <Label fx:id="pipeSubtotal4" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -380,7 +380,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="FlexPipe ID :" textAlignment="CENTER" />
                       <TextField fx:id="flexPipeQtyText1" layoutX="78.0" layoutY="47.0" onAction="#CalculateFlexPipeSubtotal1" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="flexPipeComBox1" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="flexPipeComBox1" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="240.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="262.0" layoutY="17.0" mnemonicParsing="false" onAction="#openFlexPipeInfo1" text="Info" />
                       <Label fx:id="flexPipeSubtotal1" alignment="CENTER" layoutX="290.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -391,7 +391,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="FlexPipe ID :" textAlignment="CENTER" />
                       <TextField fx:id="flexPipeQtyText2" layoutX="78.0" layoutY="47.0" onAction="#CalculateFlexPipeSubtotal2" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="flexPipeComBox2" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="flexPipeComBox2" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="240.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="262.0" layoutY="17.0" mnemonicParsing="false" onAction="#openFlexPipeInfo2" text="Info" />
                       <Label fx:id="flexPipeSubtotal2" alignment="CENTER" layoutX="290.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -402,7 +402,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="FlexPipe ID :" textAlignment="CENTER" />
                       <TextField fx:id="flexPipeQtyText3" layoutX="78.0" layoutY="47.0" onAction="#CalculateFlexPipeSubtotal3" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="flexPipeComBox3" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="flexPipeComBox3" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="240.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="262.0" layoutY="17.0" mnemonicParsing="false" onAction="#openFlexPipeInfo3" text="Info" />
                       <Label fx:id="flexPipeSubtotal3" alignment="CENTER" layoutX="290.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -413,7 +413,7 @@
                       <Label layoutX="14.0" layoutY="18.0" text="FlexPipe ID :" textAlignment="CENTER" />
                       <TextField fx:id="flexPipeQtyText4" layoutX="78.0" layoutY="47.0" onAction="#CalculateFlexPipeSubtotal4" />
                       <Label layoutX="49.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="flexPipeComBox4" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="flexPipeComBox4" editable="true" layoutX="77.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="240.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="262.0" layoutY="17.0" mnemonicParsing="false" onAction="#openFlexPipeInfo4" text="Info" />
                       <Label fx:id="flexPipeSubtotal4" alignment="CENTER" layoutX="290.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -424,7 +424,7 @@
                       <Label layoutX="22.0" layoutY="18.0" prefHeight="17.0" prefWidth="53.0" text="Bolt ID :" />
                       <TextField fx:id="boltQtyText1" layoutX="69.0" layoutY="47.0" onAction="#CalculateBoltSubtotal1" />
                       <Label layoutX="36.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="boltComBox1" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="boltComBox1" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openBoltInfo1" text="Info" />
                       <Label fx:id="boltSubtotal1" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -435,7 +435,7 @@
                       <Label layoutX="22.0" layoutY="18.0" prefHeight="17.0" prefWidth="53.0" text="Bolt ID :" />
                       <TextField fx:id="boltQtyText2" layoutX="69.0" layoutY="47.0" onAction="#CalculateBoltSubtotal2" />
                       <Label layoutX="36.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="boltComBox2" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="boltComBox2" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openBoltInfo2" text="Info" />
                       <Label fx:id="boltSubtotal2" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -446,7 +446,7 @@
                       <Label layoutX="22.0" layoutY="18.0" prefHeight="17.0" prefWidth="53.0" text="Bolt ID :" />
                       <TextField fx:id="boltQtyText3" layoutX="69.0" layoutY="47.0" onAction="#CalculateBoltSubtotal3" />
                       <Label layoutX="36.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="boltComBox3" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="boltComBox3" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openBoltInfo3" text="Info" />
                       <Label fx:id="boltSubtotal3" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -457,7 +457,7 @@
                       <Label layoutX="22.0" layoutY="18.0" prefHeight="17.0" prefWidth="53.0" text="Bolt ID :" />
                       <TextField fx:id="boltQtyText4" layoutX="69.0" layoutY="47.0" onAction="#CalculateBoltSubtotal4" />
                       <Label layoutX="36.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="boltComBox4" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="boltComBox4" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openBoltInfo4" text="Info" />
                       <Label fx:id="boltSubtotal4" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -468,7 +468,7 @@
                       <Label layoutX="2.0" layoutY="18.0" prefHeight="17.0" prefWidth="64.0" text="Washer ID :" />
                       <TextField fx:id="washerQtyText1" layoutX="69.0" layoutY="47.0" onAction="#CalculateWasherSubtotal1" />
                       <Label layoutX="34.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="washerComBox1" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="washerComBox1" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openWasherInfo1" text="Info" />
                       <Label fx:id="washerSubtotal1" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -479,7 +479,7 @@
                       <Label layoutX="2.0" layoutY="18.0" prefHeight="17.0" prefWidth="64.0" text="Washer ID :" />
                       <TextField fx:id="washerQtyText2" layoutX="69.0" layoutY="47.0" onAction="#CalculateWasherSubtotal2" />
                       <Label layoutX="34.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="washerComBox2" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="washerComBox2" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openWasherInfo2" text="Info" />
                       <Label fx:id="washerSubtotal2" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -490,7 +490,7 @@
                       <Label layoutX="2.0" layoutY="18.0" prefHeight="17.0" prefWidth="64.0" text="Washer ID :" />
                       <TextField fx:id="washerQtyText3" layoutX="69.0" layoutY="47.0" onAction="#CalculateWasherSubtotal3" />
                       <Label layoutX="34.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="washerComBox3" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="washerComBox3" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openWasherInfo3" text="Info" />
                       <Label fx:id="washerSubtotal3" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -501,7 +501,7 @@
                       <Label layoutX="2.0" layoutY="18.0" prefHeight="17.0" prefWidth="64.0" text="Washer ID :" />
                       <TextField fx:id="washerQtyText4" layoutX="69.0" layoutY="47.0" onAction="#CalculateWasherSubtotal4" />
                       <Label layoutX="34.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="washerComBox4" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="washerComBox4" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openWasherInfo4" text="Info" />
                       <Label fx:id="washerSubtotal4" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -512,7 +512,7 @@
                       <Label layoutX="2.0" layoutY="18.0" prefHeight="17.0" prefWidth="64.0" text="Rubber ID :" />
                       <TextField fx:id="rubberQtyText1" layoutX="69.0" layoutY="47.0" onAction="#CalculateRubberSubtotal1" />
                       <Label layoutX="34.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="rubberComBox1" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="rubberComBox1" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openRubberInfo1" text="Info" />
                       <Label fx:id="rubberSubtotal1" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -523,7 +523,7 @@
                       <Label layoutX="2.0" layoutY="18.0" prefHeight="17.0" prefWidth="64.0" text="Rubber ID :" />
                       <TextField fx:id="rubberQtyText2" layoutX="69.0" layoutY="47.0" onAction="#CalculateRubberSubtotal2" />
                       <Label layoutX="34.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="rubberComBox2" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="rubberComBox2" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openRubberInfo2" text="Info" />
                       <Label fx:id="rubberSubtotal2" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -534,7 +534,7 @@
                       <Label layoutX="2.0" layoutY="18.0" prefHeight="17.0" prefWidth="64.0" text="Rubber ID :" />
                       <TextField fx:id="rubberQtyText3" layoutX="69.0" layoutY="47.0" onAction="#CalculateRubberSubtotal3" />
                       <Label layoutX="34.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="rubberComBox3" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="rubberComBox3" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openRubberInfo3" text="Info" />
                       <Label fx:id="rubberSubtotal3" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -545,7 +545,7 @@
                       <Label layoutX="2.0" layoutY="18.0" prefHeight="17.0" prefWidth="64.0" text="Rubber ID :" />
                       <TextField fx:id="rubberQtyText4" layoutX="69.0" layoutY="47.0" onAction="#CalculateRubberSubtotal4" />
                       <Label layoutX="34.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="rubberComBox4" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="rubberComBox4" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openRubberInfo4" text="Info" />
                       <Label fx:id="rubberSubtotal4" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -556,7 +556,7 @@
                       <Label layoutX="20.0" layoutY="18.0" prefHeight="17.0" prefWidth="53.0" text="Tip ID :" />
                       <TextField fx:id="tipQtyText1" layoutX="69.0" layoutY="47.0" onAction="#CalculateTipSubtotal1" />
                       <Label layoutX="34.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="tipComBox1" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="tipComBox1" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openTipInfo1" text="Info" />
                       <Label fx:id="tipSubtotal1" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -567,7 +567,7 @@
                       <Label layoutX="20.0" layoutY="18.0" prefHeight="17.0" prefWidth="53.0" text="Tip ID :" />
                       <TextField fx:id="tipQtyText2" layoutX="69.0" layoutY="47.0" onAction="#CalculateTipSubtotal2" />
                       <Label layoutX="34.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="tipComBox2" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="tipComBox2" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openTipInfo2" text="Info" />
                       <Label fx:id="tipSubtotal2" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -578,7 +578,7 @@
                       <Label layoutX="20.0" layoutY="18.0" prefHeight="17.0" prefWidth="53.0" text="Tip ID :" />
                       <TextField fx:id="tipQtyText3" layoutX="69.0" layoutY="47.0" onAction="#CalculateTipSubtotal3" />
                       <Label layoutX="34.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="tipComBox3" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="tipComBox3" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openTipInfo3" text="Info" />
                       <Label fx:id="tipSubtotal3" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -589,7 +589,7 @@
                       <Label layoutX="20.0" layoutY="18.0" prefHeight="17.0" prefWidth="53.0" text="Tip ID :" />
                       <TextField fx:id="tipQtyText4" layoutX="69.0" layoutY="47.0" onAction="#CalculateTipSubtotal4" />
                       <Label layoutX="34.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="tipComBox4" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="tipComBox4" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openTipInfo4" text="Info" />
                       <Label fx:id="tipSubtotal4" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -600,7 +600,7 @@
                       <Label layoutX="8.0" layoutY="18.0" prefHeight="17.0" prefWidth="64.0" text="Clamp ID :" />
                       <TextField fx:id="clampQtyText1" layoutX="69.0" layoutY="47.0" onAction="#CalculateClampSubtotal1" />
                       <Label layoutX="34.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="clampComBox1" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="clampComBox1" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openClampInfo1" text="Info" />
                       <Label fx:id="clampSubtotal1" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -611,7 +611,7 @@
                       <Label layoutX="8.0" layoutY="18.0" prefHeight="17.0" prefWidth="64.0" text="Clamp ID :" />
                       <TextField fx:id="clampQtyText2" layoutX="69.0" layoutY="47.0" onAction="#CalculateClampSubtotal2" />
                       <Label layoutX="34.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="clampComBox2" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="clampComBox2" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openClampInfo2" text="Info" />
                       <Label fx:id="clampSubtotal2" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -622,7 +622,7 @@
                       <Label layoutX="8.0" layoutY="18.0" prefHeight="17.0" prefWidth="64.0" text="Clamp ID :" />
                       <TextField fx:id="clampQtyText3" layoutX="69.0" layoutY="47.0" onAction="#CalculateClampSubtotal3" />
                       <Label layoutX="34.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="clampComBox3" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="clampComBox3" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openClampInfo3" text="Info" />
                       <Label fx:id="clampSubtotal3" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -633,7 +633,7 @@
                       <Label layoutX="8.0" layoutY="18.0" prefHeight="17.0" prefWidth="64.0" text="Clamp ID :" />
                       <TextField fx:id="clampQtyText4" layoutX="69.0" layoutY="47.0" onAction="#CalculateClampSubtotal4" />
                       <Label layoutX="34.0" layoutY="51.0" text="Qty :" />
-                      <ComboBox editable="true" fx:id="clampComBox4" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
+                      <ComboBox fx:id="clampComBox4" editable="true" layoutX="68.0" layoutY="14.0" prefWidth="150.0" />
                       <Label layoutX="227.0" layoutY="51.0" text="Subtotal: " />
                       <Button layoutX="250.0" layoutY="13.0" mnemonicParsing="false" onAction="#openClampInfo4" text="Info" />
                       <Label fx:id="clampSubtotal4" alignment="CENTER" layoutX="277.0" layoutY="51.0" text="" textAlignment="CENTER" />
@@ -695,42 +695,42 @@
                 -->
                 <Pane layoutX="22.0" layoutY="1082.0" prefHeight="145.0" prefWidth="370.0">
                    <children>
-                      <Label layoutY="60.0" layoutX="5.0" prefHeight="17.0" prefWidth="64.0" text="Misc Price :" />
+                      <Label layoutX="5.0" layoutY="60.0" prefHeight="17.0" prefWidth="64.0" text="Misc Price :" />
                       <TextField fx:id="miscPriceText1" layoutX="68.0" layoutY="56.0" prefWidth="150.0" />
                       <TextField fx:id="miscPartText1" layoutX="68.0" layoutY="24.0" prefWidth="150.0" />
                       <Label layoutX="10.0" layoutY="31.0" text="Misc part :" />
-                      <RadioButton fx:id="miscRadBtnCAD1" onAction="#clickRadBtnCAD1" layoutX="71.0" layoutY="97.0" selected="true" mnemonicParsing="false" text="CAD" />
-                      <RadioButton fx:id="miscRadBtnUSD1" onAction="#clickRadBtnUSD1" layoutX="165.0" layoutY="97.0" mnemonicParsing="false" text="USD" />
+                      <RadioButton fx:id="miscRadBtnCAD1" layoutX="71.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickRadBtnCAD1" selected="true" text="CAD" />
+                      <RadioButton fx:id="miscRadBtnUSD1" layoutX="165.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickRadBtnUSD1" text="USD" />
                    </children>
                 </Pane>
                 <Pane layoutX="336.0" layoutY="1082.0" prefHeight="145.0" prefWidth="370.0">
                    <children>
-                      <Label layoutY="60.0" layoutX="5.0" prefHeight="17.0" prefWidth="64.0" text="Misc Price :" />
+                      <Label layoutX="5.0" layoutY="60.0" prefHeight="17.0" prefWidth="64.0" text="Misc Price :" />
                       <TextField fx:id="miscPriceText2" layoutX="68.0" layoutY="56.0" prefWidth="150.0" />
                       <TextField fx:id="miscPartText2" layoutX="68.0" layoutY="24.0" prefWidth="150.0" />
                       <Label layoutX="10.0" layoutY="31.0" text="Misc part :" />
-                      <RadioButton fx:id="miscRadBtnCAD2" onAction="#clickRadBtnCAD2" layoutX="71.0" layoutY="97.0" selected="true" mnemonicParsing="false" text="CAD" />
-                      <RadioButton fx:id="miscRadBtnUSD2" onAction="#clickRadBtnUSD2" layoutX="165.0" layoutY="97.0" mnemonicParsing="false" text="USD" />
+                      <RadioButton fx:id="miscRadBtnCAD2" layoutX="71.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickRadBtnCAD2" selected="true" text="CAD" />
+                      <RadioButton fx:id="miscRadBtnUSD2" layoutX="165.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickRadBtnUSD2" text="USD" />
                    </children>
                 </Pane>
                 <Pane layoutX="649.0" layoutY="1082.0" prefHeight="145.0" prefWidth="370.0">
                    <children>
-                      <Label layoutY="60.0" layoutX="5.0" prefHeight="17.0" prefWidth="64.0" text="Misc Price :" />
+                      <Label layoutX="5.0" layoutY="60.0" prefHeight="17.0" prefWidth="64.0" text="Misc Price :" />
                       <TextField fx:id="miscPriceText3" layoutX="68.0" layoutY="56.0" prefWidth="150.0" />
                       <TextField fx:id="miscPartText3" layoutX="68.0" layoutY="24.0" prefWidth="150.0" />
                       <Label layoutX="10.0" layoutY="31.0" text="Misc part :" />
-                      <RadioButton fx:id="miscRadBtnCAD3" onAction="#clickRadBtnCAD3" layoutX="71.0" layoutY="97.0" selected="true" mnemonicParsing="false" text="CAD" />
-                      <RadioButton fx:id="miscRadBtnUSD3" onAction="#clickRadBtnUSD3" layoutX="165.0" layoutY="97.0" mnemonicParsing="false" text="USD" />
+                      <RadioButton fx:id="miscRadBtnCAD3" layoutX="71.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickRadBtnCAD3" selected="true" text="CAD" />
+                      <RadioButton fx:id="miscRadBtnUSD3" layoutX="165.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickRadBtnUSD3" text="USD" />
                    </children>
                 </Pane>
                 <Pane layoutX="962.0" layoutY="1082.0" prefHeight="145.0" prefWidth="370.0">
                    <children>
-                      <Label layoutY="60.0" layoutX="5.0" prefHeight="17.0" prefWidth="64.0" text="Misc Price :" />
+                      <Label layoutX="5.0" layoutY="60.0" prefHeight="17.0" prefWidth="64.0" text="Misc Price :" />
                       <TextField fx:id="miscPriceText4" layoutX="68.0" layoutY="56.0" prefWidth="150.0" />
                       <TextField fx:id="miscPartText4" layoutX="68.0" layoutY="24.0" prefWidth="150.0" />
                       <Label layoutX="10.0" layoutY="31.0" text="Misc part :" />
-                      <RadioButton fx:id="miscRadBtnCAD4" onAction="#clickRadBtnCAD4" layoutX="71.0" layoutY="97.0" selected="true" mnemonicParsing="false" text="CAD" />
-                      <RadioButton fx:id="miscRadBtnUSD4" onAction="#clickRadBtnUSD4" layoutX="165.0" layoutY="97.0" mnemonicParsing="false" text="USD" />
+                      <RadioButton fx:id="miscRadBtnCAD4" layoutX="71.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickRadBtnCAD4" selected="true" text="CAD" />
+                      <RadioButton fx:id="miscRadBtnUSD4" layoutX="165.0" layoutY="97.0" mnemonicParsing="false" onAction="#clickRadBtnUSD4" text="USD" />
                    </children>
                 </Pane>
                </children>
@@ -745,5 +745,7 @@
       <TextField fx:id="labourCostTextCAD" layoutX="12.0" layoutY="337.0" prefHeight="26.0" prefWidth="98.0" />
       <Label layoutX="11.0" layoutY="230.0" text="Labour Costs (USD)" />
       <TextField fx:id="labourCostTextUSD" layoutX="12.0" layoutY="257.0" prefHeight="26.0" prefWidth="98.0" />
+      <ComboBox fx:id="kitIDComBox" layoutX="6.0" layoutY="558.0" prefHeight="26.0" prefWidth="114.0" />
+      <Button onAction ="#openKitInfo" layoutX="36.0" layoutY="601.0" mnemonicParsing="false" text="Open Kit" />
    </children>
 </AnchorPane>
