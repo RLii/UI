@@ -739,8 +739,9 @@
       </ScrollPane>
       <Button layoutX="14.0" layoutY="739.0" mnemonicParsing="false" onAction="#buildComBoxData" prefHeight="26.0" prefWidth="98.0" text="Reload Data" />
       <Label layoutX="38.0" layoutY="35.0" text="Kit Name" />
-      <TextField fx:id="KitNameText" layoutX="2.0" layoutY="60.0" prefHeight="26.0" prefWidth="120.0" />
+      <TextField fx:id="kitNameText" layoutX="2.0" layoutY="60.0" prefHeight="26.0" prefWidth="120.0" />
       <Button layoutX="25.0" layoutY="100.0" mnemonicParsing="false" onAction="#saveAsKit" text="Save As Kit" />
+      <Button layoutX="21.0" layoutY="125.0" mnemonicParsing="false" onAction="#overwriteKit" text="Overwrite Kit" />
       <Label layoutX="11.0" layoutY="310.0" text="Labour Costs (CAD)" />
       <TextField fx:id="labourCostTextCAD" layoutX="12.0" layoutY="337.0" prefHeight="26.0" prefWidth="98.0" />
       <Label layoutX="11.0" layoutY="230.0" text="Labour Costs (USD)" />
