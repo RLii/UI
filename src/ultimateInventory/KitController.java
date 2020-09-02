@@ -308,7 +308,7 @@ public class KitController implements Initializable {
 
             //Write the workbook in file system
             FileOutputStream out = new FileOutputStream(
-                        new File(String.format(String.format("%s",pathText.getText())+"\\%s.xlsx",kitNameComBox.getValue().toString())));
+                        new File(String.format(String.format("%s",pathText.getText())+"\\%s.xlsx",kitNameComBox.getValue().toString().trim())));
 
             workbook.write(out);
             out.close();
@@ -322,7 +322,7 @@ public class KitController implements Initializable {
             }
             else
             {
-                displayAlert("Path not found");
+                displayAlert("Error : "+e);
             }
         }
     }
@@ -337,6 +337,20 @@ public class KitController implements Initializable {
         catch(Exception e)
         {
             displayAlert("Error: "+e);
+        }
+    }
+
+    public void deleteKit()
+    {
+        try {
+            kitTableManager.delete(kitNameComBox.getValue().toString().trim());
+            buildComBoxData();
+            kitNameComBox.getSelectionModel().selectFirst();
+            displayAlert("Deleted");
+        }
+        catch(Exception e)
+        {
+            displayAlert("delete failed");
         }
     }
 

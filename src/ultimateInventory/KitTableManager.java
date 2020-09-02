@@ -56,43 +56,43 @@ public class KitTableManager {
             finally
             {
                 stmt.execute("CREATE TABLE Kits ("
-                        + "ID CHAR(30) NOT NULL PRIMARY KEY,"
-                        + "Bolt CHAR(30),"
-                        + "BoltQTY CHAR(30),"
-                        + "Cat CHAR (30),"
-                        + "CatQTY CHAR (30),"
-                        + "Clamp CHAR (30),"
-                        + "ClampQTY CHAR (30),"
-                        + "Elbow CHAR (30),"
-                        + "ElbowQTY CHAR (30),"
-                        + "Flange CHAR (30),"
-                        + "FlangeQTY CHAR (30),"
-                        + "FlexPipe CHAR(30),"
-                        + "FlexPipeQTY CHAR(30),"
-                        + "Hanger CHAR(30),"
-                        + "HangerQTY CHAR(30),"
-                        + "Muffler CHAR(30),"
-                        + "MufflerQTY CHAR(30),"
-                        + "Nut CHAR(30),"
-                        + "NutQTY CHAR(30),"
-                        + "Pipe CHAR(30),"
-                        + "PipeLENGTH CHAR(30),"
-                        + "Resonator CHAR(30),"
-                        + "ResonatorQTY CHAR(30),"
-                        + "Rubber CHAR(30),"
-                        + "RubberQTY CHAR(30),"
-                        + "Tip CHAR(30),"
-                        + "TipQTY CHAR(30),"
-                        + "Washer CHAR (30),"
-                        + "WasherQTY CHAR (30),"
-                        + "Misc CHAR (30),"
-                        + "MiscPrice CHAR (30),"
-                        + "MiscCurr CHAR (30),"
+                        + "ID CHAR(254) NOT NULL PRIMARY KEY,"
+                        + "Bolt CHAR(254),"
+                        + "BoltQTY CHAR(254),"
+                        + "Cat CHAR(254),"
+                        + "CatQTY CHAR(254),"
+                        + "Clamp CHAR(254),"
+                        + "ClampQTY CHAR(254),"
+                        + "Elbow CHAR(254),"
+                        + "ElbowQTY CHAR(254),"
+                        + "Flange CHAR(254),"
+                        + "FlangeQTY CHAR(254),"
+                        + "FlexPipe CHAR(254),"
+                        + "FlexPipeQTY CHAR(254),"
+                        + "Hanger CHAR(254),"
+                        + "HangerQTY CHAR(254),"
+                        + "Muffler CHAR(254),"
+                        + "MufflerQTY CHAR(254),"
+                        + "Nut CHAR(254),"
+                        + "NutQTY CHAR(254),"
+                        + "Pipe CHAR(254),"
+                        + "PipeLENGTH CHAR(254),"
+                        + "Resonator CHAR(254),"
+                        + "ResonatorQTY CHAR(254),"
+                        + "Rubber CHAR(254),"
+                        + "RubberQTY CHAR(254),"
+                        + "Tip CHAR(254),"
+                        + "TipQTY CHAR(254),"
+                        + "Washer CHAR(254),"
+                        + "WasherQTY CHAR(254),"
+                        + "Misc CHAR(254),"
+                        + "MiscPrice CHAR(254),"
+                        + "MiscCurr CHAR(254),"
                         + "labourCAD DOUBLE ,"
                         + "labourUSD DOUBLE,"
                         + "CostCAD DOUBLE,"
                         + "CostUSD DOUBLE,"
-                        + "OutputPath CHAR(100)"+")");
+                        + "OutputPath CHAR(254)"+")");
             }
         }
     }
@@ -170,7 +170,7 @@ public class KitTableManager {
         rs = stmt.executeQuery("SELECT ID FROM Kits");
         while(rs.next())
         {
-            list.add(rs.getString(1));
+            list.add(rs.getString(1).trim().trim());
         }
 
         return list;

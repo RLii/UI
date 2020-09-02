@@ -72,7 +72,7 @@ public class Controller implements Initializable {
         }
         catch(SQLException ex)
         {
-            displayAlert("ERROR" + ex.getMessage());
+            displayAlert("ERROR :" + ex);
         }
     }
     public void resetNuts(ActionEvent actionEvent)

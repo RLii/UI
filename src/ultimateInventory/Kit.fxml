@@ -10,9 +10,10 @@
    <children>
       <ComboBox fx:id="kitNameComBox" layoutX="259.0" layoutY="34.0" prefWidth="150.0" />
       <Label layoutX="193.0" layoutY="38.0" text="Kit Name :" />
-      <Button layoutX="254.0" layoutY="329.0" mnemonicParsing="false" onAction="#exportKitInfo" text="Export Kit Info" />
+      <Button layoutX="259.0" layoutY="329.0" mnemonicParsing="false" onAction="#exportKitInfo" text="Export Kit Info" />
       <TextField fx:id="pathText" layoutX="202.0" layoutY="199.0" prefHeight="26.0" prefWidth="247.0" />
       <Label layoutX="163.0" layoutY="204.0" text="Path :" />
-      <Button onAction="#savePath" layoutX="373.0" layoutY="329.0" mnemonicParsing="false" text="Save Path" />
+      <Button layoutX="367.0" layoutY="329.0" mnemonicParsing="false" onAction="#savePath" text="Save Path" />
+      <Button layoutX="176.0" layoutY="329.0" mnemonicParsing="false" onAction="#deleteKit" text="Delete Kit" />
    </children>
 </AnchorPane>

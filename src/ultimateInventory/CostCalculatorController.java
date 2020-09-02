@@ -4859,7 +4859,7 @@ public class CostCalculatorController implements Initializable {
         {
             if(e instanceof SQLException)
             {
-                displayAlert("Kit Names must be unique");
+                displayAlert("Kit Names must be unique //"+ e);
             }
             else
             {
@@ -4871,7 +4871,7 @@ public class CostCalculatorController implements Initializable {
     public void overwriteKit()
     {
         try {
-            kitTableManager.delete(kitNameText.getText());
+            kitTableManager.delete(kitNameText.getText().trim());
         }
         catch(Exception e)
         {

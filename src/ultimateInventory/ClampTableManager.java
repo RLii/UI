@@ -23,14 +23,14 @@ public class ClampTableManager {
             finally
             {
                 stmt.execute("CREATE TABLE Clamps ("
-                        + "ID CHAR(30) NOT NULL PRIMARY KEY,"
-                        + "VendorName CHAR(30),"
-                        + "VendorEmail CHAR (30),"
-                        + "VendorContact CHAR (30),"
-                        + "VendorWebsite CHAR (30),"
+                        + "ID CHAR(254) NOT NULL PRIMARY KEY,"
+                        + "VendorName CHAR(254),"
+                        + "VendorEmail CHAR(254),"
+                        + "VendorContact CHAR(254),"
+                        + "VendorWebsite CHAR(254),"
                         + "Price DOUBLE,"
-                        + "PayMethod CHAR(30),"
-                        + "PayTerm CHAR(30),"
+                        + "PayMethod CHAR(254),"
+                        + "PayTerm CHAR(254),"
                         + "PurchaseDate CHAR(10),"
                         + "Currency CHAR(3),"
                         + "Note VARCHAR (20000)"+ ")");
@@ -88,7 +88,7 @@ public class ClampTableManager {
         rs = stmt.executeQuery("SELECT ID FROM Clamps");
         while(rs.next())
         {
-            list.add(rs.getString(1));
+            list.add(rs.getString(1).trim());
         }
 
         return list;
